@@ -23,5 +23,13 @@
       "source.formatDocument",
       "source.fixAll.eslint"
     ],
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": [
+      "source.organizeImports",
+      "source.formatDocument",
+      "source.fixAll.eslint"
+    ],
   }
 }
