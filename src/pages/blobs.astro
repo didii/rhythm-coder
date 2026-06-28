@@ -1,0 +1,260 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blob Background</title>
+    <style>
+      /* ─── Reset ─────────────────────────────────────────── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* ─── Page ───────────────────────────────────────────── */
+      body {
+        min-height: 100vh;
+        background: #f8f6f2;
+        overflow-x: hidden;
+        /* Optional: keep your page content above the blob layer */
+        position: relative;
+      }
+
+      /* ─── Blob layer ─────────────────────────────────────── */
+      /*
+      Single wrapper div that:
+        - covers the full viewport (fixed so it scrolls with the page)
+        - applies blur ONCE via filter (cheaper than blurring each blob)
+        - sits behind everything with z-index: -1
+    */
+      #blob-layer {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        filter: blur(20px) saturate(1.2);
+        will-change: contents; /* hint: compositor layer */
+      }
+
+      /* ─── Individual blobs ───────────────────────────────── */
+      .blob {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.75;
+        will-change: transform, left, top, border-radius;
+      }
+
+      /* ─── Organic float animations ───────────────────────── */
+      @keyframes floatA {
+        0% {
+          transform: scale(1);
+          border-radius: 60% 40% 55% 45% / 50% 55% 45% 50%;
+        }
+        33% {
+          transform: scale(1.04);
+          border-radius: 45% 55% 40% 60% / 60% 40% 55% 45%;
+        }
+        66% {
+          transform: scale(0.97);
+          border-radius: 55% 45% 60% 40% / 45% 60% 40% 55%;
+        }
+        100% {
+          transform: scale(1);
+          border-radius: 60% 40% 55% 45% / 50% 55% 45% 50%;
+        }
+      }
+      @keyframes floatB {
+        0% {
+          transform: scale(1);
+          border-radius: 45% 55% 60% 40% / 55% 45% 50% 50%;
+        }
+        40% {
+          transform: scale(1.05);
+          border-radius: 60% 40% 45% 55% / 40% 60% 50% 50%;
+        }
+        80% {
+          transform: scale(0.96);
+          border-radius: 50% 50% 55% 45% / 60% 40% 45% 55%;
+        }
+        100% {
+          transform: scale(1);
+          border-radius: 45% 55% 60% 40% / 55% 45% 50% 50%;
+        }
+      }
+      @keyframes floatC {
+        0% {
+          transform: scale(1);
+          border-radius: 50% 50% 45% 55% / 60% 40% 55% 45%;
+        }
+        50% {
+          transform: scale(1.03);
+          border-radius: 40% 60% 55% 45% / 50% 50% 45% 55%;
+        }
+        100% {
+          transform: scale(1);
+          border-radius: 50% 50% 45% 55% / 60% 40% 55% 45%;
+        }
+      }
+      @keyframes floatD {
+        0% {
+          transform: scale(1);
+          border-radius: 55% 45% 50% 50% / 45% 55% 50% 50%;
+        }
+        45% {
+          transform: scale(1.06);
+          border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%;
+        }
+        100% {
+          transform: scale(1);
+          border-radius: 55% 45% 50% 50% / 45% 55% 50% 50%;
+        }
+      }
+
+      /* ─── Demo content (remove in your own project) ──────── */
+      .demo-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        gap: 1rem;
+        font-family: Georgia, serif;
+        color: #3a3050;
+      }
+      .demo-content h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 400;
+      }
+      .demo-content p {
+        font-size: 1.1rem;
+        opacity: 0.6;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ── Blob layer ──────────────────────────────────────────
+       JS creates the blobs inside here on DOMContentLoaded.
+       You can also hardcode them as <div class="blob"> if you
+       prefer no JS at all (just remove the mouse-reaction part).
+  ─────────────────────────────────────────────────────────── -->
+    <div id="blob-layer"></div>
+    <template id="blob-template">
+      <div class="blob"></div>
+    </template>
+
+    <!-- Your page content goes here -->
+    <div class="demo-content">
+      <h1>Hello, world.</h1>
+      <p>Move your mouse around.</p>
+    </div>
+
+    <script>
+      // ── Blob definitions ──────────────────────────────────────
+      // Tweak colors, sizes, and positions to fit your palette.
+      // x/y are percentages (left/top relative to the viewport).
+      const blobDefinitions = [
+        { color: '#d4b8e8', w: 23, h: 20, x: 5, y: 5, anim: 'floatA', dur: 9 },
+        { color: '#b8d4e8', w: 18, h: 19, x: 55, y: 40, anim: 'floatB', dur: 11 },
+        { color: '#e8d4b8', w: 16, h: 15, x: 20, y: 55, anim: 'floatC', dur: 8 },
+        { color: '#b8e8d4', w: 15, h: 17, x: 68, y: 8, anim: 'floatD', dur: 13 },
+        { color: '#e8b8cc', w: 12, h: 15, x: 38, y: 22, anim: 'floatA', dur: 10 },
+      ];
+
+      // ── Tuning knobs ─────────────────────────────────────────
+      const INFLUENCE = 120; // px radius in which the cursor affects a blob
+      const MAX_PUSH = 64; // max px a blob is displaced from its base position
+      const LERP_SPEED = 0.06; // 0–1: lower = lazier / more floaty
+
+      // ── Build DOM ────────────────────────────────────────────
+      const blobTemplate = document.getElementById('blob-template') as HTMLTemplateElement;
+      const layer = document.getElementById('blob-layer') as HTMLDivElement;
+
+      const blobs = blobDefinitions.map((b, i) => {
+        const el = document.importNode(blobTemplate.content, true);
+        const root = el.children[0] as HTMLDivElement;
+        root.style.cssText = [
+          `width:${b.w}vw`,
+          `height:${b.h}vw`,
+          `left:${b.x}vw`,
+          `top:${b.y}vh`,
+          `background:${b.color}`,
+          `animation:${b.anim} ${b.dur}s ease-in-out infinite`,
+          `animation-delay:${-i * 1.8}s`,
+        ].join(';');
+        layer.appendChild(el);
+        return {
+          root,
+          x: b.x,
+          y: b.y,
+          w: b.w,
+          h: b.h,
+          cx: b.x + b.w / 2,
+        };
+      });
+
+      // ── State ────────────────────────────────────────────────
+      let mouseX = -9999,
+        mouseY = -9999;
+
+      // Current positions (in vw/vh percentages)
+      const curX = blobDefinitions.map((b) => b.x);
+      const curY = blobDefinitions.map((b) => b.y);
+
+      function lerp(a: number, b: number, t: number) {
+        return a + (b - a) * t;
+      }
+
+      // ── Animation loop ───────────────────────────────────────
+      // JS only updates left/top CSS props — the blob shape morphing
+      // and scaling are handled entirely by CSS @keyframes above.
+      function tick() {
+        const vw = window.innerWidth || 1;
+        const vh = window.innerHeight || 1;
+
+        blobDefinitions.forEach((b, i) => {
+          // Centre of this blob in px
+          const bx = (b.x / 100) * vw + b.w / 2;
+          const by = (b.y / 100) * vh + b.h / 2;
+
+          const dx = bx - mouseX;
+          const dy = by - mouseY;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          let tx = b.x;
+          let ty = b.y;
+
+          if (dist < INFLUENCE && dist > 0.1) {
+            const push = (1 - dist / INFLUENCE) * MAX_PUSH;
+            tx += (((dx / dist) * push) / vw) * 100;
+            ty += (((dy / dist) * push) / vh) * 100;
+          }
+
+          curX[i] = lerp(curX[i], tx, LERP_SPEED);
+          curY[i] = lerp(curY[i], ty, LERP_SPEED);
+
+          blobs[i].root.style.left = curX[i] + 'vw';
+          blobs[i].root.style.top = curY[i] + 'vh';
+        });
+
+        requestAnimationFrame(tick);
+      }
+
+      // ── Mouse tracking (desktop only) ────────────────────────
+      // On mobile there is no mousemove, so blobs just float via CSS.
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      tick();
+    </script>
+  </body>
+</html>
