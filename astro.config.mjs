@@ -8,8 +8,7 @@ import vue from '@astrojs/vue';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://didii.github.io',
-  base: '/rhythm-coder',
+  site: 'https://rhythm-coder.dev',
   integrations: [mdx(), sitemap(), vue()],
   fonts: [
     {
