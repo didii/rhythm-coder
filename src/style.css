@@ -1,0 +1,56 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Sofia Sans', 'Segoe UI', Roboto, sans-serif;
+  --font-legend: 'Sofia Sans Extra Condensed', 'Sofia Sans', sans-serif;
+
+  /* sampled from the profile photo: jacket blue, scarf mint, mountain red, valley sand */
+  --color-jacket: #1e4f7d;
+  --color-jacket-band: #1b476f;
+  --color-jacket-deep: #173d60;
+  --color-mint: #9cc7b3;
+  --color-mint-deep: #5f8c79;
+  --color-sand: #efe7dc;
+  --color-sand-shade: #ddd2c2;
+  --color-mountain: #9b4b40;
+  --color-ink: #173d60;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+    scrollbar-color: var(--color-mint) var(--color-jacket-deep);
+    background: var(--color-jacket);
+  }
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-sand);
+    background-color: var(--color-jacket);
+    font-variant-numeric: tabular-nums;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: var(--color-mint);
+    color: var(--color-jacket-deep);
+  }
+  :focus-visible {
+    outline: 2px dashed var(--focus, var(--color-mint));
+    outline-offset: 3px;
+  }
+  a {
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 1ms !important;
+      transition-duration: 1ms !important;
+    }
+  }
+}

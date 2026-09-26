@@ -1,0 +1,352 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-26T12:00:00Z",
+  "title": "Design System: rhythm-coder CV",
+  "extensions": {
+    "colorMeta": {
+      "jacket": {
+        "role": "primary",
+        "displayName": "Jacket Blue",
+        "canonical": "#1e4f7d",
+        "tonalRamp": [
+          "oklch(15% 0.051 250)",
+          "oklch(25% 0.067 250)",
+          "oklch(35% 0.082 250)",
+          "oklch(41.8% 0.093 250)",
+          "oklch(55% 0.073 250)",
+          "oklch(68% 0.052 250)",
+          "oklch(82% 0.031 250)",
+          "oklch(95% 0.028 250)"
+        ]
+      },
+      "jacket-band": {
+        "role": "primary",
+        "displayName": "Band Blue",
+        "canonical": "#1b476f",
+        "tonalRamp": [
+          "oklch(15% 0.051 249)",
+          "oklch(25% 0.065 249)",
+          "oklch(38.8% 0.084 249)",
+          "oklch(45% 0.075 249)",
+          "oklch(55% 0.061 249)",
+          "oklch(68% 0.043 249)",
+          "oklch(82% 0.025 249)",
+          "oklch(95% 0.025 249)"
+        ]
+      },
+      "jacket-deep": {
+        "role": "primary",
+        "displayName": "Window Blue",
+        "canonical": "#173d60",
+        "tonalRamp": [
+          "oklch(15% 0.05 249)",
+          "oklch(25% 0.062 249)",
+          "oklch(35.1% 0.075 249)",
+          "oklch(45% 0.063 249)",
+          "oklch(55% 0.05 249)",
+          "oklch(68% 0.034 249)",
+          "oklch(82% 0.022 249)",
+          "oklch(95% 0.022 249)"
+        ]
+      },
+      "mint": {
+        "role": "secondary",
+        "displayName": "Scarf Mint",
+        "canonical": "#9cc7b3",
+        "tonalRamp": [
+          "oklch(15% 0.016 165)",
+          "oklch(25% 0.016 165)",
+          "oklch(35% 0.016 165)",
+          "oklch(45% 0.023 165)",
+          "oklch(55% 0.032 165)",
+          "oklch(68% 0.044 165)",
+          "oklch(79.3% 0.054 165)",
+          "oklch(95% 0.04 165)"
+        ]
+      },
+      "mint-deep": {
+        "role": "secondary",
+        "displayName": "Thread Green",
+        "canonical": "#5f8c79",
+        "tonalRamp": [
+          "oklch(15% 0.017 166)",
+          "oklch(25% 0.024 166)",
+          "oklch(35% 0.033 166)",
+          "oklch(45% 0.043 166)",
+          "oklch(60.2% 0.057 166)",
+          "oklch(68% 0.05 166)",
+          "oklch(82% 0.036 166)",
+          "oklch(95% 0.024 166)"
+        ]
+      },
+      "mountain": {
+        "role": "tertiary",
+        "displayName": "Mountain Red",
+        "canonical": "#9b4b40",
+        "tonalRamp": [
+          "oklch(15% 0.043 29)",
+          "oklch(25% 0.062 29)",
+          "oklch(35% 0.08 29)",
+          "oklch(45% 0.098 29)",
+          "oklch(51.1% 0.109 29)",
+          "oklch(68% 0.078 29)",
+          "oklch(82% 0.053 29)",
+          "oklch(95% 0.033 29)"
+        ]
+      },
+      "sand": {
+        "role": "neutral",
+        "displayName": "Valley Sand",
+        "canonical": "#efe7dc",
+        "tonalRamp": [
+          "oklch(15% 0.005 76)",
+          "oklch(25% 0.005 76)",
+          "oklch(35% 0.005 76)",
+          "oklch(45% 0.005 76)",
+          "oklch(55% 0.006 76)",
+          "oklch(68% 0.01 76)",
+          "oklch(82% 0.014 76)",
+          "oklch(93.1% 0.017 76)"
+        ]
+      },
+      "sand-shade": {
+        "role": "neutral",
+        "displayName": "Sand Shade",
+        "canonical": "#ddd2c2",
+        "tonalRamp": [
+          "oklch(15% 0.007 77)",
+          "oklch(25% 0.007 77)",
+          "oklch(35% 0.007 77)",
+          "oklch(45% 0.008 77)",
+          "oklch(55% 0.012 77)",
+          "oklch(68% 0.017 77)",
+          "oklch(86.8% 0.025 77)",
+          "oklch(95% 0.022 77)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#173d60",
+        "tonalRamp": [
+          "oklch(15% 0.05 249)",
+          "oklch(25% 0.062 249)",
+          "oklch(35.1% 0.075 249)",
+          "oklch(45% 0.063 249)",
+          "oklch(55% 0.05 249)",
+          "oklch(68% 0.034 249)",
+          "oklch(82% 0.022 249)",
+          "oklch(95% 0.022 249)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The name in the hero window only; mint uppercase, balanced."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Employer names on sand heads; the closing email shares the voice."
+      },
+      "title": {
+        "displayName": "Course Legend",
+        "purpose": "Assignment names on course bands."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Description panels and prose on sand, capped at 62–72ch; tabular numerals on."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Eyelet labels and lead-panel fact terms; uppercase."
+      }
+    },
+    "shadows": [
+      {
+        "name": "tape-shade",
+        "value": "4px 0 18px rgb(0 0 0 / 0.35)",
+        "purpose": "Eyelet tape over the roll (mobile: 0 -4px 18px rgb(0 0 0 / 0.35))."
+      },
+      {
+        "name": "window-drop",
+        "value": "0 10px 18px -10px rgb(0 0 0 / 0.55)",
+        "purpose": "Under the hero window."
+      },
+      {
+        "name": "seam-lip",
+        "value": "0 -6px 10px -6px rgb(0 0 0 / 0.5)",
+        "purpose": "The seam where the next course slides under the window."
+      },
+      {
+        "name": "lead-lift",
+        "value": "0 18px 40px -12px rgb(0 0 0 / 0.6)",
+        "purpose": "The sand lead panel floating off the roll."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-settle",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Every movement except the ribbon: roll-in 900ms, eyelet 260ms, plus rotation and course colour 280ms, panel unroll 360ms."
+      },
+      {
+        "name": "ease-ribbon-step",
+        "value": "cubic-bezier(0.34, 1.45, 0.6, 1)",
+        "purpose": "The one allowed overshoot: the window ribbon stepping one course, 520ms."
+      },
+      {
+        "name": "hover-colour",
+        "value": "160ms ease-out",
+        "purpose": "Background and colour hovers on tabs and links (eyelet fill 200ms)."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "60rem"
+      },
+      {
+        "name": "mobile",
+        "value": "40rem"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Solid Tab",
+      "kind": "button",
+      "refersTo": "tab-solid",
+      "description": "Primary action: mint bias-cut tab with jacket-deep legend.",
+      "html": "<a class=\"ds-tab ds-tab-solid\" href=\"#\">Email Dieter</a>",
+      "css": ".ds-tab { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-legend); font-weight: 800; font-size: 1.25rem; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; padding: 0.6rem 1.8rem 0.6rem 1.1rem; clip-path: polygon(0 0, 100% 0, calc(100% - 0.7rem) 100%, 0 100%); cursor: pointer; border: 0; transition: background-color 160ms ease-out, color 160ms ease-out; } .ds-tab-solid { background: var(--color-mint); color: var(--color-jacket-deep); } .ds-tab-solid:hover { background: var(--color-sand); } .ds-tab:focus-visible { outline: 2px dashed var(--color-mint); outline-offset: 3px; }"
+    },
+    {
+      "name": "Stitched Tab",
+      "kind": "button",
+      "refersTo": "tab-stitched",
+      "description": "Secondary action on jacket: mint legend inside an inset dashed stitch.",
+      "html": "<div style=\"background:var(--color-jacket);padding:1rem\"><a class=\"ds-tab-stitched\" href=\"#\">See the roll <svg width=\"1em\" height=\"1em\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M11 15.586V5h2v10.586l3.293-3.293l1.414 1.414L12 19.414l-5.707-5.707l1.414-1.414z\"/></svg></a></div>",
+      "css": ".ds-tab-stitched { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-legend); font-weight: 800; font-size: 1.25rem; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; padding: 0.6rem 1.1rem; color: var(--color-mint); outline: 1px dashed var(--color-mint); outline-offset: -5px; transition: background-color 160ms ease-out; } .ds-tab-stitched:hover { background: color-mix(in srgb, var(--color-mint) 12%, transparent); } .ds-tab-stitched:focus-visible { outline: 2px dashed var(--color-mint); outline-offset: 3px; }"
+    },
+    {
+      "name": "Ink Tab",
+      "kind": "button",
+      "refersTo": "tab-ink",
+      "description": "Action on sand: jacket bias-cut tab with sand legend and rotating plus.",
+      "html": "<div style=\"background:var(--color-sand);padding:1rem\"><button type=\"button\" class=\"ds-tab-ink\" aria-expanded=\"false\">About Kenze <svg width=\"1em\" height=\"1em\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M13 11h7v2h-7v7h-2v-7H4v-2h7V4h2z\"/></svg></button></div>",
+      "css": ".ds-tab-ink { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-legend); font-weight: 800; font-size: 1.0625rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.6rem 1.8rem 0.6rem 1.1rem; border: 0; background: var(--color-jacket); color: var(--color-sand); clip-path: polygon(0 0, 100% 0, calc(100% - 0.7rem) 100%, 0 100%); cursor: pointer; transition: background-color 160ms ease-out; } .ds-tab-ink:hover { background: var(--color-jacket-deep); } .ds-tab-ink svg { transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-tab-ink[aria-expanded=true] svg { transform: rotate(45deg); } .ds-tab-ink:focus-visible { outline: 2px dashed var(--color-jacket); outline-offset: 3px; }"
+    },
+    {
+      "name": "Legend Strip",
+      "kind": "custom",
+      "refersTo": "legend-strip",
+      "description": "Section heading: mint legend on a jacket strip hanging over the sand panel edge.",
+      "html": "<section class=\"ds-panel\"><h2 class=\"ds-strip\">About me</h2><p class=\"ds-prose\">A .NET and full-stack developer with a physics background.</p></section>",
+      "css": ".ds-panel { background: var(--color-sand); color: var(--color-ink); padding: 0 2rem 2rem; margin-left: 1.25rem; } .ds-strip { display: inline-block; margin: 0 0 0 -1.25rem; font-family: var(--font-legend); font-weight: 800; font-size: 2.5rem; line-height: 1; text-transform: uppercase; padding: 0.35rem 2.2rem 0.3rem 1.25rem; background: var(--color-jacket); color: var(--color-mint); clip-path: polygon(0 0, 100% 0, calc(100% - 0.6rem) 100%, 0 100%); } .ds-prose { margin-top: 1.5rem; font-family: var(--font-sans); font-size: 1.25rem; line-height: 1.55; max-width: 62ch; }"
+    },
+    {
+      "name": "Course Row",
+      "kind": "card",
+      "refersTo": "course",
+      "description": "Signature: one assignment as a bias-cut jacket band; opens to mountain red.",
+      "html": "<ol class=\"ds-courses\"><li class=\"ds-course\" tabindex=\"0\"><div class=\"ds-course-code\">10</div><div><h4 class=\"ds-course-legend\">Taxi Hendriks<span class=\"ds-course-line\"> / Transport</span></h4><p class=\"ds-course-kw\">DDD<span class=\"ds-sep\"> / </span>Microservices<span class=\"ds-sep\"> / </span>CQRS</p></div><div class=\"ds-course-period\">09/2024 – 12/2026</div></li></ol>",
+      "css": ".ds-courses { display: grid; gap: 6px; list-style: none; padding: 0; margin: 0; background: var(--color-jacket); } .ds-course { display: grid; grid-template-columns: 4.5rem 1fr auto; column-gap: 1.25rem; align-items: start; padding: 1.1rem 2.75rem 1.2rem 1rem; background-color: var(--color-jacket-band); border-top: 1px dashed color-mix(in srgb, var(--color-mint) 55%, transparent); clip-path: polygon(0 0, 100% 0, calc(100% - 1.25rem) 100%, 0 100%); transition: background-color 280ms cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer; } .ds-course:hover, .ds-course:focus-visible { background-color: var(--color-mountain); outline: none; } .ds-course-code { font-family: var(--font-legend); font-weight: 800; font-size: 3rem; line-height: 0.85; color: var(--color-mint); } .ds-course-legend { margin: 0; font-family: var(--font-legend); font-weight: 700; font-size: 2.25rem; line-height: 1; text-transform: uppercase; color: var(--color-mint); } .ds-course-line { color: var(--color-sand); font-weight: 600; } .ds-course-kw { margin: 0.5rem 0 0; font-family: var(--font-legend); font-weight: 600; font-size: 1.125rem; letter-spacing: 0.03em; text-transform: uppercase; color: var(--color-sand); } .ds-sep { color: var(--color-mint); } .ds-course-period { font-family: var(--font-legend); font-weight: 700; font-size: 1.375rem; color: var(--color-sand); white-space: nowrap; padding-top: 0.35rem; }"
+    },
+    {
+      "name": "Eyelet Tape",
+      "kind": "nav",
+      "refersTo": "eyelet-tape",
+      "description": "Index: sand tape of punched eyelets; the active section is punched through.",
+      "html": "<nav class=\"ds-tape\" aria-label=\"Sections\"><a class=\"ds-eyelet ds-eyelet-punched\" href=\"#\" aria-current=\"true\"><span class=\"ds-ring\"></span><span class=\"ds-eyelet-label\">Top</span></a><a class=\"ds-eyelet\" href=\"#\"><span class=\"ds-ring\"></span><span class=\"ds-eyelet-label\">About</span></a><a class=\"ds-eyelet\" href=\"#\"><span class=\"ds-ring\"></span><span class=\"ds-eyelet-label\">Kenze</span></a></nav>",
+      "css": ".ds-tape { display: inline-flex; flex-direction: column; gap: 1.1rem; width: 4.5rem; padding-block: 1.5rem; background: var(--color-sand); border-right: 1px dashed var(--color-mint-deep); box-shadow: 4px 0 18px rgb(0 0 0 / 0.35); } .ds-eyelet { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; color: var(--color-ink); text-decoration: none; } .ds-ring { width: 1.4rem; height: 1.4rem; border-radius: 50%; border: 4px solid var(--color-mint-deep); background: var(--color-sand); box-sizing: border-box; transition: background-color 200ms ease-out, transform 260ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-eyelet:hover .ds-ring, .ds-eyelet-punched .ds-ring { background: var(--color-jacket); } .ds-eyelet-punched .ds-ring { transform: scale(1.12); } .ds-eyelet-label { font-family: var(--font-legend); font-weight: 700; font-size: 0.8125rem; letter-spacing: 0.06em; text-transform: uppercase; } .ds-eyelet:focus-visible { outline: 2px dashed var(--color-jacket); outline-offset: 3px; }"
+    },
+    {
+      "name": "Window Ribbon",
+      "kind": "nav",
+      "refersTo": "ribbon",
+      "description": "Signature: sticky bar whose window names the current course and steps with the one overshoot.",
+      "html": "<header class=\"ds-ribbon\"><span class=\"ds-ribbon-mark\">rhythm-coder</span><span class=\"ds-ribbon-window\"><span class=\"ds-ribbon-strip\"><span>Van Broeck Dieter</span><span>About me</span></span></span><a class=\"ds-ribbon-mail\" href=\"#\">cv@rhythm-coder.dev</a></header>",
+      "css": ".ds-ribbon { display: flex; align-items: center; gap: 1.5rem; height: 3.5rem; padding-inline: 1.5rem; background: var(--color-jacket-deep); border-bottom: 1px dashed var(--color-mint); font-family: var(--font-legend); text-transform: uppercase; } .ds-ribbon-mark { font-weight: 800; font-size: 1.125rem; letter-spacing: 0.08em; color: var(--color-sand); } .ds-ribbon-window { flex: 1; height: 1.75rem; overflow: hidden; border-inline: 1px solid color-mix(in srgb, var(--color-mint) 50%, transparent); padding-inline: 0.9rem; } .ds-ribbon-strip { display: flex; flex-direction: column; font-weight: 800; font-size: 1.375rem; line-height: 1.75rem; letter-spacing: 0.03em; color: var(--color-mint); white-space: nowrap; transition: transform 520ms cubic-bezier(0.34, 1.45, 0.6, 1); } .ds-ribbon:hover .ds-ribbon-strip { transform: translateY(-1.75rem); } .ds-ribbon-mail { font-weight: 800; font-size: 1rem; letter-spacing: 0.05em; padding: 0.35rem 1.2rem 0.35rem 0.8rem; background: var(--color-mint); color: var(--color-jacket-deep); text-decoration: none; clip-path: polygon(0 0, 100% 0, calc(100% - 0.5rem) 100%, 0 100%); transition: background-color 160ms ease-out; } .ds-ribbon-mail:hover { background: var(--color-sand); } .ds-ribbon-mail:focus-visible { outline: 2px dashed var(--color-mint); outline-offset: 3px; }"
+    },
+    {
+      "name": "Rating Punches",
+      "kind": "chip",
+      "refersTo": "sand-panel",
+      "description": "Seven-hole punched skill scale on sand, filled jacket blue up to the rating.",
+      "html": "<div class=\"ds-skill\"><span class=\"ds-skill-name\">TypeScript</span><span class=\"ds-rating\" role=\"img\" aria-label=\"5 out of 7\"><span class=\"ds-punch ds-through\"></span><span class=\"ds-punch ds-through\"></span><span class=\"ds-punch ds-through\"></span><span class=\"ds-punch ds-through\"></span><span class=\"ds-punch ds-through\"></span><span class=\"ds-punch\"></span><span class=\"ds-punch\"></span></span><span class=\"ds-skill-desc\">Daily use, deep knowledge</span></div>",
+      "css": ".ds-skill { display: grid; grid-template-columns: 1fr auto; gap: 0.2rem 1rem; padding: 0.75rem 1rem; background: var(--color-sand); color: var(--color-ink); border-bottom: 1px solid var(--color-sand-shade); } .ds-skill-name { font-family: var(--font-legend); font-weight: 700; font-size: 1.375rem; text-transform: uppercase; line-height: 1.1; } .ds-rating { display: flex; gap: 0.3rem; align-items: center; } .ds-punch { width: 0.8rem; height: 0.8rem; border-radius: 50%; border: 2px solid var(--color-mint-deep); background: var(--color-sand); box-sizing: border-box; } .ds-through { background: var(--color-jacket); } .ds-skill-desc { grid-column: 1 / -1; font-family: var(--font-sans); font-size: 0.9375rem; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Destination Blind",
+    "overview": "The page is a depot destination blind: a long roll of jacket-blue duck cloth whose courses (the hero, each employer, each assignment) step one by one under a fixed window. Every destination is lettered in scarf-mint extra-condensed caps, the way a bus blind prints its route. Anything meant to be read at length (prose, facts, descriptions) sits on pale sand panels stitched onto the roll, printed in dark ink. Mountain red shows up only when a course has been opened.\n\nThe palette is sampled from the profile photo (src/About/me.jpg): the blue of the jacket is the cloth, the mint of the scarf is the lettering and thread, the valley floor gives the sand panels, and the red mountain marks an open course.\n\nThe world is drenched rather than accented. Jacket blue is the field, not a highlight. Density comes from big condensed type and tight course spacing, not from boxes and dividers. Structure comes from sewing: dashed stitch hairlines, bias-cut ends on strips and tabs, and punched eyelets for the index. The user asked for cleaner, more minimal and more legible than the Glazier's Partition steer, and for good behaviour on mobile. They also said it is wrong if it looks template-like, corporate, or like a dark hacker terminal.\n\nMotion belongs to the roll. The sticky ribbon steps the current course name with a single overshoot. Everything else eases out and settles without bouncing.",
+    "keyCharacteristics": [
+      "Drenched jacket-blue field with mint legends; sand panels carry the prose.",
+      "One family: Sofia Sans for reading, Sofia Sans Extra Condensed uppercase for every legend.",
+      "Square cloth with one slanted (bias-cut) trailing edge on strips, tabs and courses.",
+      "Dashed stitch hairlines instead of solid rules for structural seams.",
+      "A punched eyelet tape as the index, and a sticky window ribbon that names the current course.",
+      "Mountain red appears only as the state of an open course."
+    ],
+    "rules": [
+      {
+        "name": "The Drenched Field Rule",
+        "body": "Jacket blue is the ground of the page and never a small accent. New surfaces sit on jacket, and anything long enough to read gets a sand panel with ink text.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mountain Is State Rule",
+        "body": "Mountain red means \"this course is open.\" It does not appear as decoration, as a section colour, or at rest.",
+        "section": "colors"
+      },
+      {
+        "name": "The Large Legend Rule",
+        "body": "Mint on jacket is about 4.7:1, so mint text is legible at every size the build uses on the jacket-blue field and bands. On an open course the legends sit on mountain red at about 3.3:1: only the large legends (course codes and titles) stay mint there, and body-size text on mountain is sand (about 5:1).",
+        "section": "colors"
+      },
+      {
+        "name": "The Legend Caps Rule",
+        "body": "Every name, heading, tab, period and index label is Extra Condensed and uppercase. Sentences and descriptions never are.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "No second typeface. Contrast comes from width (extra condensed or regular) and weight (400 to 900).",
+        "section": "typography"
+      },
+      {
+        "name": "The Window Rule",
+        "body": "The ribbon always names the course currently under the window: the band just under the ribbon, set as an observer rootMargin of -72px 0 -85% 0. Every course and section feeds it.",
+        "section": "layout"
+      },
+      {
+        "name": "The Cloth-Over-Cloth Rule",
+        "body": "A shadow is only allowed where one piece of cloth physically overlaps another. Courses, strips and tabs stay flat.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Bias Cut Rule",
+        "body": "The slant is always on the trailing edge, cutting the bottom-right corner. Never slant both ends, and never round a corner to soften a piece.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do set new surfaces on the jacket-blue field and put any reading text on sand in ink.",
+      "Do letter every name, heading, tab and period in Sofia Sans Extra Condensed uppercase at 700–900.",
+      "Do cut the trailing bottom corner of strips, tabs and course bands with `clip-path`, and keep all other corners square.",
+      "Do draw seams as 1px dashed stitches: mint on jacket, mint-deep on sand.",
+      "Do keep mint on mountain red to large legends only (about 3.3:1); set anything smaller on an open course in sand.",
+      "Do keep the overshoot curve `cubic-bezier(0.34, 1.45, 0.6, 1)` on the window ribbon and use `cubic-bezier(0.16, 1, 0.3, 1)` for everything else.",
+      "Do feed every new course or section to the window ribbon so it always names what is under the window."
+    ],
+    "donts": [
+      "Don't make it look template-like or corporate: no sidebar-and-timeline résumé, no rounded cards, no generic UI kit.",
+      "Don't drift toward the dark hacker look: no black or near-black field, no monospace, no terminal green.",
+      "Don't use mountain red for anything except an open course (and link hover inside the lead panel).",
+      "Don't round corners or add a second typeface.",
+      "Don't add shadows to courses, strips or tabs; shade only where cloth overlaps cloth.",
+      "Don't give a second element the ribbon's overshoot."
+    ]
+  }
+}
