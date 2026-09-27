@@ -5,6 +5,12 @@ import type { Course } from '../cv';
 
 const props = defineProps<{ course: Course }>();
 const open = ref(false);
+const toggle = ref<HTMLButtonElement>();
+
+function close() {
+  open.value = false;
+  toggle.value?.focus();
+}
 const panelId = useId();
 const label = [props.course.name, props.course.line].filter(Boolean).join(' · ');
 </script>
@@ -19,6 +25,7 @@ const label = [props.course.name, props.course.line].filter(Boolean).join(' · '
         <button
           v-if="course.description"
           type="button"
+          ref="toggle"
           class="course__toggle"
           :aria-expanded="open"
           :aria-controls="panelId"
@@ -46,7 +53,15 @@ const label = [props.course.name, props.course.line].filter(Boolean).join(' · '
     </div>
     <div class="course__period">{{ course.period }}</div>
     <div v-if="course.description" :id="panelId" class="course__panel" :inert="!open">
-      <div class="course__panel-inner" lang="nl" v-html="course.description"></div>
+      <div class="course__panel-clip">
+        <div class="course__panel-inner" lang="nl" v-html="course.description"></div>
+        <div class="course__close">
+          <button type="button" class="tab tab--stitched" @click="close">
+            Close
+            <Plus class="course__icon" height="1em" aria-hidden="true" />
+          </button>
+        </div>
+      </div>
     </div>
   </li>
 </template>
@@ -66,9 +81,13 @@ const label = [props.course.name, props.course.line].filter(Boolean).join(' · '
   transition-timing-function: ease-out;
   --legend: var(--color-mint);
   --text: var(--color-sand);
+  position: relative;
+}
+.course--open,
+.course:has(.course__toggle:hover) {
+  background-color: var(--color-mountain);
 }
 .course--open {
-  background-color: var(--color-mountain);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 .course__img {
@@ -101,6 +120,12 @@ const label = [props.course.name, props.course.line].filter(Boolean).join(' · '
   text-align: left;
   text-transform: inherit;
   cursor: pointer;
+}
+/* stretch the toggle's hit area over the whole row */
+.course__toggle::after {
+  content: '';
+  position: absolute;
+  inset: 0;
 }
 .course__tab {
   display: inline-flex;
@@ -146,6 +171,8 @@ const label = [props.course.name, props.course.line].filter(Boolean).join(' · '
   padding-top: 0.35rem;
 }
 .course__panel {
+  /* above the toggle's hit area, so the description stays selectable */
+  position: relative;
   grid-column: 2 / -1;
   display: grid;
   grid-template-rows: 0fr;
@@ -154,10 +181,12 @@ const label = [props.course.name, props.course.line].filter(Boolean).join(' · '
 .course--open .course__panel {
   grid-template-rows: 1fr;
 }
-.course__panel-inner {
-  --focus: var(--color-jacket);
+.course__panel-clip {
   overflow: hidden;
   min-height: 0;
+}
+.course__panel-inner {
+  --focus: var(--color-jacket);
   background: var(--color-sand);
   color: var(--color-ink);
   font-size: 1.0625rem;
@@ -174,6 +203,10 @@ const label = [props.course.name, props.course.line].filter(Boolean).join(' · '
 }
 .course__panel-inner :deep(p + p) {
   margin-top: 0.9rem;
+}
+.course__close {
+  display: none;
+  margin-top: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -205,6 +238,9 @@ const label = [props.course.name, props.course.line].filter(Boolean).join(' · '
   }
   .course__panel {
     grid-column: 1 / -1;
+  }
+  .course__close {
+    display: block;
   }
 }
 </style>
