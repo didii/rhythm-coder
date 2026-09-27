@@ -17,9 +17,7 @@ const label = [props.course.name, props.course.line].filter(Boolean).join(' · '
 
 <template>
   <li class="course" :class="{ 'course--open': open }" :data-course="label">
-    <div class="course__img" aria-hidden="true">
-      <img :src="course.img" />
-    </div>
+    <div v-if="course.img" class="course__img" :style="{ '--logo': `url(${course.img})` }" aria-hidden="true"></div>
     <div class="course__body">
       <h4 class="course__legend">
         <button
@@ -91,13 +89,15 @@ const label = [props.course.name, props.course.line].filter(Boolean).join(' · '
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 .course__img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
+  /* logo as a mint silhouette: its alpha channel masks a flat fill */
   width: 4rem;
   height: 4rem;
-  padding: 0.5rem;
+  background-color: var(--legend);
+  mask: var(--logo) center / contain no-repeat;
+}
+/* explicit columns so rows without a logo keep the empty first column */
+.course__body {
+  grid-column: 2;
 }
 .course__legend {
   font-family: var(--font-legend);
@@ -162,6 +162,7 @@ const label = [props.course.name, props.course.line].filter(Boolean).join(' · '
   color: var(--legend);
 }
 .course__period {
+  grid-column: 3;
   font-family: var(--font-legend);
   font-weight: 700;
   font-size: 1.375rem;
@@ -220,8 +221,6 @@ const label = [props.course.name, props.course.line].filter(Boolean).join(' · '
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
   .course__img {
-    background-color: white;
-    padding: 0.25rem;
     grid-column: 1;
     grid-row: 2;
     height: 4rem;
