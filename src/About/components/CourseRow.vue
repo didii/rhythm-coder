@@ -46,9 +46,7 @@ const label = [props.course.img, props.course.name, props.course.line].filter(Bo
     </div>
     <div class="course__period">{{ course.period }}</div>
     <div v-if="course.description" :id="panelId" class="course__panel" :inert="!open">
-      <div class="course__panel-inner" lang="nl">
-        <p v-for="(p, i) of course.description" :key="i">{{ p }}</p>
-      </div>
+      <div class="course__panel-inner" lang="nl" v-html="course.description"></div>
     </div>
   </li>
 </template>
@@ -171,7 +169,7 @@ const label = [props.course.img, props.course.name, props.course.line].filter(Bo
   padding: 1.25rem 1.5rem;
   clip-path: inset(0 0 0 0);
 }
-.course__panel-inner p + p {
+.course__panel-inner :deep(p + p) {
   margin-top: 0.9rem;
 }
 
