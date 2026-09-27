@@ -12,10 +12,11 @@ import LeadPanel from './LeadPanel.vue';
       <p class="hero__next">Software developer</p>
     </div>
     <div class="hero__lede">
-      <p class="hero__route">Physics background <span aria-hidden="true">/</span> <b>.NET &amp; full-stack</b></p>
+      <p class="hero__route">
+        Physics background <span aria-hidden="true">&nbsp;/&nbsp;</span> <b>.NET &amp; full-stack</b>
+      </p>
       <div class="hero__actions">
         <a class="tab tab--solid" :href="`mailto:${EMAIL}`">Email Dieter</a>
-        <a class="tab tab--stitched" href="#kenze">See the roll <ArrowDown height="1em" aria-hidden="true" /></a>
       </div>
     </div>
 
@@ -105,6 +106,9 @@ import LeadPanel from './LeadPanel.vue';
     grid-template-columns: 1fr;
     grid-template-rows: none;
     min-height: 0;
+  }
+  .hero__actions {
+    display: none;
   }
 }
 </style>

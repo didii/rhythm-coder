@@ -123,13 +123,13 @@ defineProps<{ current: string; previous: string; stepDir: 'down' | 'up'; tick: n
     border-left: 0;
     padding-left: 0;
   }
-  .ribbon__mail span {
+  /* .ribbon__mail span {
     position: absolute;
     width: 1px;
     height: 1px;
     overflow: hidden;
     clip-path: inset(50%);
     white-space: nowrap;
-  }
+  } */
 }
 </style>

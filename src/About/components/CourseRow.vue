@@ -6,7 +6,7 @@ import type { Course } from '../cv';
 const props = defineProps<{ course: Course }>();
 const open = ref(false);
 const panelId = useId();
-const label = [props.course.img, props.course.name, props.course.line].filter(Boolean).join(' · ');
+const label = [props.course.name, props.course.line].filter(Boolean).join(' · ');
 </script>
 
 <template>
@@ -61,12 +61,15 @@ const label = [props.course.img, props.course.name, props.course.line].filter(Bo
   background-color: var(--color-jacket-band);
   border-top: 1px dashed color-mix(in srgb, var(--color-mint) 55%, transparent);
   clip-path: polygon(0 0, 100% 0, calc(100% - 1.25rem) 100%, 0 100%);
-  transition: background-color 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-property: background-color, clip-path;
+  transition-duration: 250ms;
+  transition-timing-function: ease-out;
   --legend: var(--color-mint);
   --text: var(--color-sand);
 }
 .course--open {
   background-color: var(--color-mountain);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 .course__img {
   display: flex;
@@ -173,20 +176,23 @@ const label = [props.course.img, props.course.name, props.course.line].filter(Bo
   margin-top: 0.9rem;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 768px) {
   .course {
-    grid-template-columns: 3rem 1fr;
+    grid-template-columns: 4rem 1fr;
     column-gap: 0.75rem;
-    padding: 1rem 1.75rem 1.1rem 0.75rem;
+    padding: 0.75rem 1rem;
     clip-path: polygon(0 0, 100% 0, calc(100% - 0.75rem) 100%, 0 100%);
+  }
+  .course--open {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
   .course__img {
     background-color: white;
     padding: 0.25rem;
     grid-column: 1;
     grid-row: 2;
-    width: 3rem;
-    height: 3rem;
+    height: 4rem;
+    width: 4rem;
   }
   .course__period {
     grid-column: 2;

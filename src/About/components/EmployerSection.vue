@@ -26,6 +26,7 @@ const open = ref(false);
         v-if="employer.description"
         type="button"
         class="tab tab--ink"
+        :class="{ 'tab--open': open }"
         :aria-expanded="open"
         :aria-controls="`${employer.id}-about`"
         @click="open = !open"

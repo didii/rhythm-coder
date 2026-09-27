@@ -153,10 +153,10 @@ main {
   margin-top: 4rem;
   background: var(--color-sand);
   color: var(--color-ink);
-  padding: 0 clamp(1.25rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 2.5rem);
+  padding: 0 clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2.5rem);
 }
 .panel__prose {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   font-size: clamp(1.125rem, 1.6vw, 1.375rem);
   line-height: 1.55;
 }
