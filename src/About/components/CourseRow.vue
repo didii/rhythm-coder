@@ -39,7 +39,7 @@ const label = [props.course.img, props.course.name, props.course.line].filter(Bo
       <p class="course__keywords">
         <template v-for="k of course.keywords" :key="k">
           <span>{{ k }}</span
-          ><span class="course__sep" aria-hidden="true"> / </span>
+          ><span class="course__sep" aria-hidden="true"> &nbsp;/&nbsp; </span>
         </template>
         <span aria-label="and more">…</span>
       </p>
