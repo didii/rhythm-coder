@@ -10,7 +10,12 @@ const open = ref(false);
 
 <template>
   <section :id="employer.id" :data-section="employer.name" class="employer" :aria-labelledby="`${employer.id}-name`">
-    <div class="employer__head">
+    <!-- the whole head toggles; the button's own click bubbles up to here, so it's keyboard-accessible too -->
+    <div
+      class="employer__head"
+      :class="{ 'employer__head--toggle': employer.description }"
+      @click="employer.description && (open = !open)"
+    >
       <img :src="employer.logo" alt="" class="employer__logo" width="64" height="64" />
       <div class="employer__id">
         <h2 :id="`${employer.id}-name`" class="employer__name">{{ employer.name }}</h2>
@@ -29,7 +34,6 @@ const open = ref(false);
         :class="{ 'tab--open': open }"
         :aria-expanded="open"
         :aria-controls="`${employer.id}-about`"
-        @click="open = !open"
       >
         About {{ employer.name }}
         <Plus height="1em" aria-hidden="true" class="employer__icon" :class="{ 'employer__icon--open': open }" />
@@ -66,6 +70,13 @@ const open = ref(false);
   background: var(--color-sand);
   color: var(--color-ink);
   padding: 1rem 1.25rem;
+  transition: background-color 160ms ease-out;
+}
+.employer__head--toggle {
+  cursor: pointer;
+}
+.employer__head--toggle:hover {
+  background: var(--color-sand-shade);
 }
 .employer__logo {
   width: 4rem;
