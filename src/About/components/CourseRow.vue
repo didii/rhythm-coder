@@ -6,12 +6,14 @@ import type { Course } from '../cv';
 const props = defineProps<{ course: Course }>();
 const open = ref(false);
 const panelId = useId();
-const label = [props.course.code, props.course.name, props.course.line].filter(Boolean).join(' · ');
+const label = [props.course.img, props.course.name, props.course.line].filter(Boolean).join(' · ');
 </script>
 
 <template>
   <li class="course" :class="{ 'course--open': open }" :data-course="label">
-    <div class="course__code" aria-hidden="true">{{ course.code ?? '··' }}</div>
+    <div class="course__img" aria-hidden="true">
+      <img :src="course.img" />
+    </div>
     <div class="course__body">
       <h4 class="course__legend">
         <button
@@ -35,8 +37,9 @@ const label = [props.course.code, props.course.name, props.course.line].filter(B
         </span>
       </h4>
       <p class="course__keywords">
-        <template v-for="(k, i) of course.keywords" :key="k">
-          <span>{{ k }}</span><span class="course__sep" aria-hidden="true"> / </span>
+        <template v-for="k of course.keywords" :key="k">
+          <span>{{ k }}</span
+          ><span class="course__sep" aria-hidden="true"> / </span>
         </template>
         <span aria-label="and more">…</span>
       </p>
@@ -67,12 +70,14 @@ const label = [props.course.code, props.course.name, props.course.line].filter(B
 .course--open {
   background-color: var(--color-mountain);
 }
-.course__code {
-  font-family: var(--font-legend);
-  font-weight: 800;
-  font-size: 3rem;
-  line-height: 0.85;
-  color: var(--legend);
+.course__img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  width: 4rem;
+  height: 4rem;
+  padding: 0.5rem;
 }
 .course__legend {
   font-family: var(--font-legend);
@@ -126,7 +131,6 @@ const label = [props.course.code, props.course.name, props.course.line].filter(B
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--text);
-  max-width: 62ch;
 }
 .course__sep {
   color: var(--legend);
@@ -178,8 +182,13 @@ const label = [props.course.code, props.course.name, props.course.line].filter(B
     padding: 1rem 1.75rem 1.1rem 0.75rem;
     clip-path: polygon(0 0, 100% 0, calc(100% - 0.75rem) 100%, 0 100%);
   }
-  .course__code {
-    font-size: 2.25rem;
+  .course__img {
+    background-color: white;
+    padding: 0.25rem;
+    grid-column: 1;
+    grid-row: 2;
+    width: 3rem;
+    height: 3rem;
   }
   .course__period {
     grid-column: 2;
@@ -189,9 +198,6 @@ const label = [props.course.code, props.course.name, props.course.line].filter(B
   }
   .course__body {
     grid-column: 2;
-  }
-  .course__code {
-    grid-row: 1 / span 2;
   }
   .course__panel {
     grid-column: 1 / -1;

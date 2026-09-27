@@ -5,7 +5,7 @@ import Plus from '@iconify-vue/fe/plus';
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 import CourseRow from './components/CourseRow.vue';
 import { employers, skills } from './cv';
-import me from './me.jpg';
+import me from './img/me.jpg';
 
 const EMAIL = 'cv@rhythm-coder.dev';
 
@@ -192,7 +192,7 @@ onBeforeUnmount(() => observer?.disconnect());
           </div>
         </div>
         <ol class="courses" :aria-label="`Assignments at ${emp.name}`">
-          <CourseRow v-for="c of emp.courses" :key="`${c.code}-${c.name}`" :course="c" />
+          <CourseRow v-for="c of emp.courses" :key="`${c.img}-${c.name}`" :course="c" />
         </ol>
       </section>
 
@@ -420,6 +420,7 @@ main {
 
 .strip {
   display: inline-block;
+  margin-top: -1px;
   font-family: var(--font-legend);
   font-weight: 800;
   font-size: 2.5rem;
@@ -441,7 +442,6 @@ main {
   margin-top: 1.5rem;
   font-size: clamp(1.125rem, 1.6vw, 1.375rem);
   line-height: 1.55;
-  max-width: 62ch;
 }
 
 /* ---------- hero ---------- */
@@ -464,12 +464,11 @@ main {
   clip-path: polygon(0 0, 100% 0, calc(100% - 2.5rem) 100%, 0 100%);
   padding: clamp(1rem, 2.5vw, 2rem) clamp(3rem, 5vw, 4rem) 0 clamp(1rem, 2.5vw, 2rem);
   overflow: hidden;
-  animation: roll-in 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 .hero__name {
   font-family: var(--font-legend);
   font-weight: 900;
-  font-size: clamp(4.25rem, 11.5vw, 10rem);
+  font-size: clamp(3.25rem, 17vw, 10rem);
   line-height: 0.86;
   letter-spacing: -0.005em;
   text-transform: uppercase;
@@ -494,14 +493,6 @@ main {
   margin-bottom: 0.5rem;
   box-sizing: content-box;
   overflow: hidden;
-}
-@keyframes roll-in {
-  from {
-    transform: translateY(1.5rem);
-  }
-  to {
-    transform: none;
-  }
 }
 .hero__lede {
   grid-column: 1;
@@ -547,7 +538,7 @@ main {
   object-fit: cover;
 }
 .lead__photo figcaption {
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
   font-size: 0.875rem;
   font-style: italic;
 }
@@ -560,7 +551,7 @@ main {
   color: var(--color-mountain);
 }
 .lead__facts {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   display: grid;
   gap: 0.6rem;
   border-top: 1px dashed var(--color-mint-deep);
@@ -644,7 +635,6 @@ main {
   overflow: hidden;
   min-height: 0;
   padding-inline: 1.25rem;
-  max-width: 72ch;
   font-size: 1.0625rem;
   line-height: 1.6;
 }
