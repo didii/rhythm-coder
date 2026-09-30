@@ -103,7 +103,7 @@ export const employers: Employer[] = [
         img: actemiumLogo,
         name: "Actemium",
         line: "Testplan debugger",
-        period: "05/2022 – 08/2023",
+        period: "05/2023 – 08/2023",
         keywords: ["Analyst", "Akka.NET", "gRPC", "RabbitMQ", "WPF", "Entity Framework"],
         description: `
         <p>
