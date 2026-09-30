@@ -55,7 +55,7 @@ export const employers: Employer[] = [
         img: hendriksLogo,
         name: "Taxi Hendriks",
         line: "Transport",
-        period: "09/2024 – 12/2026",
+        period: "09/2024 – now",
         keywords: ["Domain-Driven Design (DDD)", "Microservices Architecture", "React (+Native)", "CQRS"],
         description: `
           <p>
@@ -80,7 +80,7 @@ export const employers: Employer[] = [
         name: "Odot",
         line: "EMP",
         period: "08/2023 – 09/2024",
-        keywords: ["Analyst", "Akka.NET", "gRPC", "RabbitMQ"],
+        keywords: ["React", "TypeScript", "ASP.NET (Web API)", "Azure", "CQRS", "SignalR"],
         description: `
           <p>
             Odot is actief binnen de energiemarkt en biedt zowel interne als externe applicaties ter ondersteuning van de aankoop en opvolging van
@@ -96,7 +96,7 @@ export const employers: Employer[] = [
         name: "Actemium",
         line: "Testplan debugger",
         period: "05/2022 – 08/2023",
-        keywords: [],
+        keywords: ["Analyst", "Akka.NET", "gRPC", "RabbitMQ", "WPF", "Entity Framework"],
         description: `
         <p>
           Actemium ontwikkelt software voor het testen en valideren van industriële machines. De applicatie biedt een zeer flexibele
@@ -145,8 +145,7 @@ export const employers: Employer[] = [
         name: "Gosselin",
         line: "Gosselin",
         period: "12/2022 – 04/2023",
-        // TODO: placeholder copied from Odot, replace with Actemium's real keywords
-        keywords: ["Analyst", "Akka.NET", "gRPC", "RabbitMQ"],
+        keywords: ["Fullstack .NET Developer", "Frontend lead", "React", "ASP.NET (Web API)", ".NET Core", "Code Reviews"],
         description: `
           <p>
             Gosselin is een grote logistieke speler gevestigd in Antwerpen en is al meerdere jaren partner van het Amerikaanse Department of Defense.
@@ -236,7 +235,7 @@ export const employers: Employer[] = [
         name: "Fluxys",
         line: "Connect",
         period: "03/2019 – 11/2019",
-        keywords: [],
+        keywords: ["ASP.NET (MVC)", "jQuery", "Knockout JS", "T-SQL", "Angular", "XML / XSLT", "Message Queues"],
         description: `
           <p>
             Fluxys is een bedrijf gespecialiseerd in het transport van gas in België. Het team waarin Dieter werkte focuste voornamelijk op de
@@ -262,7 +261,7 @@ export const employers: Employer[] = [
       {
         img: imecLogo,
         name: "IMEC",
-        line: "Calendar apps",
+        line: "PTW",
         period: "02/2019 – 03/2019",
         keywords: [
           "Technical Architect",
@@ -299,7 +298,7 @@ export const employers: Employer[] = [
         period: "06/2018 – 12/2018",
         keywords: [
           "Complex Legacy Modernization",
-          "Fullstack .NET Developer",
+          "Fullstack Developer",
           "High-stakes Holiday Release",
           "Business Logic",
           "Small team",
@@ -325,8 +324,8 @@ export const employers: Employer[] = [
       {
         name: "Securex",
         line: "Elastic Stack Research",
-        period: "05/2028",
-        keywords: [],
+        period: "05/2018",
+        keywords: ["Technical Analyst", "Elasticsearch", "Logging & Monitoring", "Research", "Demo"],
         description: `
           <p>
             Dit was een kort pre-sales project waarbij een demo werd ontwikkeld rond de mogelijkheden, sterktes en beperkingen van de ELK-stack
@@ -347,7 +346,7 @@ export const employers: Employer[] = [
         name: "Digipolis Antwerpen",
         line: "Generiek Dossier Platform (GDP)",
         period: "04/2018 – 05/2018",
-        keywords: [],
+        keywords: ["TDD", "Integration Testing", "Load / Performance Testing", "Performance Optimization", "PostgreSQL", "EF Core"],
         description: `
           <p>
             GDP was bedoeld als een document store voor het beheren van cases met gestructureerde en dynamische data, inclusief taakbeheer, historie
@@ -368,9 +367,9 @@ export const employers: Employer[] = [
       },
       {
         name: "Intrum",
-        line: "Mainenance",
-        period: "12/2017 - 02/2018",
-        keywords: [],
+        line: "Maintenance",
+        period: "12/2017 – 02/2018",
+        keywords: ["Oracle Database", "Stored Procedures", ".NET Framework", "Scrum", "Support"],
         description: `
           <p>
             Intrum is een incassobureau waar de meeste processen, zoals het versturen van sms-berichten, brieven en e-mails of het toewijzen van
@@ -382,8 +381,8 @@ export const employers: Employer[] = [
       {
         name: "Digipolis Antwerpen",
         line: "Delivery Request Registration",
-        period: "09/2017 - 11/2017",
-        keywords: [],
+        period: "09/2017 – 11/2017",
+        keywords: [".NET Core", "Angular", "PostgreSQL", "Docker", "Hangfire", "EF Core"],
         description: `
           <p>
             De aanvraag voor identiteitskaarten en andere officiële documenten werd in dit project gedigitaliseerd voor de stad Antwerpen. Dit project
@@ -405,7 +404,7 @@ export const employers: Employer[] = [
         name: "Technicolor",
         line: "Various jobs",
         period: "07/2015 – 07/2017",
-        keywords: [],
+        keywords: ["WPF", ".NET Framework", "MongoDB", "Jenkins (CI/CD)", "Automated UI Testing"],
         description: `
           <p>
             Tijdens Dieter zijn studentenjobs bij Technicolor ontwikkelde hij interne softwareoplossingen in C#/.NET (WPF) ter ondersteuning van
