@@ -128,6 +128,7 @@ const open = ref(false);
 .overview__cat:first-child {
   margin-top: 0.75rem;
   border-top: 1px dashed var(--color-mint-deep);
+  padding-top: 0.1rem;
 }
 .overview__cat {
   display: grid;
@@ -143,12 +144,11 @@ const open = ref(false);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--color-jacket);
-  padding-top: 0.1rem;
 }
 .overview__list {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   gap: 0.2rem 0;
   font-family: var(--font-legend);
   font-weight: 600;
@@ -170,6 +170,9 @@ const open = ref(false);
 }
 
 @media (max-width: 40rem) {
+  .overview__name {
+    font-size: 1.25rem;
+  }
   .overview__cat {
     grid-template-columns: 1fr;
   }

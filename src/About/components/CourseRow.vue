@@ -39,7 +39,7 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
         >
           <span>
             <span class="course__name">{{ course.name }}</span>
-            <span v-if="course.line" class="course__line"> &nbsp;/&nbsp; {{ course.line }}</span>
+            <span v-if="course.line" class="course__line">&nbsp;&nbsp;/&nbsp; {{ course.line }}</span>
           </span>
           <span class="course__tab">
             {{ open ? 'Close' : 'Read' }}
@@ -48,13 +48,13 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
         </button>
         <span v-else>
           <span class="course__name">{{ course.name }}</span
-          ><span v-if="course.line" class="course__line"> &nbsp;/&nbsp; {{ course.line }}</span>
+          ><span v-if="course.line" class="course__line">&nbsp;&nbsp;/&nbsp; {{ course.line }}</span>
         </span>
       </h4>
       <p class="course__keywords">
         <template v-for="k of course.keywords" :key="k">
           <span>{{ k }}</span
-          ><span class="course__sep" aria-hidden="true"> &nbsp;/&nbsp; </span>
+          ><span class="course__sep" aria-hidden="true">&nbsp;&nbsp;/&nbsp; </span>
         </template>
         <span aria-label="and more">…</span>
       </p>
