@@ -38,7 +38,8 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
           "
         >
           <span>
-            {{ course.name }}<span v-if="course.line" class="course__line"> / {{ course.line }}</span>
+            <span class="course__name">{{ course.name }}</span>
+            <span v-if="course.line" class="course__line"> &nbsp;/&nbsp; {{ course.line }}</span>
           </span>
           <span class="course__tab">
             {{ open ? 'Close' : 'Read' }}
@@ -46,7 +47,8 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
           </span>
         </button>
         <span v-else>
-          {{ course.name }}<span v-if="course.line" class="course__line"> / {{ course.line }}</span>
+          <span class="course__name">{{ course.name }}</span
+          ><span v-if="course.line" class="course__line"> &nbsp;/&nbsp; {{ course.line }}</span>
         </span>
       </h4>
       <p class="course__keywords">
@@ -156,6 +158,9 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
   color: var(--legend);
   text-wrap: balance;
 }
+.course__name {
+  font-weight: 800;
+}
 .course__line {
   color: var(--text);
   font-weight: 600;
@@ -260,7 +265,7 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
 
 @media (max-width: 768px) {
   .course {
-    grid-template-columns: 4rem 1fr;
+    grid-template-columns: 3rem 1fr;
     column-gap: 0.75rem;
     padding: 0.75rem 1rem;
     clip-path: polygon(0 0, 100% 0, calc(100% - 0.75rem) 100%, 0 100%);
@@ -271,6 +276,8 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
   .course__mark {
     grid-column: 1;
     grid-row: 2;
+    width: 3rem;
+    height: 3rem;
   }
   .course__period {
     grid-column: 2;

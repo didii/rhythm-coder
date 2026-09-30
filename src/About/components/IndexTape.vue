@@ -86,7 +86,7 @@ defineProps<{ items: { id: string; label: string }[]; active: string }>();
     padding-block: 0.25rem;
   }
   /* no room in the bottom bar; the student years sit right under Ordina anyway */
-  .eyelet[data-id='student'] {
+  .eyelet[data-id='technicolor'] {
     display: none;
   }
   .eyelet__ring {

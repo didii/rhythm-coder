@@ -28,6 +28,7 @@ export interface Course {
 export interface Employer {
   id: string;
   name: string;
+  ribbonName: string;
   logo: string;
   period: string;
   span: string;
@@ -40,6 +41,7 @@ export const employers: Employer[] = [
   {
     id: "kenze",
     name: "Kenze",
+    ribbonName: "Kenze",
     logo: kenzeLogo,
     period: "10/2021 – now",
     span: "5 years",
@@ -198,6 +200,7 @@ export const employers: Employer[] = [
   {
     id: "ordina",
     name: "Ordina Belgium",
+    ribbonName: "Ordina",
     logo: ordinaLogo,
     period: "08/2017 – 09/2021",
     span: "4 years",
@@ -419,17 +422,18 @@ export const employers: Employer[] = [
     ],
   },
   {
-    id: "student",
-    name: "Student",
-    logo: "",
+    id: "technicolor",
+    name: "Technicolor",
+    ribbonName: "Student",
+    logo: technicolorLogo,
     period: "07/2015 – 07/2017",
     span: "2 years",
-    activity: "Developer",
+    activity: "Student software developer",
     courses: [
       {
         img: technicolorLogo,
-        name: "Technicolor",
-        line: "Various jobs",
+        name: "Internal tooling",
+        line: "Test & reporting",
         period: "07/2015 – 07/2017",
         keywords: ["WPF", ".NET Framework", "MongoDB", "Jenkins (CI/CD)", "Automated UI Testing"],
         description: `

@@ -12,7 +12,7 @@ import { employers } from './cv';
 const index = [
   { id: 'top', label: 'Top' },
   { id: 'about', label: 'About' },
-  ...employers.map((e) => ({ id: e.id, label: e.name.split(' ')[0]! })),
+  ...employers.map((e) => ({ id: e.id, label: e.ribbonName })),
   { id: 'skills', label: 'Skills' },
   { id: 'talks', label: 'Talks' },
   { id: 'contact', label: 'Mail' },
