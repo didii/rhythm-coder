@@ -9,6 +9,7 @@ defineProps<{ items: { id: string; label: string }[]; active: string }>();
       :key="item.id"
       :href="`#${item.id}`"
       class="eyelet"
+      :data-id="item.id"
       :class="{ 'eyelet--punched': active === item.id }"
       :aria-current="active === item.id ? 'true' : undefined"
     >
@@ -83,6 +84,10 @@ defineProps<{ items: { id: string; label: string }[]; active: string }>();
   .eyelet {
     min-width: 2.75rem;
     padding-block: 0.25rem;
+  }
+  /* no room in the bottom bar; the student years sit right under Ordina anyway */
+  .eyelet[data-id='student'] {
+    display: none;
   }
   .eyelet__ring {
     width: 1.1rem;

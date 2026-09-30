@@ -418,6 +418,229 @@ export const employers: Employer[] = [
   },
 ];
 
+export interface Presentation {
+  title: string;
+  period: string; // "MM/YYYY"
+  topics: string[];
+  description: string; // HTML
+}
+
+export const presentations: Presentation[] = [
+  {
+    title: "React Internals",
+    period: "11/2024",
+    topics: ["Mounting", "JSX", "Render cycles", "State", "useRef & useCallback"],
+    description: `
+      <p>
+        Een technische deep dive in de interne werking van React op basis van de broncode. De presentatie behandelde onder meer hoe een
+        React-applicatie wordt gemount, hoe JSX achterliggend wordt verwerkt en hoe React pagina's opbouwt en render cycles beheert. Daarnaast
+        werd dieper ingegaan op state management en de momenten waarop React een nieuwe render uitvoert. Aan de hand van praktische voorbeelden
+        werd ook toegelicht hoe hooks zoals <code>useRef</code> en <code>useCallback</code> doelgericht kunnen worden ingezet om onnodige renders te
+        vermijden en applicaties te optimaliseren.
+      </p>
+    `,
+  },
+  {
+    title: "TypeScript Shenanigans",
+    period: "02/2023",
+    topics: ["Compile-time vs runtime", "Pitfalls", "String types", "Mapped types", "Decorators"],
+    description: `
+      <p>
+        Over de mogelijkheden van TypeScript wanneer de taal correct en bewust wordt ingezet. De presentatie behandelde de werking van TypeScript
+        achter de schermen, waaronder de vertaling naar JavaScript en het fundamentele verschil tussen compile-time en runtime. Daarnaast werden
+        minder voor de hand liggende valkuilen en moeilijk te detecteren bugs besproken. Aan de hand van praktische demo's werd vervolgens
+        getoond hoe TypeScript-types op creatieve en geavanceerde manieren kunnen worden ingezet en gecombineerd, met onder andere complexe string
+        types, mapped types, decorators en types voor JSON-structuren.
+      </p>
+    `,
+  },
+  {
+    title: "Angular Spaghetti",
+    period: "09/2022",
+    topics: ["Smart & dumb components", "Stateful services", "State management", "Architecture"],
+    description: `
+      <p>
+        Een toegankelijke uitleg over wat spaghetti-code binnen Angular betekent en hoe een goed gestructureerde applicatie eerder als een
+        lasagne kan worden opgebouwd. De presentatie bevatte letterlijk een recept voor een gezonde Angular-architectuur, met aandacht voor de
+        juiste opbouw van componenten, het onderscheid tussen smart en dumb components, stateless en stateful services en degelijk state
+        management. Naast de theoretische principes werd ook uitgebreid toegelicht hoe deze structuur in de praktijk kan worden toegepast binnen
+        bestaande en nieuwe Angular-projecten.
+      </p>
+    `,
+  },
+];
+
+// Full keyword list per category, most used first.
+export const skillOverview: { name: string; skills: string[] }[] = [
+  {
+    name: "Frontend",
+    skills: [
+      "React",
+      "TypeScript",
+      "NPM",
+      "Webpack / Vite",
+      "i18next",
+      "Angular",
+      "jQuery",
+      "HeroUI",
+      "TanStack Query",
+      "Knockout JS",
+      "Sass",
+      "WPF",
+      "CSS3",
+      "Vue.js",
+      "WinForms",
+    ],
+  },
+  {
+    name: "Backend",
+    skills: [
+      ".NET Core",
+      "ASP.NET (MVC)",
+      "Entity Framework Core",
+      "ASP.NET (Web API)",
+      "Background Services",
+      ".NET Framework",
+      "NHibernate",
+      ".NET Aspire",
+      "Dapper",
+      "LINQ",
+      "MediatR",
+      "MassTransit",
+      "Akka.NET",
+      "gRPC",
+      "SignalR",
+      "NodeJS",
+      "Entity Framework",
+      "AutoMapper",
+      "Hangfire",
+      "Asynchronous Programming",
+      "Web Services",
+    ],
+  },
+  {
+    name: "Testing",
+    skills: [
+      "Unit Testing",
+      "Integration Testing",
+      "xUnit",
+      "NSubstitute",
+      "Respawn",
+      "Automated UI Testing",
+      "NUnit",
+      "Snapshot Testing",
+      "Karma",
+      "End-to-End Testing",
+      "Load / Performance Testing",
+      "Jest",
+    ],
+  },
+  {
+    name: "Cloud & DevOps",
+    skills: [
+      "RabbitMQ",
+      "Azure Functions",
+      "Azure Service Bus",
+      "Azure Storage",
+      "Azure DevOps",
+      "Application Insights",
+      "Docker",
+      "GitHub Actions",
+      "Message Queues",
+      "Azure App Services",
+      "Azure Pipelines",
+      "Microsoft Azure",
+      "Azure Container Apps",
+      "Azure App Configuration",
+      "GitHub",
+      "Bash",
+    ],
+  },
+  {
+    name: "Databases",
+    skills: [
+      "Azure SQL",
+      "SQL Server",
+      "PostgreSQL",
+      "T-SQL",
+      "Dacpac",
+      "Oracle",
+      "Elasticsearch",
+      "Stored Procedures",
+      "SQL",
+      "NoSQL",
+      "Data Migrations",
+      "Indexing / Query Optimization",
+      "Backup & Restore",
+    ],
+  },
+  {
+    name: "Architecture",
+    skills: [
+      "CQRS",
+      "Domain-Driven Design",
+      "Microservices",
+      "Vertical Slice Architecture",
+      "Layered / N-tier",
+      "Event-Driven Architecture",
+      "Modular Monoliths",
+      "Onion Architecture",
+      "MVC",
+      "API Design",
+      "SOLID",
+      "Clean Code",
+      "DRY",
+      "Design Patterns",
+      "Dependency Injection",
+      "Inversion of Control",
+      "Loose Coupling",
+      "Component-based Architecture",
+      "OOP / OOD",
+      "ORM",
+    ],
+  },
+  {
+    name: "Methodologies",
+    skills: ["Code Reviews", "Scrum", "Agile", "CI/CD", "Pair Programming", "User Stories", "TDD"],
+  },
+  {
+    name: "Security",
+    skills: ["Authentication", "Authorization", "Keycloak", "OAuth2", "ASP.NET Core Identity"],
+  },
+  {
+    name: "UX / UI / Design",
+    skills: ["Figma", "Responsive / Mobile-first", "Tailwind", "Design Systems", "Component Libraries", "User-Centered Design"],
+  },
+  {
+    name: "Tools",
+    skills: ["Google Maps", "OpenTelemetry", "OpenAPI", "Portainer", "NuGet", "Swagger", "Git", "Jira", "Rider"],
+  },
+  {
+    name: "Other",
+    skills: [
+      "Logging & Monitoring",
+      "React Native",
+      "Claude Code",
+      "JSON / XML / XSLT / YAML",
+      "Performance Optimization",
+      "Caching",
+      "Exception Handling",
+      "Localization",
+    ],
+  },
+  {
+    name: "Soft skills",
+    skills: [
+      "Coach & Mentor",
+      "Eye for detail",
+      "Task-oriented",
+      "Cross-functional collaborator",
+      "Communicative",
+      "Creative problem solver",
+    ],
+  },
+];
+
 export const skills = [
   {
     name: "Programming languages",

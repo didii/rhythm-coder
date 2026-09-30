@@ -13,11 +13,16 @@ function close() {
 }
 const panelId = useId();
 const label = [props.course.name, props.course.line].filter(Boolean).join(' · ');
+const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
 </script>
 
 <template>
   <li class="course" :class="{ 'course--open': open }" :data-course="label">
-    <div v-if="course.img" class="course__img" :style="{ '--logo': `url(${course.img})` }" aria-hidden="true"></div>
+    <!-- the start year is the route code; the logo takes its place when the course is opened or hovered -->
+    <div class="course__mark" aria-hidden="true">
+      <span class="course__code">{{ code }}</span>
+      <span v-if="course.img" class="course__img" :style="{ '--logo': `url(${course.img})` }"></span>
+    </div>
     <div class="course__body">
       <h4 class="course__legend">
         <button
@@ -81,19 +86,57 @@ const label = [props.course.name, props.course.line].filter(Boolean).join(' · '
   --text: var(--color-sand);
   position: relative;
 }
-.course--open,
-.course:has(.course__toggle:hover) {
+.course--open {
   background-color: var(--color-mountain);
 }
 .course--open {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
-.course__img {
-  /* logo as a mint silhouette: its alpha channel masks a flat fill */
+.course__mark {
+  display: grid;
   width: 4rem;
   height: 4rem;
+}
+.course__code,
+.course__img {
+  grid-area: 1 / 1;
+  transition: opacity 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.course__code {
+  font-family: var(--font-legend);
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 0.85;
+  color: var(--text);
+  place-self: center;
+}
+.course__img {
+  /* logo as a mint silhouette: its alpha channel masks a flat fill */
   background-color: var(--legend);
   mask: var(--logo) center / contain no-repeat;
+  opacity: 0;
+}
+.course--open .course__img {
+  opacity: 1;
+}
+/* rows without a logo keep their code */
+.course--open .course__code:has(+ .course__img) {
+  opacity: 0;
+}
+/* hover previews the open state, only where hover is real: on touch it sticks after closing */
+@media (hover: hover) {
+  .course:has(.course__toggle:hover) {
+    background-color: var(--color-mountain);
+  }
+  .course:has(.course__toggle:hover) .course__img {
+    opacity: 1;
+  }
+  .course:has(.course__toggle:hover) .course__code:has(+ .course__img) {
+    opacity: 0;
+  }
+  .course__toggle:hover .course__tab {
+    background: var(--color-sand);
+  }
 }
 /* explicit columns so rows without a logo keep the empty first column */
 .course__body {
@@ -139,9 +182,6 @@ const label = [props.course.name, props.course.line].filter(Boolean).join(' · '
   color: var(--color-jacket-deep);
   clip-path: polygon(0 0, 100% 0, calc(100% - 0.45rem) 100%, 0 100%);
   transition: background-color 160ms ease-out;
-}
-.course__toggle:hover .course__tab {
-  background: var(--color-sand);
 }
 .course__icon {
   transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -220,11 +260,9 @@ const label = [props.course.name, props.course.line].filter(Boolean).join(' · '
   .course--open {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
-  .course__img {
+  .course__mark {
     grid-column: 1;
     grid-row: 2;
-    height: 4rem;
-    width: 4rem;
   }
   .course__period {
     grid-column: 2;

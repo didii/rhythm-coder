@@ -4,6 +4,7 @@ import ContactSection from './components/ContactSection.vue';
 import EmployerSection from './components/EmployerSection.vue';
 import HeroSection from './components/HeroSection.vue';
 import IndexTape from './components/IndexTape.vue';
+import PresentationsSection from './components/PresentationsSection.vue';
 import SkillsSection from './components/SkillsSection.vue';
 import WindowRibbon from './components/WindowRibbon.vue';
 import { employers } from './cv';
@@ -13,6 +14,7 @@ const index = [
   { id: 'about', label: 'About' },
   ...employers.map((e) => ({ id: e.id, label: e.name.split(' ')[0]! })),
   { id: 'skills', label: 'Skills' },
+  { id: 'talks', label: 'Talks' },
   { id: 'contact', label: 'Mail' },
 ];
 
@@ -71,6 +73,7 @@ onBeforeUnmount(() => observer?.disconnect());
 
       <EmployerSection v-for="emp of employers" :key="emp.id" :employer="emp" />
       <SkillsSection />
+      <PresentationsSection />
       <ContactSection />
     </main>
   </div>

@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import { skills } from '../cv';
+import Plus from '@iconify-vue/fe/plus';
+import { ref } from 'vue';
+import { skillOverview, skills } from '../cv';
+
+const open = ref(false);
 </script>
 
 <template>
@@ -18,6 +22,28 @@ import { skills } from '../cv';
           </li>
         </ul>
       </div>
+    </div>
+    <h3 class="skills__name skills__name--overview">
+      <button
+        type="button"
+        class="tab tab--ink"
+        :aria-expanded="open"
+        aria-controls="skills-overview"
+        @click="open = !open"
+      >
+        Full overview
+        <Plus height="1em" aria-hidden="true" class="overview__icon" :class="{ 'overview__icon--open': open }" />
+      </button>
+    </h3>
+    <div id="skills-overview" class="overview-roll" :class="{ 'overview-roll--open': open }" :inert="!open">
+      <dl class="overview">
+        <div v-for="cat of skillOverview" :key="cat.name" class="overview__cat">
+          <dt class="overview__name">{{ cat.name }}</dt>
+          <dd class="overview__list">
+            <span v-for="s of cat.skills" :key="s" class="overview__item">{{ s }}</span>
+          </dd>
+        </div>
+      </dl>
     </div>
   </section>
 </template>
@@ -71,5 +97,80 @@ import { skills } from '../cv';
 }
 .punch--through {
   background: var(--color-jacket);
+}
+
+/* ---------- overview: plain keyword list per category ---------- */
+.skills__name--overview {
+  margin-top: 2.5rem;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+.overview__icon {
+  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.overview__icon--open {
+  transform: rotate(45deg);
+}
+/* unrolls like an employer's About panel */
+.overview-roll {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 360ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.overview-roll--open {
+  grid-template-rows: 1fr;
+}
+.overview {
+  overflow: hidden;
+  min-height: 0;
+}
+.overview-roll--open .overview {
+  margin-top: 0.75rem;
+  border-top: 1px dashed var(--color-mint-deep);
+}
+.overview__cat {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 0.25rem 1.5rem;
+  padding-block: 0.7rem;
+  border-bottom: 1px solid var(--color-sand-shade);
+}
+.overview__name {
+  font-family: var(--font-legend);
+  font-weight: 800;
+  font-size: 1.125rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-jacket);
+  padding-top: 0.1rem;
+}
+.overview__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 0;
+  font-family: var(--font-legend);
+  font-weight: 600;
+  font-size: 1.125rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+/* a small punched hole between keywords: item names already contain slashes */
+.overview__item:not(:last-child)::after {
+  content: '';
+  display: inline-block;
+  width: 0.35rem;
+  height: 0.35rem;
+  margin-inline: 0.6rem;
+  vertical-align: 0.2em;
+  border-radius: 50%;
+  background: var(--color-mint-deep);
+}
+
+@media (max-width: 40rem) {
+  .overview__cat {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
