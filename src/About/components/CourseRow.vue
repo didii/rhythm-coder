@@ -32,7 +32,10 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
           class="course__toggle"
           :aria-expanded="open"
           :aria-controls="panelId"
-          @click="open = !open"
+          @click="
+            open = !open;
+            toggle?.focus();
+          "
         >
           <span>
             {{ course.name }}<span v-if="course.line" class="course__line"> / {{ course.line }}</span>
@@ -57,7 +60,8 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
     <div class="course__period">{{ course.period }}</div>
     <div v-if="course.description" :id="panelId" class="course__panel" :inert="!open">
       <div class="course__panel-clip">
-        <div class="course__panel-inner" lang="nl" v-html="course.description"></div>
+        <!-- focusable so reading or selecting the description keeps the course active (red) -->
+        <div class="course__panel-inner" tabindex="-1" lang="nl" v-html="course.description"></div>
         <div class="course__close">
           <button type="button" class="tab tab--stitched" @click="close">
             Close
@@ -86,7 +90,8 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
   --text: var(--color-sand);
   position: relative;
 }
-.course--open {
+/* red marks the course being worked with, not every open one */
+.course--open:focus-within {
   background-color: var(--color-mountain);
 }
 .course--open {
@@ -235,6 +240,9 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
   max-width: 72ch;
   clip-path: inset(0 0 100% 0);
   transition: clip-path 360ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.course__panel-inner:focus {
+  outline: none;
 }
 .course--open .course__panel-inner {
   --focus: var(--color-jacket);

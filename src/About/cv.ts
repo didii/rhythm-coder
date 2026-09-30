@@ -7,6 +7,12 @@ import actemiumLogo from "./img/actemium.png";
 import connectiveLogo from "./img/connective.png";
 import vlmLogo from "./img/vlm.png";
 import imecLogo from "./img/imec.png";
+import digipolisLogo from "./img/digipolis.png";
+import fluxysLogo from "./img/fluxys.png";
+import gosselinLogo from "./img/gosselin.png";
+import intrumLogo from "./img/intrum.png";
+import securexLogo from "./img/securex.png";
+import technicolorLogo from "./img/technicolor.png";
 
 export const EMAIL = "cv@rhythm-coder.dev";
 
@@ -142,10 +148,18 @@ export const employers: Employer[] = [
         `,
       },
       {
+        img: gosselinLogo,
         name: "Gosselin",
         line: "Gosselin",
         period: "12/2022 – 04/2023",
-        keywords: ["Fullstack .NET Developer", "Frontend lead", "React", "ASP.NET (Web API)", ".NET Core", "Code Reviews"],
+        keywords: [
+          "Fullstack .NET Developer",
+          "Frontend lead",
+          "React",
+          "ASP.NET (Web API)",
+          ".NET Core",
+          "Code Reviews",
+        ],
         description: `
           <p>
             Gosselin is een grote logistieke speler gevestigd in Antwerpen en is al meerdere jaren partner van het Amerikaanse Department of Defense.
@@ -232,6 +246,7 @@ export const employers: Employer[] = [
         `,
       },
       {
+        img: fluxysLogo,
         name: "Fluxys",
         line: "Connect",
         period: "03/2019 – 11/2019",
@@ -322,6 +337,7 @@ export const employers: Employer[] = [
         `,
       },
       {
+        img: securexLogo,
         name: "Securex",
         line: "Elastic Stack Research",
         period: "05/2018",
@@ -343,10 +359,18 @@ export const employers: Employer[] = [
         `,
       },
       {
+        img: digipolisLogo,
         name: "Digipolis Antwerpen",
         line: "Generiek Dossier Platform (GDP)",
         period: "04/2018 – 05/2018",
-        keywords: ["TDD", "Integration Testing", "Load / Performance Testing", "Performance Optimization", "PostgreSQL", "EF Core"],
+        keywords: [
+          "TDD",
+          "Integration Testing",
+          "Load / Performance Testing",
+          "Performance Optimization",
+          "PostgreSQL",
+          "EF Core",
+        ],
         description: `
           <p>
             GDP was bedoeld als een document store voor het beheren van cases met gestructureerde en dynamische data, inclusief taakbeheer, historie
@@ -366,6 +390,7 @@ export const employers: Employer[] = [
         `,
       },
       {
+        img: intrumLogo,
         name: "Intrum",
         line: "Maintenance",
         period: "12/2017 – 02/2018",
@@ -379,6 +404,7 @@ export const employers: Employer[] = [
         `,
       },
       {
+        img: digipolisLogo,
         name: "Digipolis Antwerpen",
         line: "Delivery Request Registration",
         period: "09/2017 – 11/2017",
@@ -401,6 +427,7 @@ export const employers: Employer[] = [
     activity: "Developer",
     courses: [
       {
+        img: technicolorLogo,
         name: "Technicolor",
         line: "Various jobs",
         period: "07/2015 – 07/2017",
@@ -609,7 +636,14 @@ export const skillOverview: { name: string; skills: string[] }[] = [
   },
   {
     name: "UX / UI / Design",
-    skills: ["Figma", "Responsive / Mobile-first", "Tailwind", "Design Systems", "Component Libraries", "User-Centered Design"],
+    skills: [
+      "Figma",
+      "Responsive / Mobile-first",
+      "Tailwind",
+      "Design Systems",
+      "Component Libraries",
+      "User-Centered Design",
+    ],
   },
   {
     name: "Tools",

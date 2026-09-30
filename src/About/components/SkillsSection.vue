@@ -124,7 +124,8 @@ const open = ref(false);
   overflow: hidden;
   min-height: 0;
 }
-.overview-roll--open .overview {
+/* inside the clipped box, so it rolls up with the list instead of snapping away on close */
+.overview__cat:first-child {
   margin-top: 0.75rem;
   border-top: 1px dashed var(--color-mint-deep);
 }
