@@ -16,6 +16,29 @@ import technicolorLogo from "./img/technicolor.png";
 
 export const EMAIL = "cv@rhythm-coder.dev";
 
+export const LINKS = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/dieter-van-broeck-476092142/" },
+  { label: "GitHub", href: "https://github.com/didii" },
+];
+
+// Full years between two "MM/YYYY" dates; "now" (or nothing) means today.
+export const yearsBetween = (from: string, to = "now") => {
+  const months = (d: string) => {
+    if (d === "now") return new Date().getFullYear() * 12 + new Date().getMonth();
+    const [m, y] = d.split("/").map(Number) as [number, number];
+    return y * 12 + m - 1;
+  };
+  return Math.floor((months(to) - months(from)) / 12);
+};
+// "MM/YYYY – MM/YYYY" or "MM/YYYY – now"
+export const spanOf = (period: string) => {
+  const years = yearsBetween(...(period.split(" – ") as [string, string]));
+  return `${years} year${years === 1 ? "" : "s"}`;
+};
+
+// Since the first professional job (Ordina); student jobs don't count.
+export const yearsOfExperience = () => yearsBetween("08/2017");
+
 export interface Course {
   img?: string;
   name: string;
@@ -31,7 +54,6 @@ export interface Employer {
   ribbonName: string;
   logo: string;
   period: string;
-  span: string;
   activity: string;
   description?: string; // HTML
   courses: Course[];
@@ -44,7 +66,6 @@ export const employers: Employer[] = [
     ribbonName: "Kenze",
     logo: kenzeLogo,
     period: "10/2021 – now",
-    span: "5 years",
     activity: ".NET developer consultant",
     description: `
       <p>
@@ -203,7 +224,6 @@ export const employers: Employer[] = [
     ribbonName: "Ordina",
     logo: ordinaLogo,
     period: "08/2017 – 09/2021",
-    span: "4 years",
     activity: ".NET developer consultant",
     description: `
       <p>
@@ -445,7 +465,6 @@ export const employers: Employer[] = [
     ribbonName: "Student",
     logo: technicolorLogo,
     period: "07/2015 – 07/2017",
-    span: "2 years",
     activity: "Student software developer",
     courses: [
       {

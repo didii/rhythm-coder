@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Plus from '@iconify-vue/fe/plus';
 import { ref } from 'vue';
-import type { Employer } from '../cv';
+import { spanOf, type Employer } from '../cv';
 import CourseRow from './CourseRow.vue';
 
 defineProps<{ employer: Employer }>();
@@ -24,7 +24,7 @@ const open = ref(false);
           <span aria-hidden="true">/</span>
           <b>{{ employer.period }}</b>
           <span aria-hidden="true">/</span>
-          <b>{{ employer.span }}</b>
+          <b>{{ spanOf(employer.period) }}</b>
         </p>
       </div>
       <button

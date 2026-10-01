@@ -3,7 +3,7 @@ import { createSSRApp } from "vue";
 import { renderToString } from "vue/server-renderer";
 import { createMemoryHistory } from "vue-router";
 import App from "./App.vue";
-import { EMAIL, education, employers, skillOverview, skills } from "./About/cv";
+import { EMAIL, LINKS, education, employers, skillOverview, skills } from "./About/cv";
 import me from "./About/img/me.jpg";
 import { createAppRouter } from "./router.ts";
 
@@ -33,6 +33,7 @@ export function head() {
     url: SITE,
     image,
     email: `mailto:${EMAIL}`,
+    sameAs: LINKS.map((l) => l.href),
     address: { "@type": "PostalAddress", addressLocality: "Zoersel", addressCountry: "BE" },
     worksFor: { "@type": "Organization", name: employers[0]!.name },
     alumniOf: { "@type": "CollegeOrUniversity", name: education[0]!.school },

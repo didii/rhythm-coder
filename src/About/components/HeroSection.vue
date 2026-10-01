@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import ArrowDown from '@iconify-vue/fe/arrow-down';
-import { EMAIL } from '../cv';
+import LinkExternal from '@iconify-vue/fe/link-external';
+import { EMAIL, LINKS, yearsOfExperience } from '../cv';
 import LeadPanel from './LeadPanel.vue';
 </script>
 
@@ -13,10 +14,13 @@ import LeadPanel from './LeadPanel.vue';
     </div>
     <div class="hero__lede">
       <p class="hero__route">
-        Physics background <span aria-hidden="true">&nbsp;/&nbsp;</span> <b>.NET &amp; full-stack</b>
+        Physics background <span aria-hidden="true">&nbsp;/&nbsp;</span> <b>.NET &amp; full-stack</b> <span aria-hidden="true">&nbsp;/&nbsp;</span> <b>{{ yearsOfExperience() }} years experience</b>
       </p>
       <div class="hero__actions">
         <a class="tab tab--solid" :href="`mailto:${EMAIL}`">Email Dieter</a>
+        <a v-for="l of LINKS" :key="l.label" class="tab tab--stitched" :href="l.href" target="_blank" rel="noopener">
+          {{ l.label }} <LinkExternal height="1em" aria-hidden="true" />
+        </a>
       </div>
     </div>
 
