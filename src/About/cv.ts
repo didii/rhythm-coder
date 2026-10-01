@@ -205,6 +205,18 @@ export const employers: Employer[] = [
     period: "08/2017 – 09/2021",
     span: "4 years",
     activity: ".NET developer consultant",
+    description: `
+      <p>
+        Ordina is een IT-dienstverlener in de Benelux en was de plek waar Dieter zijn carrière als consultant startte. Als starter kreeg hij
+        er een uitstekende reeks opleidingen die hem een stevige basis gaven in professionele softwareontwikkeling, nog voor hij bij zijn
+        eerste klant aan de slag ging.
+      </p>
+      <p>
+        Hoogtepunt waren de donderdagavonden: met eten voorzien kwamen collega's samen om te experimenteren met allerlei technologie. Er stond
+        een ruim aanbod aan speelgoed klaar, van rovers en drones tot VR-headsets, waardoor er volop ruimte was om nieuwe dingen uit te
+        proberen en van elkaar te leren.
+      </p>
+    `,
     courses: [
       {
         name: "Internship supervisor",
