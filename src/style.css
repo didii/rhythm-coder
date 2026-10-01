@@ -42,6 +42,56 @@
     text-underline-offset: 0.2em;
     text-decoration-thickness: 1px;
   }
+  /* print / save as PDF: keep the cloth colours, unroll every panel, drop the navigation chrome.
+     !important because the component rules are scoped (attribute selectors) and win otherwise. */
+  @media print {
+    @page {
+      margin: 10mm;
+    }
+    * {
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+    .tape,
+    .ribbon,
+    .hero__actions,
+    .course__tab,
+    .course__close,
+    .talk__tab,
+    .employer__head .tab,
+    .skills__name--overview .tab svg {
+      display: none !important;
+    }
+    .roll main {
+      margin-left: 0 !important;
+      max-width: none !important;
+    }
+    .hero {
+      min-height: 0 !important;
+    }
+    .course__panel,
+    .employer__about,
+    .overview-roll,
+    .talk__panel {
+      grid-template-rows: 1fr !important;
+    }
+    .course__panel-inner {
+      clip-path: none !important;
+      margin-top: 1rem !important;
+      padding: 1.25rem 1.5rem !important;
+    }
+    .employer__about > div {
+      padding-block: 0.25rem 1.5rem !important;
+    }
+    .course,
+    .talk,
+    .edu__item,
+    .skills__cat,
+    .overview__cat,
+    .lead {
+      break-inside: avoid;
+    }
+  }
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
