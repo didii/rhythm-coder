@@ -222,6 +222,12 @@ export const employers: Employer[] = [
         name: "Internship supervisor",
         period: "03/2021 – 05/2021",
         keywords: ["Supporting role", "VR meeting app", "Unity 3D", "Brainstorming"],
+        description: `
+          <p>
+            Dieter begeleidde twee stagiairs bij het bouwen van een speelse VR-vergaderruimte. Naast hulp bij het structureren van hun code
+            lag zijn focus vooral op het organiseren en opvolgen van het werk en op het brainstormen over ideeën en functionaliteiten.
+          </p>
+        `,
       },
       {
         img: vlmLogo,
