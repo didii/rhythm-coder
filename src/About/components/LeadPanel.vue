@@ -15,7 +15,7 @@ import me from '../img/me.jpg';
       <div>
         <dt>Based in</dt>
         <dd>
-          <a href="https://www.google.com/maps/place/Zoersel" target="_blank" rel="noopener">Zoersel</a>
+          <a href="https://www.google.com/maps/place/Zoersel" target="_blank" rel="noopener">Zoersel, Belgium</a>
         </dd>
       </div>
       <div>

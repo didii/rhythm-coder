@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 import ContactSection from './components/ContactSection.vue';
+import EducationSection from './components/EducationSection.vue';
 import EmployerSection from './components/EmployerSection.vue';
 import HeroSection from './components/HeroSection.vue';
 import IndexTape from './components/IndexTape.vue';
@@ -13,6 +14,7 @@ const index = [
   { id: 'top', label: 'Top' },
   { id: 'about', label: 'About' },
   ...employers.map((e) => ({ id: e.id, label: e.ribbonName })),
+  { id: 'education', label: 'Education' },
   { id: 'skills', label: 'Skills' },
   { id: 'talks', label: 'Talks' },
   { id: 'contact', label: 'Mail' },
@@ -72,6 +74,7 @@ onBeforeUnmount(() => observer?.disconnect());
       </section>
 
       <EmployerSection v-for="emp of employers" :key="emp.id" :employer="emp" />
+      <EducationSection />
       <SkillsSection />
       <PresentationsSection />
       <ContactSection />

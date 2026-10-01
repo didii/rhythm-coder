@@ -467,6 +467,18 @@ export const employers: Employer[] = [
   },
 ];
 
+export interface Education {
+  degree: string;
+  school: string;
+  period: string;
+}
+
+// ponytail: periods copied from Flowcase as-is; they overlap oddly (bachelor ending after the master), verify.
+export const education: Education[] = [
+  { degree: "Master in Physics", school: "University of Antwerp", period: "09/2010 – 07/2016" },
+  { degree: "Bachelor in Physics", school: "University of Antwerp", period: "09/2014 – 07/2018" },
+];
+
 export interface Presentation {
   title: string;
   period: string; // "MM/YYYY"

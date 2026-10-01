@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Plus from '@iconify-vue/fe/plus';
-import { onBeforeUnmount, reactive, ref } from 'vue';
+import { onBeforeUnmount, onMounted, reactive, ref } from 'vue';
 import { presentations } from '../cv';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -9,19 +9,27 @@ const talks = presentations.map((t) => {
   return { ...t, month: MONTHS[Number(m) - 1], year: y, datetime: `${y}-${m}` };
 });
 
-// always expanded on desktop; collapsible only on mobile
-const mq = window.matchMedia('(max-width: 40rem)');
-const mobile = ref(mq.matches);
+// always expanded on desktop; collapsible only on mobile.
+// Starts as desktop so the prerendered HTML (expanded, readable without JS) matches the first client render.
+const mobile = ref(false);
+// transitions stay off until after the first layout, so mobile snaps closed instead of animating on load
+const ready = ref(false);
+let mq: MediaQueryList | undefined;
 const onChange = (e: MediaQueryListEvent) => (mobile.value = e.matches);
-mq.addEventListener('change', onChange);
-onBeforeUnmount(() => mq.removeEventListener('change', onChange));
+onMounted(() => {
+  mq = window.matchMedia('(max-width: 40rem)');
+  mobile.value = mq.matches;
+  mq.addEventListener('change', onChange);
+  requestAnimationFrame(() => requestAnimationFrame(() => (ready.value = true)));
+});
+onBeforeUnmount(() => mq?.removeEventListener('change', onChange));
 
 const open = reactive<Record<string, boolean>>({});
 const isOpen = (title: string) => !mobile.value || !!open[title];
 </script>
 
 <template>
-  <section id="talks" data-section="Presentations" class="talks" aria-labelledby="talks-title">
+  <section id="talks" data-section="Presentations" class="talks" :class="{ 'talks--ready': ready }" aria-labelledby="talks-title">
     <div class="talks__head">
       <h2 id="talks-title" class="talks__title">Presentations</h2>
       <p class="talks__sub">Internal talks @ Kenze</p>
@@ -187,6 +195,8 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
   position: relative;
   display: grid;
   grid-template-rows: 0fr;
+}
+.talks--ready .talk__panel {
   transition: grid-template-rows 360ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 .talk--open .talk__panel {
