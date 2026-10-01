@@ -70,14 +70,13 @@ export const employers: Employer[] = [
     activity: ".NET developer consultant",
     description: `
       <p>
-        Kenze is een fantastisch bedrijf. Ze blinken uit in hun menselijkheid en hun sales. Dit zorgt ervoor dat je je steeds als persoon behandeld
-        wordt. Je bent geen nummer dat enkel maar dient om geld op te brengen. Feedback wordt serieus genomen, van zodra er een aantal mensen
-        gelijkaardige kritiek uiten, gaan ze hier ook werkelijk mee aan de slag om na te gaan in hoeverre deze terecht zijn, door zelfs derde partijen
-        in te schakelen. Ze zijn zich er perfect van bewust dat ze zelf ook maar mens zijn en zetten de kritiek voor hun eigen trots.
+        Kenze is een IT-consultancybedrijf waar Dieter sinds oktober 2021 als .NET-consultant werkt. Het bedrijf zet sterk in op een goede match
+        tussen consultant en klant: elke salesmedewerker heeft zelf een technische achtergrond, waardoor opdrachten inhoudelijk goed aansluiten bij
+        het profiel van de consultant.
       </p>
       <p>
-        Ze hechten veel aandacht aan een goede match tussen consultant en klant. Daarom dat elke sales ook werkelijk een technische achtergrond heeft:
-        ze weten m.a.w. goed wat ze verkopen.
+        Daarnaast heeft Kenze een open feedbackcultuur. Wanneer meerdere medewerkers gelijkaardige feedback geven, wordt die actief opgevolgd en
+        indien nodig met hulp van externe partijen onderzocht.
       </p>
     `,
     courses: [
