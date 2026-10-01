@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { EMAIL, LINKS } from '../cv';
+import { EMAIL } from '../cv';
 import me from '../img/me.jpg';
 </script>
 
@@ -25,10 +25,8 @@ import me from '../img/me.jpg';
         </dd>
       </div>
       <div>
-        <dt>Profiles</dt>
-        <dd class="lead__links">
-          <a v-for="l of LINKS" :key="l.label" :href="l.href" target="_blank" rel="noopener">{{ l.label }}</a>
-        </dd>
+        <dt>Driving licence</dt>
+        <dd>B</dd>
       </div>
       <div>
         <dt>Born</dt>
@@ -83,10 +81,6 @@ import me from '../img/me.jpg';
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-jacket);
-}
-.lead__links {
-  display: flex;
-  gap: 1rem;
 }
 .lead__facts dd {
   font-size: 1rem;
