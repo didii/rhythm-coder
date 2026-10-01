@@ -80,6 +80,9 @@
       margin-top: 1rem !important;
       padding: 1.25rem 1.5rem !important;
     }
+    .course__keywords--clamped {
+      white-space: normal !important;
+    }
     .employer__about > div {
       padding-block: 0.25rem 1.5rem !important;
     }

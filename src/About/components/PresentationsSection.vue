@@ -29,7 +29,13 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
 </script>
 
 <template>
-  <section id="talks" data-section="Presentations" class="talks" :class="{ 'talks--ready': ready }" aria-labelledby="talks-title">
+  <section
+    id="talks"
+    data-section="Presentations"
+    class="talks"
+    :class="{ 'talks--ready': ready }"
+    aria-labelledby="talks-title"
+  >
     <div class="talks__head">
       <h2 id="talks-title" class="talks__title">Presentations</h2>
       <p class="talks__sub">Internal talks @ Kenze</p>
@@ -147,6 +153,7 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
 .talk__tab {
   display: inline-flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.4rem;
   font-size: 1rem;
   font-weight: 800;
@@ -156,6 +163,7 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
   color: var(--color-jacket-deep);
   clip-path: polygon(0 0, 100% 0, calc(100% - 0.45rem) 100%, 0 100%);
   transition: background-color 160ms ease-out;
+  width: 5.5rem;
 }
 .talk__toggle:hover .talk__tab {
   background: var(--color-sand);
@@ -217,7 +225,6 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
   line-height: 1.6;
 }
 .talk__desc :deep(code) {
-  font-family: inherit;
   font-weight: 700;
 }
 

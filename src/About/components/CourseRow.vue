@@ -52,12 +52,12 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
           ><span v-if="course.line" class="course__line">&nbsp;&nbsp;/&nbsp; {{ course.line }}</span>
         </span>
       </h4>
-      <p class="course__keywords">
-        <template v-for="k of course.keywords" :key="k">
-          <span>{{ k }}</span
-          ><span class="course__sep" aria-hidden="true">&nbsp;&nbsp;/&nbsp; </span>
+      <p v-if="course.role" class="course__role">{{ course.role }}</p>
+      <!-- one line while closed (the browser adds … when it overflows); the full list once opened -->
+      <p class="course__keywords" :class="{ 'course__keywords--clamped': course.description && !open }">
+        <template v-for="(k, i) of course.keywords" :key="k">
+          <span v-if="i" class="course__sep" aria-hidden="true">&nbsp;&nbsp;/&nbsp; </span><span>{{ k }}</span>
         </template>
-        <span aria-label="and more">…</span>
       </p>
     </div>
     <div class="course__period"><PeriodTime :period="course.period" /></div>
@@ -149,6 +149,8 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
 /* explicit columns so rows without a logo keep the empty first column */
 .course__body {
   grid-column: 2;
+  /* let the one-line keywords truncate instead of stretching the column */
+  min-width: 0;
 }
 .course__legend {
   font-family: var(--font-legend);
@@ -184,6 +186,7 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
 .course__tab {
   display: inline-flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.4rem;
   font-size: 1rem;
   font-weight: 800;
@@ -193,6 +196,7 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
   color: var(--color-jacket-deep);
   clip-path: polygon(0 0, 100% 0, calc(100% - 0.45rem) 100%, 0 100%);
   transition: background-color 160ms ease-out;
+  width: 5.5rem;
 }
 .course__icon {
   transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -205,6 +209,21 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
   font-family: var(--font-legend);
   font-weight: 600;
   font-size: 1.125rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.course__keywords--clamped {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.course__role {
+  margin-top: 0.4rem;
+  font-family: var(--font-legend);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.15;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--text);

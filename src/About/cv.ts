@@ -42,6 +42,7 @@ export const yearsOfExperience = () => yearsBetween("08/2017");
 export interface Course {
   img?: string;
   name: string;
+  role?: string;
   line?: string;
   period: string;
   keywords: string[];
@@ -72,7 +73,7 @@ export const employers: Employer[] = [
         Kenze is een fantastisch bedrijf. Ze blinken uit in hun menselijkheid en hun sales. Dit zorgt ervoor dat je je steeds als persoon behandeld
         wordt. Je bent geen nummer dat enkel maar dient om geld op te brengen. Feedback wordt serieus genomen, van zodra er een aantal mensen
         gelijkaardige kritiek uiten, gaan ze hier ook werkelijk mee aan de slag om na te gaan in hoeverre deze terecht zijn, door zelfs derde partijen
-        in te schakelen. Ze zijn zich er perfect van bewust dat ze zelf ook maar mens zijn en en zetten de kritiek voor hun eigen trots.
+        in te schakelen. Ze zijn zich er perfect van bewust dat ze zelf ook maar mens zijn en zetten de kritiek voor hun eigen trots.
       </p>
       <p>
         Ze hechten veel aandacht aan een goede match tussen consultant en klant. Daarom dat elke sales ook werkelijk een technische achtergrond heeft:
@@ -83,6 +84,7 @@ export const employers: Employer[] = [
       {
         img: hendriksLogo,
         name: "Taxi Hendriks",
+        role: "Technical Lead / Fullstack .NET Developer",
         line: "Transport",
         period: "09/2024 – now",
         keywords: ["Domain-Driven Design (DDD)", "Microservices Architecture", "React (+Native)", "CQRS"],
@@ -107,6 +109,7 @@ export const employers: Employer[] = [
       {
         img: odotLogo,
         name: "Odot",
+        role: "Fullstack .NET Developer",
         line: "EMP",
         period: "08/2023 – 09/2024",
         keywords: ["React", "TypeScript", "ASP.NET (Web API)", "Azure", "CQRS", "SignalR"],
@@ -123,6 +126,7 @@ export const employers: Employer[] = [
       {
         img: actemiumLogo,
         name: "Actemium",
+        role: ".NET Developer",
         line: "Testplan debugger",
         period: "05/2023 – 08/2023",
         keywords: ["Analyst", "Akka.NET", "gRPC", "RabbitMQ", "WPF", "Entity Framework"],
@@ -147,16 +151,10 @@ export const employers: Employer[] = [
       {
         img: cascadorLogo,
         name: "Cascador",
+        role: "Technical Coach",
         line: "Tech support",
         period: "09/2022 – 02/2025",
-        keywords: [
-          "Technical Coach",
-          "React",
-          "TypeScript",
-          "Frontend Architecture",
-          "Mentoring & Code Reviews",
-          "Startup Environment",
-        ],
+        keywords: ["React", "TypeScript", "Frontend Architecture", "Mentoring & Code Reviews", "Startup Environment"],
         description: `
           <p>
             Cascador richt zich op het verzamelen van medische data uit onder meer ziekenhuizen, het anonimiseren ervan en het doorsturen naar klanten
@@ -173,16 +171,10 @@ export const employers: Employer[] = [
       {
         img: gosselinLogo,
         name: "Gosselin",
+        role: "Fullstack .NET Developer",
         line: "Gosselin",
         period: "12/2022 – 04/2023",
-        keywords: [
-          "Fullstack .NET Developer",
-          "Frontend lead",
-          "React",
-          "ASP.NET (Web API)",
-          ".NET Core",
-          "Code Reviews",
-        ],
+        keywords: ["Frontend lead", "React", "ASP.NET (Web API)", ".NET Core", "Code Reviews"],
         description: `
           <p>
             Gosselin is een grote logistieke speler gevestigd in Antwerpen en is al meerdere jaren partner van het Amerikaanse Department of Defense.
@@ -196,17 +188,10 @@ export const employers: Employer[] = [
       {
         img: connectiveLogo,
         name: "Connective",
+        role: "Teamlead / Frontend Developer",
         line: "e-signing",
         period: "10/2021 – 12/2022",
-        keywords: [
-          "Team Lead",
-          "React",
-          "Design Systems",
-          "Storybook",
-          "From Scratch",
-          "TypeScript",
-          "Automated UI Testing",
-        ],
+        keywords: ["React", "Design Systems", "Storybook", "From Scratch", "TypeScript", "Automated UI Testing"],
         description: `
           <p>
             Connective verzorgt voornamelijk digitale ondertekening van documenten en ondersteunt verschillende ondertekenmethodes. De
@@ -253,6 +238,7 @@ export const employers: Employer[] = [
         img: vlmLogo,
         name: "VLM",
         line: "Mestbank",
+        role: "Teamlead / Fullstack .NET Developer",
         period: "09/2019 – 05/2021",
         keywords: [
           "Frontend lead",
@@ -289,6 +275,7 @@ export const employers: Employer[] = [
       {
         img: fluxysLogo,
         name: "Fluxys",
+        role: ".NET Developer",
         line: "Connect",
         period: "03/2019 – 11/2019",
         keywords: ["ASP.NET (MVC)", "jQuery", "Knockout JS", "T-SQL", "Angular", "XML / XSLT", "Message Queues"],
@@ -317,10 +304,10 @@ export const employers: Employer[] = [
       {
         img: imecLogo,
         name: "IMEC",
+        role: "Technical Architect / Fullstack .NET Developer",
         line: "PTW",
         period: "02/2019 – 03/2019",
         keywords: [
-          "Technical Architect",
           "Short Deadline",
           "Microsoft Azure",
           "React",
@@ -351,14 +338,9 @@ export const employers: Employer[] = [
         img: vlmLogo,
         name: "VLM",
         line: "MTIL 2.0",
+        role: "Fullstack Developer",
         period: "06/2018 – 12/2018",
-        keywords: [
-          "Complex Legacy Modernization",
-          "Fullstack Developer",
-          "High-stakes Holiday Release",
-          "Business Logic",
-          "Small team",
-        ],
+        keywords: ["Complex Legacy Modernization", "High-stakes Holiday Release", "Business Logic", "Small team"],
         description: `
           <p>
             De oude MTIL-applicatie dateerde van vóór de millenniumwissel en de klant besloot dat het tijd was voor een vernieuwing. Deze applicatie
@@ -380,9 +362,10 @@ export const employers: Employer[] = [
       {
         img: securexLogo,
         name: "Securex",
+        role: "Technical Analyst",
         line: "Elastic Stack Research",
         period: "05/2018",
-        keywords: ["Technical Analyst", "Elasticsearch", "Logging & Monitoring", "Research", "Demo"],
+        keywords: ["Elasticsearch", "Logging & Monitoring", "Research", "Demo"],
         description: `
           <p>
             Dit was een kort pre-sales project waarbij een demo werd ontwikkeld rond de mogelijkheden, sterktes en beperkingen van de ELK-stack
@@ -403,6 +386,7 @@ export const employers: Employer[] = [
         img: digipolisLogo,
         name: "Digipolis Antwerpen",
         line: "Generiek Dossier Platform (GDP)",
+        role: ".NET Developer",
         period: "04/2018 – 05/2018",
         keywords: [
           "TDD",
@@ -433,6 +417,7 @@ export const employers: Employer[] = [
       {
         img: intrumLogo,
         name: "Intrum",
+        role: ".NET Developer",
         line: "Maintenance",
         period: "12/2017 – 02/2018",
         keywords: ["Oracle Database", "Stored Procedures", ".NET Framework", "Scrum", "Support"],
@@ -448,6 +433,7 @@ export const employers: Employer[] = [
         img: digipolisLogo,
         name: "Digipolis Antwerpen",
         line: "Delivery Request Registration",
+        role: "Fullstack .NET Developer",
         period: "09/2017 – 11/2017",
         keywords: [".NET Core", "Angular", "PostgreSQL", "Docker", "Hangfire", "EF Core"],
         description: `
@@ -470,6 +456,7 @@ export const employers: Employer[] = [
       {
         img: technicolorLogo,
         name: "Internal tooling",
+        role: "Software Developer",
         line: "Test & reporting",
         period: "07/2015 – 07/2017",
         keywords: ["WPF", ".NET Framework", "MongoDB", "Jenkins (CI/CD)", "Automated UI Testing"],
