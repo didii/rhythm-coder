@@ -2,6 +2,7 @@
 import Plus from '@iconify-vue/fe/plus';
 import { ref, useId } from 'vue';
 import type { Course } from '../cv';
+import PeriodTime from './PeriodTime.vue';
 
 const props = defineProps<{ course: Course }>();
 const open = ref(false);
@@ -59,7 +60,7 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
         <span aria-label="and more">…</span>
       </p>
     </div>
-    <div class="course__period">{{ course.period }}</div>
+    <div class="course__period"><PeriodTime :period="course.period" /></div>
     <div v-if="course.description" :id="panelId" class="course__panel" :inert="!open">
       <div class="course__panel-clip">
         <!-- focusable so reading or selecting the description keeps the course active (red) -->

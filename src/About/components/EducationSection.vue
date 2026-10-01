@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { education } from '../cv';
+import PeriodTime from './PeriodTime.vue';
 </script>
 
 <template>
@@ -9,7 +10,7 @@ import { education } from '../cv';
       <li v-for="e of education" :key="e.degree" class="edu__item">
         <h3 class="edu__degree">{{ e.degree }}</h3>
         <p class="edu__meta">
-          {{ e.school }}<span class="edu__sep" aria-hidden="true">&nbsp;&nbsp;/&nbsp; </span><span class="edu__period">{{ e.period }}</span>
+          {{ e.school }}<span class="edu__sep" aria-hidden="true">&nbsp;&nbsp;/&nbsp; </span><span class="edu__period"><PeriodTime :period="e.period" /></span>
         </p>
       </li>
     </ul>

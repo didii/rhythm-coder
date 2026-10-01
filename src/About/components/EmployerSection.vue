@@ -3,6 +3,7 @@ import Plus from '@iconify-vue/fe/plus';
 import { ref } from 'vue';
 import { spanOf, type Employer } from '../cv';
 import CourseRow from './CourseRow.vue';
+import PeriodTime from './PeriodTime.vue';
 
 defineProps<{ employer: Employer }>();
 const open = ref(false);
@@ -22,7 +23,7 @@ const open = ref(false);
         <p class="employer__meta">
           <b>{{ employer.activity }}</b>
           <span aria-hidden="true">/</span>
-          <b>{{ employer.period }}</b>
+          <b><PeriodTime :period="employer.period" /></b>
           <span aria-hidden="true">/</span>
           <b>{{ spanOf(employer.period) }}</b>
         </p>
