@@ -1,8 +1,8 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-sans: 'Sofia Sans', 'Segoe UI', Roboto, sans-serif;
-  --font-legend: 'Sofia Sans Extra Condensed', 'Sofia Sans', sans-serif;
+  --font-sans: 'Mulish', 'Segoe UI', Roboto, sans-serif;
+  --font-legend: 'Sofia Sans Extra Condensed', sans-serif;
 
   /* sampled from the profile photo: jacket blue, scarf mint, mountain red, valley sand */
   --color-jacket: #1e4f7d;

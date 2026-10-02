@@ -38,18 +38,22 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
             toggle?.focus();
           "
         >
-          <span>
-            <span class="course__name">{{ course.name }}</span>
-            <span v-if="course.line" class="course__line">&nbsp;&nbsp;/&nbsp; {{ course.line }}</span>
-          </span>
+          <span class="course__name">{{ course.name }}</span>
+          <template v-if="course.line">
+            <span class="course__line">/</span>
+            <span class="course__line">{{ course.line }}</span>
+          </template>
           <span class="course__tab">
             {{ open ? 'Close' : 'Read' }}
             <Plus class="course__icon" height="1em" aria-hidden="true" />
           </span>
         </button>
         <span v-else>
-          <span class="course__name">{{ course.name }}</span
-          ><span v-if="course.line" class="course__line">&nbsp;&nbsp;/&nbsp; {{ course.line }}</span>
+          <span class="course__name">{{ course.name }}</span>
+          <template v-if="course.line">
+            <span class="course__line">/</span>
+            <span class="course__line">{{ course.line }}</span>
+          </template>
         </span>
       </h4>
       <p v-if="course.role" class="course__role">{{ course.role }}</p>
@@ -65,12 +69,10 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
       <div class="course__panel-clip">
         <!-- focusable so reading or selecting the description keeps the course active (red) -->
         <div class="course__panel-inner" tabindex="-1" lang="nl" v-html="course.description"></div>
-        <div class="course__close">
-          <button type="button" class="tab tab--stitched" @click="close">
-            Close
-            <Plus class="course__icon" height="1em" aria-hidden="true" />
-          </button>
-        </div>
+        <button type="button" class="course__close tab tab--stitched" @click="close">
+          Close
+          <Plus class="course__icon" height="1em" aria-hidden="true" />
+        </button>
       </div>
     </div>
   </li>
@@ -168,11 +170,17 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
   color: var(--text);
   font-weight: 600;
 }
+/* trim to cap height so the toggle centres the tab on the visible caps, not the empty descender space */
+.course__toggle > .course__name,
+.course__toggle > .course__line {
+  text-box: trim-both cap alphabetic;
+}
 .course__toggle {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem 1rem;
+  column-gap: 0.75rem;
+  row-gap: 0.75rem;
   text-align: left;
   text-transform: inherit;
   cursor: pointer;

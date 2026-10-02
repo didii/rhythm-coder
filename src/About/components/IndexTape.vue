@@ -57,8 +57,8 @@ defineProps<{ items: { id: string; label: string }[]; active: string }>();
 .eyelet:hover .eyelet__ring {
   background: var(--color-jacket);
 }
-.eyelet--punched .eyelet__ring {
-  transform: scale(1.12);
+.eyelet--punched {
+  transform: scale(1.15);
 }
 .eyelet__label {
   font-family: var(--font-legend);

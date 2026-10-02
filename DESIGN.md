@@ -13,29 +13,29 @@ colors:
   ink: "#173d60"
 typography:
   display:
-    fontFamily: "Sofia Sans Extra Condensed, Sofia Sans, sans-serif"
+    fontFamily: "Sofia Sans Extra Condensed, sans-serif"
     fontSize: "clamp(4.25rem, 11.5vw, 10rem)"
     fontWeight: 900
     lineHeight: 0.86
     letterSpacing: "-0.005em"
   headline:
-    fontFamily: "Sofia Sans Extra Condensed, Sofia Sans, sans-serif"
+    fontFamily: "Sofia Sans Extra Condensed, sans-serif"
     fontSize: "clamp(2.75rem, 6vw, 4.5rem)"
     fontWeight: 900
     lineHeight: 0.9
   title:
-    fontFamily: "Sofia Sans Extra Condensed, Sofia Sans, sans-serif"
+    fontFamily: "Sofia Sans Extra Condensed, sans-serif"
     fontSize: "2.25rem"
     fontWeight: 700
     lineHeight: 1
   body:
-    fontFamily: "Sofia Sans, Segoe UI, Roboto, sans-serif"
+    fontFamily: "Mulish, Segoe UI, Roboto, sans-serif"
     fontSize: "1.0625rem"
     fontWeight: 400
     lineHeight: 1.6
     fontFeature: "tnum"
   label:
-    fontFamily: "Sofia Sans Extra Condensed, Sofia Sans, sans-serif"
+    fontFamily: "Sofia Sans Extra Condensed, sans-serif"
     fontSize: "0.875rem"
     fontWeight: 700
     letterSpacing: "0.08em"
@@ -110,7 +110,7 @@ Motion belongs to the roll. The sticky ribbon steps the current course name with
 
 **Key Characteristics:**
 - Drenched jacket-blue field with mint legends; sand panels carry the prose.
-- One family: Sofia Sans for reading, Sofia Sans Extra Condensed uppercase for every legend.
+- Two families: Mulish for reading, Sofia Sans Extra Condensed uppercase for every legend.
 - Square cloth with one slanted (bias-cut) trailing edge on strips, tabs and courses.
 - Dashed stitch hairlines instead of solid rules for structural seams.
 - A punched eyelet tape as the index, and a sticky window ribbon that names the current course.
@@ -146,10 +146,10 @@ Four colours sampled from the profile photo, plus ink. Jacket blue is the field,
 
 ## Typography
 
-**Display Font:** Sofia Sans Extra Condensed (with Sofia Sans, sans-serif)
-**Body Font:** Sofia Sans (with Segoe UI, Roboto, sans-serif)
+**Display Font:** Sofia Sans Extra Condensed (with sans-serif)
+**Body Font:** Mulish (with Segoe UI, Roboto, sans-serif)
 
-**Character:** One family in two widths. The extra-condensed cut in heavy uppercase does the blind lettering. The regular width in roman weights does the reading. Both load from Google Fonts: Sofia Sans at 400–800 with italics, Extra Condensed at 500–900. Tabular numerals are on globally, so periods and codes line up.
+**Character:** Two families. The extra-condensed Sofia Sans cut in heavy uppercase does the blind lettering. Mulish in roman weights does the reading. Both load from Google Fonts: Mulish at 400–800 with italics, Extra Condensed at 500–900. Tabular numerals are on globally, so periods and codes line up.
 
 ### Hierarchy
 - **Display** (900, clamp(4.25rem, 11.5vw, 10rem), 0.86): The name in the hero window only. Mint, uppercase, balanced.

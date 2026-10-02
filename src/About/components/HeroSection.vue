@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import ArrowDown from '@iconify-vue/fe/arrow-down';
 import LinkExternal from '@iconify-vue/fe/link-external';
 import { EMAIL, LINKS, yearsOfExperience } from '../cv';
 import LeadPanel from './LeadPanel.vue';
@@ -14,7 +13,11 @@ import LeadPanel from './LeadPanel.vue';
     </div>
     <div class="hero__lede">
       <p class="hero__route">
-        Physics background <span aria-hidden="true">&nbsp;/&nbsp;</span> <b>.NET &amp; full-stack</b> <span aria-hidden="true">&nbsp;/&nbsp;</span> <b>{{ yearsOfExperience() }} years experience</b>
+        <b>.NET &amp; React expert</b>
+        <span aria-hidden="true"> / </span>
+        <b>{{ yearsOfExperience() }} years experience</b>
+        <span aria-hidden="true"> / </span>
+        Physics background
       </p>
       <div class="hero__actions">
         <a class="tab tab--solid" :href="`mailto:${EMAIL}`">Email Dieter</a>
