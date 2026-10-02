@@ -60,8 +60,7 @@ const open = ref(false);
 .employer {
   margin-top: 5rem;
 }
-.employer__head,
-.employer__about {
+.employer__head {
   --focus: var(--color-jacket);
 }
 .employer__head {
@@ -139,7 +138,7 @@ const open = ref(false);
   line-height: 1.6;
 }
 .employer__about--open > div {
-  padding-block: 0.25rem 1.5rem;
+  padding-block: 0.5rem 1.5rem;
 }
 .employer__about :deep(p + p) {
   margin-top: 0.9rem;

@@ -13,6 +13,9 @@ import gosselinLogo from "./img/gosselin.png";
 import intrumLogo from "./img/intrum.png";
 import securexLogo from "./img/securex.png";
 import technicolorLogo from "./img/technicolor.png";
+import angularLogo from "./img/angular.png";
+import typescriptLogo from "./img/typescript.png";
+import reactLogo from "./img/react.png";
 
 export const EMAIL = "cv@rhythm-coder.dev";
 
@@ -487,6 +490,7 @@ export const education: Education[] = [
 export interface Presentation {
   title: string;
   period: string; // "MM/YYYY"
+  img: string;
   topics: string[];
   description: string; // HTML
 }
@@ -494,6 +498,7 @@ export interface Presentation {
 export const presentations: Presentation[] = [
   {
     title: "React Internals",
+    img: reactLogo,
     period: "11/2024",
     topics: ["Mounting", "JSX", "Render cycles", "State", "useRef & useCallback"],
     description: `
@@ -508,6 +513,7 @@ export const presentations: Presentation[] = [
   },
   {
     title: "TypeScript Shenanigans",
+    img: typescriptLogo,
     period: "02/2023",
     topics: ["Compile-time vs runtime", "Pitfalls", "String types", "Mapped types", "Decorators"],
     description: `
@@ -522,6 +528,7 @@ export const presentations: Presentation[] = [
   },
   {
     title: "Angular Spaghetti",
+    img: angularLogo,
     period: "09/2022",
     topics: ["Smart & dumb components", "Stateful services", "State management", "Architecture"],
     description: `

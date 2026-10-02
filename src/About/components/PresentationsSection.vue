@@ -49,6 +49,7 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
         :data-course="t.title"
       >
         <div class="talk__band">
+          <span class="talk__img" :style="{ '--logo': `url(${t.img})` }" aria-hidden="true"></span>
           <h3 class="talk__name">
             <button
               v-if="mobile"
@@ -123,9 +124,17 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
 }
 .talk__band {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 4rem 1fr auto;
   gap: 0.4rem 1.5rem;
   padding: 1.1rem 2.75rem 1.2rem 1.25rem;
+}
+.talk__img {
+  /* logo as a mint silhouette, like the course marks: its alpha channel masks a flat fill */
+  grid-row: 1 / span 2;
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--color-mint);
+  mask: var(--logo) center / contain no-repeat;
 }
 .talk__name {
   font-family: var(--font-legend);
@@ -185,7 +194,7 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
   padding-top: 0.35rem;
 }
 .talk__topics {
-  grid-column: 1 / -1;
+  grid-column: 2 / -1;
   font-family: var(--font-legend);
   font-weight: 600;
   font-size: 1.125rem;
@@ -216,7 +225,8 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
 }
 .talk__desc {
   --focus: var(--color-jacket);
-  margin: 0 1.25rem 1.25rem;
+  /* left edge lines up with the title: band padding + logo + gap */
+  margin: 0 1.25rem 1.25rem calc(1.25rem + 4rem + 1.5rem);
   padding: 1.25rem 1.5rem;
   max-width: 72ch;
   background: var(--color-sand);
@@ -236,15 +246,23 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
   .talk__band {
-    grid-template-columns: 1fr;
+    grid-template-columns: 3rem 1fr;
+    column-gap: 0.75rem;
     padding: 0.75rem 1.5rem 0.9rem 1rem;
+  }
+  .talk__img {
+    grid-row: 2 / span 2;
+    width: 3rem;
+    height: 3rem;
   }
   .talk__date {
     grid-row: 1;
+    grid-column: 2;
     padding: 0;
     font-size: 1.125rem;
   }
   .talk__name {
+    grid-column: 2;
     font-size: 1.875rem;
   }
   .talk__desc {
