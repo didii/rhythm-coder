@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { education } from '../cv';
 import PeriodTime from './PeriodTime.vue';
+import SectionPanel from './SectionPanel.vue';
 </script>
 
 <template>
-  <section id="education" data-section="Education" class="panel">
-    <h2 class="strip">Education</h2>
+  <SectionPanel id="education" title="Education">
     <ul class="edu">
       <li v-for="e of education" :key="e.degree" class="edu__item">
         <h3 class="edu__degree">{{ e.degree }}</h3>
@@ -14,7 +14,7 @@ import PeriodTime from './PeriodTime.vue';
         </p>
       </li>
     </ul>
-  </section>
+  </SectionPanel>
 </template>
 
 <style scoped>

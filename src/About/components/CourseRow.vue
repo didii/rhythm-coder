@@ -2,6 +2,7 @@
 import Plus from '@iconify-vue/fe/plus';
 import { ref, useId } from 'vue';
 import type { Course } from '../cv';
+import CutTab from './CutTab.vue';
 import PeriodTime from './PeriodTime.vue';
 
 const props = defineProps<{ course: Course }>();
@@ -69,10 +70,10 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
       <div class="course__panel-clip">
         <!-- focusable so reading or selecting the description keeps the course active (red) -->
         <div class="course__panel-inner" tabindex="-1" lang="nl" v-html="course.description"></div>
-        <button type="button" class="course__close tab tab--stitched" @click="close">
+        <CutTab type="button" variant="stitched" class="course__close" @click="close">
           Close
           <Plus class="course__icon" height="1em" aria-hidden="true" />
-        </button>
+        </CutTab>
       </div>
     </div>
   </li>
@@ -320,7 +321,7 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
     grid-column: 1 / -1;
   }
   .course__close {
-    display: block;
+    display: inline-flex;
   }
 }
 </style>

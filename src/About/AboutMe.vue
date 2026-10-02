@@ -6,6 +6,7 @@ import EmployerSection from './components/EmployerSection.vue';
 import HeroSection from './components/HeroSection.vue';
 import IndexTape from './components/IndexTape.vue';
 import PresentationsSection from './components/PresentationsSection.vue';
+import SectionPanel from './components/SectionPanel.vue';
 import SkillsSection from './components/SkillsSection.vue';
 import WindowRibbon from './components/WindowRibbon.vue';
 import { employers } from './cv';
@@ -63,15 +64,14 @@ onBeforeUnmount(() => observer?.disconnect());
     <main>
       <HeroSection />
 
-      <section id="about" data-section="About me" class="panel">
-        <h2 class="strip">About me</h2>
+      <SectionPanel id="about" title="About me">
         <p class="panel__prose">
           I'm a passionate .NET and Full-stack developer with a physics background, turning complex analytical problems
           into elegant, maintainable solutions. Thrives in open environments that encourage initiative, bridging
           technical execution with product and business vision. Outside of coding, enjoys cooking, listening to music,
           and playing music.
         </p>
-      </section>
+      </SectionPanel>
 
       <EmployerSection v-for="emp of employers" :key="emp.id" :employer="emp" />
       <EducationSection />
@@ -96,71 +96,6 @@ main {
   max-width: calc(78rem + var(--tape));
 }
 
-/* ---------- shared pieces, used by child sections ---------- */
-.roll :deep(.tab) {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-legend);
-  font-weight: 800;
-  font-size: 1.25rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 0.6rem 1.8rem 0.6rem 1.1rem;
-  clip-path: polygon(0 0, 100% 0, calc(100% - 0.7rem) 100%, 0 100%);
-  cursor: pointer;
-  transition:
-    background-color 160ms ease-out,
-    color 160ms ease-out;
-}
-.roll :deep(.tab--solid) {
-  background: var(--color-mint);
-  color: var(--color-jacket-deep);
-}
-.roll :deep(.tab--solid:hover) {
-  background: var(--color-sand);
-}
-.roll :deep(.tab--stitched) {
-  color: var(--color-mint);
-  clip-path: none;
-  outline: 1px dashed var(--color-mint);
-  outline-offset: -5px;
-  padding-right: 1.1rem;
-}
-.roll :deep(.tab--stitched:hover) {
-  background: color-mix(in srgb, var(--color-mint) 12%, transparent);
-}
-.roll :deep(.tab--ink) {
-  background: var(--color-jacket);
-  color: var(--color-sand);
-  font-size: 1.0625rem;
-}
-.roll :deep(.tab--ink:hover) {
-  background: var(--color-jacket-deep);
-}
-
-.roll :deep(.strip) {
-  display: inline-block;
-  margin-top: -1px;
-  font-family: var(--font-legend);
-  font-weight: 800;
-  font-size: 2.5rem;
-  line-height: 1;
-  text-transform: uppercase;
-  padding: 0.35rem 2.2rem 0.3rem 1.25rem;
-  background: var(--color-jacket);
-  color: var(--color-mint);
-  clip-path: polygon(0 0, 100% 0, calc(100% - 0.6rem) 100%, 0 100%);
-}
-
-.roll :deep(.panel) {
-  --focus: var(--color-jacket);
-  margin-top: 4rem;
-  background: var(--color-sand);
-  color: var(--color-ink);
-  padding: 0 clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2.5rem);
-}
 .panel__prose {
   margin-top: 1rem;
   font-size: clamp(1.125rem, 1.6vw, 1.375rem);
@@ -175,9 +110,6 @@ main {
   }
   main {
     padding-bottom: 4.5rem;
-  }
-  .roll :deep(.strip) {
-    font-size: 2rem;
   }
 }
 </style>

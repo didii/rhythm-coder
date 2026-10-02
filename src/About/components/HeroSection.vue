@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import LinkExternal from '@iconify-vue/fe/link-external';
 import { EMAIL, LINKS, yearsOfExperience } from '../cv';
+import CutTab from './CutTab.vue';
 import LeadPanel from './LeadPanel.vue';
 </script>
 
@@ -20,10 +21,10 @@ import LeadPanel from './LeadPanel.vue';
         Physics background
       </p>
       <div class="hero__actions">
-        <a class="tab tab--solid" :href="`mailto:${EMAIL}`">Email Dieter</a>
-        <a v-for="l of LINKS" :key="l.label" class="tab tab--stitched" :href="l.href" target="_blank" rel="noopener">
+        <CutTab variant="solid" :href="`mailto:${EMAIL}`">Email Dieter</CutTab>
+        <CutTab v-for="l of LINKS" :key="l.label" variant="stitched" :href="l.href" target="_blank" rel="noopener">
           {{ l.label }} <LinkExternal height="1em" aria-hidden="true" />
-        </a>
+        </CutTab>
       </div>
     </div>
 

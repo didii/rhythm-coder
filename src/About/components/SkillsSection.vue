@@ -2,13 +2,14 @@
 import Plus from '@iconify-vue/fe/plus';
 import { ref } from 'vue';
 import { skillOverview, skills } from '../cv';
+import CutTab from './CutTab.vue';
+import SectionPanel from './SectionPanel.vue';
 
 const open = ref(false);
 </script>
 
 <template>
-  <section id="skills" data-section="Skills" class="panel">
-    <h2 class="strip">Skills</h2>
+  <SectionPanel id="skills" title="Skills">
     <div class="skills">
       <div v-for="cat of skills" :key="cat.name" class="skills__cat">
         <h3 class="skills__name">{{ cat.name }}</h3>
@@ -24,16 +25,16 @@ const open = ref(false);
       </div>
     </div>
     <h3 class="skills__name skills__name--overview">
-      <button
+      <CutTab
         type="button"
-        class="tab tab--ink"
+        variant="ink"
         :aria-expanded="open"
         aria-controls="skills-overview"
         @click="open = !open"
       >
         Full overview
         <Plus height="1em" aria-hidden="true" class="overview__icon" :class="{ 'overview__icon--open': open }" />
-      </button>
+      </CutTab>
     </h3>
     <div id="skills-overview" class="overview-roll" :class="{ 'overview-roll--open': open }" :inert="!open">
       <dl class="overview">
@@ -45,7 +46,7 @@ const open = ref(false);
         </div>
       </dl>
     </div>
-  </section>
+  </SectionPanel>
 </template>
 
 <style scoped>

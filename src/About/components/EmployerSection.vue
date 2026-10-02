@@ -2,6 +2,7 @@
 import Plus from '@iconify-vue/fe/plus';
 import { ref } from 'vue';
 import { spanOf, type Employer } from '../cv';
+import CutTab from './CutTab.vue';
 import CourseRow from './CourseRow.vue';
 import PeriodTime from './PeriodTime.vue';
 
@@ -28,17 +29,17 @@ const open = ref(false);
           <b>{{ spanOf(employer.period) }}</b>
         </p>
       </div>
-      <button
+      <CutTab
         v-if="employer.description"
         type="button"
-        class="tab tab--ink"
+        variant="ink"
         :class="{ 'tab--open': open }"
         :aria-expanded="open"
         :aria-controls="`${employer.id}-about`"
       >
         About {{ employer.name }}
         <Plus height="1em" aria-hidden="true" class="employer__icon" :class="{ 'employer__icon--open': open }" />
-      </button>
+      </CutTab>
     </div>
     <div
       v-if="employer.description"

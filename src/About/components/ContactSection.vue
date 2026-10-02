@@ -1,15 +1,16 @@
 <script setup lang="ts">
 import LinkExternal from '@iconify-vue/fe/link-external';
 import { EMAIL, LINKS } from '../cv';
+import CutTab from './CutTab.vue';
 </script>
 
 <template>
   <section id="contact" data-section="Contact" class="close">
     <a class="close__mail" :href="`mailto:${EMAIL}`">{{ EMAIL }}</a>
     <div class="close__links">
-      <a v-for="l of LINKS" :key="l.label" class="tab tab--stitched" :href="l.href" target="_blank" rel="noopener">
+      <CutTab v-for="l of LINKS" :key="l.label" variant="stitched" :href="l.href" target="_blank" rel="noopener">
         {{ l.label }} <LinkExternal height="1em" aria-hidden="true" />
-      </a>
+      </CutTab>
     </div>
     <p class="close__addr">Zoersel, Belgium</p>
   </section>
