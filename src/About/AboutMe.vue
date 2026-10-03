@@ -30,37 +30,47 @@ const stepDir = ref<'down' | 'up'>('down');
 const tick = ref(0);
 const activeSection = ref('top');
 
-let order: string[] = [];
 let observer: IntersectionObserver | undefined;
 let targets: HTMLElement[] = [];
 let currentEl: HTMLElement | undefined;
 const nameOf = (el: HTMLElement) => el.dataset.course ?? el.dataset.section!;
 
-// the names are translated: re-read them, and rename what the window shows without stepping it
+// the names are translated: rename what the window shows without stepping it
 watch(locale, async () => {
   await nextTick();
-  order = targets.map(nameOf);
   if (currentEl) current.value = nameOf(currentEl);
   previous.value = '';
 });
 
+// compare elements, not names: names repeat (VLM, Digipolis Antwerpen)
+function show(el: HTMLElement) {
+  if (el === currentEl) return;
+  stepDir.value = targets.indexOf(el) > targets.indexOf(currentEl!) ? 'down' : 'up';
+  previous.value = current.value;
+  current.value = nameOf(el);
+  currentEl = el;
+  tick.value++;
+}
+
 onMounted(() => {
   targets = [...document.querySelectorAll<HTMLElement>('[data-course], [data-section]')];
-  order = targets.map(nameOf);
+  currentEl = targets[0];
   observer = new IntersectionObserver(
     (entries) => {
+      // a section and its last course enter together when scrolling up: only the innermost (last) one counts
+      let next: HTMLElement | undefined;
       for (const e of entries) {
-        if (!e.isIntersecting) continue;
         const el = e.target as HTMLElement;
-        if (el.dataset.section) activeSection.value = el.id;
-        const name = nameOf(el);
-        if (name === current.value) continue;
-        currentEl = el;
-        stepDir.value = order.indexOf(name) > order.indexOf(current.value) ? 'down' : 'up';
-        previous.value = current.value;
-        current.value = name;
-        tick.value++;
+        if (e.isIntersecting) {
+          if (el.dataset.section) activeSection.value = el.id;
+          next = el;
+        } else if (el === currentEl && e.boundingClientRect.top > e.rootBounds!.top) {
+          // the first course left downwards: back into its section's head, which never re-enters (it never left)
+          const parent = targets[targets.indexOf(el) - 1];
+          if (parent?.contains(el)) next = parent;
+        }
       }
+      if (next) show(next);
     },
     // a thin band just under the ribbon is "the window"
     { rootMargin: '-25% 0px -85% 0px' },
