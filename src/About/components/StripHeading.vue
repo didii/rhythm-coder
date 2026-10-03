@@ -1,5 +1,5 @@
 <template>
-  <h2 class="strip"><slot /></h2>
+  <h2 class="strip"><slot></slot></h2>
 </template>
 
 <style scoped>

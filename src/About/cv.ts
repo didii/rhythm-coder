@@ -1,21 +1,21 @@
-import kenzeLogo from './img/kenze.png';
-import ordinaLogo from './img/ordina.png';
-import hendriksLogo from './img/hendriks.png';
-import odotLogo from './img/odot.png';
-import cascadorLogo from './img/cascador.png';
 import actemiumLogo from './img/actemium.png';
+import angularLogo from './img/angular.png';
+import cascadorLogo from './img/cascador.png';
 import connectiveLogo from './img/connective.png';
-import vlmLogo from './img/vlm.png';
-import imecLogo from './img/imec.png';
 import digipolisLogo from './img/digipolis.png';
 import fluxysLogo from './img/fluxys.png';
 import gosselinLogo from './img/gosselin.png';
+import hendriksLogo from './img/hendriks.png';
+import imecLogo from './img/imec.png';
 import intrumLogo from './img/intrum.png';
+import kenzeLogo from './img/kenze.png';
+import odotLogo from './img/odot.png';
+import ordinaLogo from './img/ordina.png';
+import reactLogo from './img/react.png';
 import securexLogo from './img/securex.png';
 import technicolorLogo from './img/technicolor.png';
-import angularLogo from './img/angular.png';
 import typescriptLogo from './img/typescript.png';
-import reactLogo from './img/react.png';
+import vlmLogo from './img/vlm.png';
 
 import type { Text } from '../i18n';
 

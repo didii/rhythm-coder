@@ -1,10 +1,10 @@
 <script setup lang="ts">
+import { useText } from '@/i18n';
 import Plus from '@iconify-vue/fe/plus';
-import { computed, ref, useId } from 'vue';
+import { computed, defineProps, ref, useId } from 'vue';
 import type { Course } from '../cv';
 import CutTab from './CutTab.vue';
 import PeriodTime from './PeriodTime.vue';
-import { useText } from '@/i18n';
 
 const props = defineProps<{ course: Course }>();
 const open = ref(false);

@@ -1,10 +1,10 @@
 <script setup lang="ts">
+import { useText } from '@/i18n';
 import Plus from '@iconify-vue/fe/plus';
 import { ref } from 'vue';
-import { skillOverview, skills } from '../cv.ts';
 import CutTab from '../components/CutTab.vue';
 import SectionPanel from '../components/SectionPanel.vue';
-import { useText } from '@/i18n';
+import { skillOverview, skills } from '../cv.ts';
 
 const open = ref(false);
 const { t, l } = useText();

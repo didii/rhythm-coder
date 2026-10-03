@@ -1,10 +1,10 @@
 // Build-time entry for scripts/prerender.mjs: renders the page to HTML and builds the <head> tags for scrapers.
 import { createSSRApp } from 'vue';
-import { renderToString } from 'vue/server-renderer';
 import { createMemoryHistory } from 'vue-router';
-import App from './App.vue';
+import { renderToString } from 'vue/server-renderer';
 import { EMAIL, LINKS, education, employers, skillOverview, skills } from './About/cv';
 import me from './About/img/me.jpg';
+import App from './App.vue';
 import { createAppI18n, pick } from './i18n.ts';
 import { createAppRouter } from './router.ts';
 

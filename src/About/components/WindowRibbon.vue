@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import Mail from '@iconify-vue/fe/mail';
-import { EMAIL } from '../cv';
 import { LOCALES, useText } from '@/i18n';
+import Mail from '@iconify-vue/fe/mail';
+import { defineProps } from 'vue';
+import { EMAIL } from '../cv';
 
 defineProps<{ current: string; previous: string; stepDir: 'down' | 'up'; tick: number }>();
 const { t, locale } = useText();

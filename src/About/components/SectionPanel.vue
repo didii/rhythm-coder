@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { defineProps } from 'vue';
 import StripHeading from './StripHeading.vue';
 
 defineProps<{ id: string; title: string }>();

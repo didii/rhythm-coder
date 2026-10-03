@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import { useText } from '@/i18n';
 import Plus from '@iconify-vue/fe/plus';
 import { onBeforeUnmount, onMounted, reactive, ref } from 'vue';
 import { presentations } from '../cv';
-import { useText } from '@/i18n';
 
 const { l } = useText();
 const talks = presentations.map((t) => {

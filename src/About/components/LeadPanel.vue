@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { useText } from '@/i18n';
 import { EMAIL } from '../cv';
 import me from '../img/me.jpg';
-import { useText } from '@/i18n';
 
 const { t } = useText();
 </script>
