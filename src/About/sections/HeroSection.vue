@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import LinkExternal from '@iconify-vue/fe/link-external';
-import { EMAIL, LINKS, yearsOfExperience } from '../cv';
-import CutTab from './CutTab.vue';
-import LeadPanel from './LeadPanel.vue';
+import { EMAIL, LINKS, yearsOfExperience } from '../cv.ts';
+import CutTab from '../components/CutTab.vue';
+import LeadPanel from '../components/LeadPanel.vue';
 import { useText } from '@/i18n';
 
 const { t } = useText();

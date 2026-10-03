@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import Plus from '@iconify-vue/fe/plus';
 import { ref } from 'vue';
-import { skillOverview, skills } from '../cv';
-import CutTab from './CutTab.vue';
-import SectionPanel from './SectionPanel.vue';
+import { skillOverview, skills } from '../cv.ts';
+import CutTab from '../components/CutTab.vue';
+import SectionPanel from '../components/SectionPanel.vue';
 import { useText } from '@/i18n';
 
 const open = ref(false);

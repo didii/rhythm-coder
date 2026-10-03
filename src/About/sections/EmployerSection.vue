@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import Plus from '@iconify-vue/fe/plus';
 import { ref } from 'vue';
-import { spanOf, type Employer } from '../cv';
-import CutTab from './CutTab.vue';
-import CourseRow from './CourseRow.vue';
-import PeriodTime from './PeriodTime.vue';
+import { spanOf, type Employer } from '../cv.ts';
+import CutTab from '../components/CutTab.vue';
+import CourseRow from '../components/CourseRow.vue';
+import PeriodTime from '../components/PeriodTime.vue';
 import { useText } from '@/i18n';
 
 defineProps<{ employer: Employer }>();

@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { useText } from '@/i18n';
-import ContactSection from './components/ContactSection.vue';
-import EducationSection from './components/EducationSection.vue';
-import EmployerSection from './components/EmployerSection.vue';
-import HeroSection from './components/HeroSection.vue';
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import IndexTape from './components/IndexTape.vue';
-import PresentationsSection from './components/PresentationsSection.vue';
 import SectionPanel from './components/SectionPanel.vue';
-import SkillsSection from './components/SkillsSection.vue';
 import WindowRibbon from './components/WindowRibbon.vue';
 import { employers } from './cv';
+import ContactSection from './sections/ContactSection.vue';
+import EducationSection from './sections/EducationSection.vue';
+import EmployerSection from './sections/EmployerSection.vue';
+import HeroSection from './sections/HeroSection.vue';
+import PresentationsSection from './sections/PresentationsSection.vue';
+import SkillsSection from './sections/SkillsSection.vue';
 
 const { t, locale } = useText();
 const index = computed(() => [
@@ -114,6 +114,7 @@ onBeforeUnmount(() => observer?.disconnect());
   --gutter: clamp(1rem, 3vw, 2.5rem);
   min-height: 100vh;
 }
+
 main {
   margin-left: var(--tape);
   padding-inline: var(--gutter);
@@ -132,6 +133,7 @@ main {
     --tape: 0rem;
     --ribbon: 3rem;
   }
+
   main {
     padding-bottom: 4.5rem;
   }

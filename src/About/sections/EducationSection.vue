@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { education } from '../cv';
-import PeriodTime from './PeriodTime.vue';
-import SectionPanel from './SectionPanel.vue';
+import { education } from '../cv.ts';
+import PeriodTime from '../components/PeriodTime.vue';
+import SectionPanel from '../components/SectionPanel.vue';
 import { useText } from '@/i18n';
 
 const { t, l } = useText();
