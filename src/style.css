@@ -92,6 +92,10 @@
     .talk__panel {
       grid-template-rows: 1fr !important;
     }
+    /* closed, it is hidden="until-found" (content-visibility: hidden) */
+    .overview-roll {
+      content-visibility: visible !important;
+    }
     .course__panel-inner {
       clip-path: none !important;
       margin-top: 1rem !important;

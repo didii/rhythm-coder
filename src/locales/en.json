@@ -43,7 +43,7 @@
   "skills": {
     "title": "Skills",
     "rating": "{n} out of 7",
-    "overview": "Full overview"
+    "overview": "Skill keywords"
   },
   "talks": {
     "title": "Presentations",

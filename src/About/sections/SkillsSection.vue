@@ -32,7 +32,14 @@ const { t, l } = useText();
         <Plus height="1em" aria-hidden="true" class="overview__icon" :class="{ 'overview__icon--open': open }" />
       </CutTab>
     </h3>
-    <div id="skills-overview" class="overview-roll" :class="{ 'overview-roll--open': open }" :inert="!open">
+    <!-- hidden="until-found" instead of inert: Ctrl+F still finds a keyword while closed, and opens the list on a match -->
+    <div
+      id="skills-overview"
+      class="overview-roll"
+      :class="{ 'overview-roll--open': open }"
+      :hidden="open ? undefined : 'until-found'"
+      @beforematch="open = true"
+    >
       <dl class="overview">
         <div v-for="cat of cvData.skills" :key="l(cat.name)" class="overview__cat">
           <dt class="overview__name">{{ l(cat.name) }}</dt>

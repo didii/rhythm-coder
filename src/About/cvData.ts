@@ -52,22 +52,22 @@ const cvData: CvData = {
       description: {
         en: `
           <p>
-            Kenze is an IT consultancy that invests heavily in a good match between consultant and client: every salesperson has a technical
-            background, so assignments fit the consultant's profile in substance.
+            Kenze is an IT consultancy where I have worked as a .NET consultant since October 2021. I was one of the first consultants there with
+            strong frontend knowledge and focus, and in the office, colleagues often come to me for advice.
           </p>
           <p>
-            Kenze also has an open feedback culture. When several employees give similar feedback, it is actively followed up and, where needed,
-            investigated with the help of external parties.
+            I also put effort into strong bonds between colleagues, by organising board game nights and trips to theme parks such as Phantasialand and
+            Europa-Park.
           </p>
         `,
         nl: `
           <p>
-            Kenze is een IT-consultancybedrijf dat sterk inzet op een goede match tussen consultant en klant: elke salesmedewerker heeft namelijk
-            een technische achtergrond, waardoor ze opdrachten inhoudelijk goed kunnen laten aansluiten bij het profiel van de consultant.
+            Kenze is een IT-consultancybedrijf waar ik sinds oktober 2021 als .NET-consultant werk. Ik was er een van de eerste consultants met een
+            sterke frontendkennis en -focus, en op kantoor komen collega's vaak bij mij langs voor advies.
           </p>
           <p>
-            Daarnaast heeft Kenze een open feedbackcultuur. Wanneer meerdere medewerkers gelijkaardige feedback geven, wordt die actief opgevolgd en
-            indien nodig met hulp van externe partijen onderzocht.
+            Daarnaast zet ik in op sterke banden tussen collega's, door bordspelavonden te organiseren en samen naar pretparken zoals Phantasialand en
+            Europa-Park te gaan.
           </p>
         `,
       },
@@ -432,11 +432,6 @@ const cvData: CvData = {
                 time processing had initially been underestimated and further analysis was needed, which I was only too happy to take on. I also
                 managed several smaller applications, mainly consisting of database operations through stored procedures and file processing.
               </p>
-              <p>
-                Because of the waterfall structure within Fluxys and the lack of open communication between teams, collaboration was difficult, which
-                made integration harder. After repeated alignment and feedback, we mutually decided to end the collaboration earlier than planned,
-                with enough time to document my work and hand it over to the next developer.
-              </p>
             `,
             nl: `
               <p>
@@ -451,11 +446,6 @@ const cvData: CvData = {
                 time veilingplatform, waarbij de complexiteit van real-time verwerking initieel onvoldoende was ingeschat en bijkomende analyses
                 noodzakelijk waren, waar ik me maar al te graag over boog. Daarnaast beheerde ik nog verschillende kleinere toepassingen, voornamelijk
                 bestaande uit database-operaties via stored procedures en bestandsverwerking.
-              </p>
-              <p>
-                Door de watervalstructuur binnen Fluxys en het ontbreken van open communicatie tussen de verschillende teams verliep de samenwerking
-                moeilijk, wat de integratie bemoeilijkte. Na herhaaldelijke afstemming en feedback besloten we in onderling overleg om de samenwerking
-                vroeger dan gepland te beëindigen, met voldoende tijd om mijn werk te documenteren en over te dragen aan de volgende ontwikkelaar.
               </p>
             `,
           },
