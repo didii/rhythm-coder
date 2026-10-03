@@ -28,8 +28,7 @@
   "place": "Zoersel, Belgium",
   "peru": "Rainbow Mountains, Peru",
   "about": {
-    "title": "About me",
-    "prose": "I'm a passionate .NET and Full-stack developer with a physics background, turning complex analytical problems into elegant, maintainable solutions. Thrives in open environments that encourage initiative, bridging technical execution with product and business vision. Outside of coding, enjoys cooking, listening to music, and playing music."
+    "title": "About me"
   },
   "employer": {
     "about": "About {name}",

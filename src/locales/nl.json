@@ -1,7 +1,7 @@
 {
   "nav": {
     "sections": "Secties",
-    "about": "Over",
+    "about": "Over mij",
     "work": "Werk",
     "education": "Opleiding",
     "skills": "Skills",
@@ -28,8 +28,7 @@
   "place": "Zoersel, België",
   "peru": "Rainbow Mountains, Peru",
   "about": {
-    "title": "Over mij",
-    "prose": "Gepassioneerde .NET- en full-stackontwikkelaar met een achtergrond in fysica, die complexe analytische problemen omzet in elegante, onderhoudbare oplossingen. Floreert in open omgevingen die initiatief aanmoedigen en slaat de brug tussen technische uitvoering en product- en bedrijfsvisie. Naast het programmeren graag bezig met koken, muziek luisteren en muziek spelen."
+    "title": "Over mij"
   },
   "employer": {
     "about": "Over {name}",
