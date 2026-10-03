@@ -19,7 +19,7 @@ export default defineConfig({
     }),
     // vueDevTools(),
     checker({
-      typescript: { tsconfigPath: './tsconfig.json' },
+      typescript: { tsconfigPath: './tsconfig.app.json' },
       oxlint: true,
     }),
   ],
