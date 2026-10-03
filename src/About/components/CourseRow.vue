@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useText } from '@/i18n';
 import Plus from '@iconify-vue/fe/plus';
-import { computed, defineProps, ref, useId } from 'vue';
+import { computed, ref, useId } from 'vue';
 import type { Course } from '../models.ts';
 import CutTab from './CutTab.vue';
 import PeriodTime from './PeriodTime.vue';

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useText } from '@/i18n';
-import { defineProps } from 'vue';
 
 defineProps<{ items: { id: string; label: string }[]; active: string }>();
 const { t } = useText();

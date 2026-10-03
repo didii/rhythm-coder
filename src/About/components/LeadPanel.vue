@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useText } from '@/i18n';
-import { defineProps } from 'vue';
 import me from '../img/me.jpg';
 
 const props = defineProps<{ email: string }>();

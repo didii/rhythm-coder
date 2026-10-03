@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // "MM/YYYY – MM/YYYY", "MM/YYYY – now" or "MM/YYYY", with machine-readable <time> elements
 import { useText } from '@/i18n';
-import { computed, defineProps } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps<{ period: string }>();
 const { t } = useText();
