@@ -30,25 +30,13 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
 </script>
 
 <template>
-  <section
-    id="talks"
-    :data-section="$t('talks.title')"
-    class="talks"
-    :class="{ 'talks--ready': ready }"
-    aria-labelledby="talks-title"
-  >
+  <section id="talks" :data-section="$t('talks.title')" class="talks" :class="{ 'talks--ready': ready }" aria-labelledby="talks-title">
     <div class="talks__head">
       <h2 id="talks-title" class="talks__title">{{ $t('talks.title') }}</h2>
       <p class="talks__sub">{{ $t('talks.sub') }}</p>
     </div>
     <ol class="talks__list">
-      <li
-        v-for="(t, i) of talks"
-        :key="t.title"
-        class="talk"
-        :class="{ 'talk--open': isOpen(t.title) }"
-        :data-course="t.title"
-      >
+      <li v-for="(t, i) of talks" :key="t.title" class="talk" :class="{ 'talk--open': isOpen(t.title) }" :data-course="t.title">
         <div class="talk__band">
           <span class="talk__img" :style="{ '--logo': `url(${t.img})` }" aria-hidden="true"></span>
           <h3 class="talk__name">

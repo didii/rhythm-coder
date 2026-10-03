@@ -46,12 +46,8 @@ export function head() {
     })),
     knowsLanguage: ['nl', 'en', 'fr'],
     knowsAbout: [
-      ...skills
-        .filter((c) => pick(c.name, 'en') !== 'Spoken languages')
-        .flatMap((c) => c.skills.map((s) => pick(s.name, 'en'))),
-      ...skillOverview
-        .filter((c) => pick(c.name, 'en') !== 'Soft skills')
-        .flatMap((c) => c.skills.slice(0, 3).map((s) => pick(s, 'en'))),
+      ...skills.filter((c) => pick(c.name, 'en') !== 'Spoken languages').flatMap((c) => c.skills.map((s) => pick(s.name, 'en'))),
+      ...skillOverview.filter((c) => pick(c.name, 'en') !== 'Soft skills').flatMap((c) => c.skills.slice(0, 3).map((s) => pick(s, 'en'))),
     ],
   };
   const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;');

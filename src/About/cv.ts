@@ -353,14 +353,7 @@ export const employers: Employer[] = [
         line: 'Mestbank',
         role: 'Teamlead / Fullstack .NET Developer',
         period: '09/2019 – 05/2021',
-        keywords: [
-          'Frontend lead',
-          'UX focus',
-          '4 new applications',
-          'Applying Angular knowledge',
-          'Azure pipelines',
-          '.NET Core',
-        ],
+        keywords: ['Frontend lead', 'UX focus', '4 new applications', 'Applying Angular knowledge', 'Azure pipelines', '.NET Core'],
         description: {
           en: `
             <p>
@@ -464,14 +457,7 @@ export const employers: Employer[] = [
         role: 'Technical Architect / Fullstack .NET Developer',
         line: 'PTW',
         period: '02/2019 – 03/2019',
-        keywords: [
-          'Short Deadline',
-          'Microsoft Azure',
-          'React',
-          '.NET Core',
-          'Performance Optimization',
-          'From Scratch',
-        ],
+        keywords: ['Short Deadline', 'Microsoft Azure', 'React', '.NET Core', 'Performance Optimization', 'From Scratch'],
         description: {
           en: `
             <p>
@@ -598,14 +584,7 @@ export const employers: Employer[] = [
         line: 'Generiek Dossier Platform (GDP)',
         role: '.NET Developer',
         period: '04/2018 – 05/2018',
-        keywords: [
-          'TDD',
-          'Integration Testing',
-          'Load / Performance Testing',
-          'Performance Optimization',
-          'PostgreSQL',
-          'EF Core',
-        ],
+        keywords: ['TDD', 'Integration Testing', 'Load / Performance Testing', 'Performance Optimization', 'PostgreSQL', 'EF Core'],
         description: {
           en: `
             <p>
@@ -965,14 +944,7 @@ export const skillOverview: { name: Text; skills: Text[] }[] = [
   },
   {
     name: 'UX / UI / Design',
-    skills: [
-      'Figma',
-      'Responsive / Mobile-first',
-      'Tailwind',
-      'Design Systems',
-      'Component Libraries',
-      'User-Centered Design',
-    ],
+    skills: ['Figma', 'Responsive / Mobile-first', 'Tailwind', 'Design Systems', 'Component Libraries', 'User-Centered Design'],
   },
   {
     name: 'Tools',

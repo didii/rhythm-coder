@@ -15,11 +15,7 @@ const { t, l } = useText();
 <template>
   <section :id="employer.id" :data-section="employer.name" class="employer" :aria-labelledby="`${employer.id}-name`">
     <!-- the whole head toggles; the button's own click bubbles up to here, so it's keyboard-accessible too -->
-    <div
-      class="employer__head"
-      :class="{ 'employer__head--toggle': employer.description }"
-      @click="employer.description && (open = !open)"
-    >
+    <div class="employer__head" :class="{ 'employer__head--toggle': employer.description }" @click="employer.description && (open = !open)">
       <img :src="employer.logo" alt="" class="employer__logo" width="64" height="64" />
       <div class="employer__id">
         <h2 :id="`${employer.id}-name`" class="employer__name">{{ employer.name }}</h2>
@@ -43,13 +39,7 @@ const { t, l } = useText();
         <Plus height="1em" aria-hidden="true" class="employer__icon" :class="{ 'employer__icon--open': open }" />
       </CutTab>
     </div>
-    <div
-      v-if="employer.description"
-      :id="`${employer.id}-about`"
-      class="employer__about"
-      :class="{ 'employer__about--open': open }"
-      :inert="!open"
-    >
+    <div v-if="employer.description" :id="`${employer.id}-about`" class="employer__about" :class="{ 'employer__about--open': open }" :inert="!open">
       <div v-html="l(employer.description)"></div>
     </div>
     <ol class="courses" :aria-label="t('employer.assignments', { name: employer.name })">

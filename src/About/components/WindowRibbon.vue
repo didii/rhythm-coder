@@ -24,15 +24,7 @@ const { t, locale } = useText();
       </span>
     </span>
     <div class="ribbon__lang" role="group" :aria-label="t('language')">
-      <button
-        v-for="l of LOCALES"
-        :key="l"
-        type="button"
-        class="ribbon__locale"
-        :lang="l"
-        :aria-pressed="locale === l"
-        @click="locale = l"
-      >
+      <button v-for="l of LOCALES" :key="l" type="button" class="ribbon__locale" :lang="l" :aria-pressed="locale === l" @click="locale = l">
         {{ l }}
       </button>
     </div>

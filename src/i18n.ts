@@ -12,8 +12,7 @@ export const pick = (text: Text, locale: Locale) => (typeof text === 'string' ? 
 const messages: Record<Locale, typeof en> = { en, nl };
 
 // one instance per app: the prerender builds its own
-export const createAppI18n = () =>
-  createI18n({ legacy: false, locale: 'en' as Locale, fallbackLocale: 'en', messages });
+export const createAppI18n = () => createI18n({ legacy: false, locale: 'en' as Locale, fallbackLocale: 'en', messages });
 
 // t() plus a picker for CV content in the active language
 export function useText() {
