@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "sections": "Secties",
+    "top": "Top",
+    "about": "Over",
+    "education": "Opleiding",
+    "skills": "Skills",
+    "talks": "Talks",
+    "mail": "Mail"
+  },
+  "language": "Taal",
+  "hero": {
+    "role": "Softwareontwikkelaar",
+    "expert": ".NET- & React-expert",
+    "experience": "{n} jaar ervaring",
+    "physics": "Achtergrond in fysica",
+    "email": "Mail Dieter"
+  },
+  "lead": {
+    "profile": "Profiel",
+    "photo": "Dieter Van Broeck voor de Rainbow Mountains",
+    "basedIn": "Woont in",
+    "mail": "Mail",
+    "licence": "Rijbewijs",
+    "born": "Geboren"
+  },
+  "place": "Zoersel, België",
+  "peru": "Rainbow Mountains, Peru",
+  "about": {
+    "title": "Over mij",
+    "prose": "Gepassioneerde .NET- en full-stackontwikkelaar met een achtergrond in fysica, die complexe analytische problemen omzet in elegante, onderhoudbare oplossingen. Floreert in open omgevingen die initiatief aanmoedigen en slaat de brug tussen technische uitvoering en product- en bedrijfsvisie. Naast het programmeren graag bezig met koken, muziek luisteren en muziek spelen."
+  },
+  "employer": {
+    "about": "Over {name}",
+    "assignments": "Opdrachten bij {name}"
+  },
+  "years": "{n} jaar | {n} jaar",
+  "now": "nu",
+  "read": "Lees",
+  "close": "Sluit",
+  "education": "Opleiding",
+  "skills": {
+    "title": "Skills",
+    "rating": "{n} op 7",
+    "overview": "Volledig overzicht"
+  },
+  "talks": {
+    "title": "Presentaties",
+    "sub": "Interne talks {'@'} Kenze"
+  },
+  "months": [
+    "jan",
+    "feb",
+    "mrt",
+    "apr",
+    "mei",
+    "jun",
+    "jul",
+    "aug",
+    "sep",
+    "okt",
+    "nov",
+    "dec"
+  ]
+}

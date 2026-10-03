@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "sections": "Sections",
+    "top": "Top",
+    "about": "About",
+    "education": "Education",
+    "skills": "Skills",
+    "talks": "Talks",
+    "mail": "Mail"
+  },
+  "language": "Language",
+  "hero": {
+    "role": "Software developer",
+    "expert": ".NET & React expert",
+    "experience": "{n} years experience",
+    "physics": "Physics background",
+    "email": "Email Dieter"
+  },
+  "lead": {
+    "profile": "Profile",
+    "photo": "Dieter Van Broeck in front of the Rainbow Mountains",
+    "basedIn": "Based in",
+    "mail": "Mail",
+    "licence": "Driving licence",
+    "born": "Born"
+  },
+  "place": "Zoersel, Belgium",
+  "peru": "Rainbow Mountains, Peru",
+  "about": {
+    "title": "About me",
+    "prose": "I'm a passionate .NET and Full-stack developer with a physics background, turning complex analytical problems into elegant, maintainable solutions. Thrives in open environments that encourage initiative, bridging technical execution with product and business vision. Outside of coding, enjoys cooking, listening to music, and playing music."
+  },
+  "employer": {
+    "about": "About {name}",
+    "assignments": "Assignments at {name}"
+  },
+  "years": "{n} year | {n} years",
+  "now": "now",
+  "read": "Read",
+  "close": "Close",
+  "education": "Education",
+  "skills": {
+    "title": "Skills",
+    "rating": "{n} out of 7",
+    "overview": "Full overview"
+  },
+  "talks": {
+    "title": "Presentations",
+    "sub": "Internal talks {'@'} Kenze"
+  },
+  "months": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ]
+}
