@@ -7,7 +7,7 @@ defineProps<{ id: string; title: string }>();
 <template>
   <section :id="id" :data-section="title" class="panel">
     <StripHeading>{{ title }}</StripHeading>
-    <slot />
+    <slot></slot>
   </section>
 </template>
 
