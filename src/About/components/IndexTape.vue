@@ -36,7 +36,7 @@ const { t } = useText();
   gap: 1.1rem;
   background: var(--color-sand);
   border-right: 1px dashed var(--color-mint-deep);
-  box-shadow: 4px 0 18px rgb(0 0 0 / 0.35);
+  box-shadow: 4px 0 12px rgb(0 0 0 / 0.35);
 }
 .eyelet {
   display: flex;
