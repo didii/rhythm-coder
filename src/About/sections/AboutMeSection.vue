@@ -8,12 +8,12 @@ const { t, l } = useText();
 
 <template>
   <SectionPanel id="about" :title="t('about.title')">
-    <div class="prose" :inner-h-t-m-l="l(cvData.aboutMe)"></div>
+    <div class="prose" v-html="l(cvData.aboutMe)"></div>
   </SectionPanel>
 </template>
 
 <style lang="css" scoped>
-.prose ::deep(div) {
+.prose {
   margin-top: 1rem;
   font-size: clamp(1.125rem, 1.6vw, 1.375rem);
   line-height: 1.55;
