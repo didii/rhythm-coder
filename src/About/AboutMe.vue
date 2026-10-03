@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref } from 'vue';
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
+import { useText } from '@/i18n';
 import ContactSection from './components/ContactSection.vue';
 import EducationSection from './components/EducationSection.vue';
 import EmployerSection from './components/EmployerSection.vue';
@@ -11,15 +12,16 @@ import SkillsSection from './components/SkillsSection.vue';
 import WindowRibbon from './components/WindowRibbon.vue';
 import { employers } from './cv';
 
-const index = [
-  { id: 'top', label: 'Top' },
-  { id: 'about', label: 'About' },
+const { t, locale } = useText();
+const index = computed(() => [
+  { id: 'top', label: t('nav.top') },
+  { id: 'about', label: t('nav.about') },
   ...employers.map((e) => ({ id: e.id, label: e.ribbonName })),
-  { id: 'education', label: 'Education' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'talks', label: 'Talks' },
-  { id: 'contact', label: 'Mail' },
-];
+  { id: 'education', label: t('nav.education') },
+  { id: 'skills', label: t('nav.skills') },
+  { id: 'talks', label: t('nav.talks') },
+  { id: 'contact', label: t('nav.mail') },
+]);
 
 // The window ribbon: names the course currently under the top edge and steps one course on change.
 const current = ref('Van Broeck Dieter');
@@ -30,18 +32,30 @@ const activeSection = ref('top');
 
 let order: string[] = [];
 let observer: IntersectionObserver | undefined;
+let targets: HTMLElement[] = [];
+let currentEl: HTMLElement | undefined;
+const nameOf = (el: HTMLElement) => el.dataset.course ?? el.dataset.section!;
+
+// the names are translated: re-read them, and rename what the window shows without stepping it
+watch(locale, async () => {
+  await nextTick();
+  order = targets.map(nameOf);
+  if (currentEl) current.value = nameOf(currentEl);
+  previous.value = '';
+});
 
 onMounted(() => {
-  const targets = [...document.querySelectorAll<HTMLElement>('[data-course], [data-section]')];
-  order = targets.map((t) => t.dataset.course ?? t.dataset.section!);
+  targets = [...document.querySelectorAll<HTMLElement>('[data-course], [data-section]')];
+  order = targets.map(nameOf);
   observer = new IntersectionObserver(
     (entries) => {
       for (const e of entries) {
         if (!e.isIntersecting) continue;
         const el = e.target as HTMLElement;
         if (el.dataset.section) activeSection.value = el.id;
-        const name = el.dataset.course ?? el.dataset.section!;
+        const name = nameOf(el);
         if (name === current.value) continue;
+        currentEl = el;
         stepDir.value = order.indexOf(name) > order.indexOf(current.value) ? 'down' : 'up';
         previous.value = current.value;
         current.value = name;
@@ -64,13 +78,8 @@ onBeforeUnmount(() => observer?.disconnect());
     <main>
       <HeroSection />
 
-      <SectionPanel id="about" title="About me">
-        <p class="panel__prose">
-          I'm a passionate .NET and Full-stack developer with a physics background, turning complex analytical problems
-          into elegant, maintainable solutions. Thrives in open environments that encourage initiative, bridging
-          technical execution with product and business vision. Outside of coding, enjoys cooking, listening to music,
-          and playing music.
-        </p>
+      <SectionPanel id="about" :title="t('about.title')">
+        <p class="panel__prose">{{ t('about.prose') }}</p>
       </SectionPanel>
 
       <EmployerSection v-for="emp of employers" :key="emp.id" :employer="emp" />

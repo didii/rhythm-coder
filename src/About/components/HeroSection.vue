@@ -3,6 +3,9 @@ import LinkExternal from '@iconify-vue/fe/link-external';
 import { EMAIL, LINKS, yearsOfExperience } from '../cv';
 import CutTab from './CutTab.vue';
 import LeadPanel from './LeadPanel.vue';
+import { useText } from '@/i18n';
+
+const { t } = useText();
 </script>
 
 <template>
@@ -10,18 +13,18 @@ import LeadPanel from './LeadPanel.vue';
     <div class="hero__window">
       <h1 class="hero__name">Van Broeck Dieter</h1>
       <div class="hero__seam" aria-hidden="true"></div>
-      <p class="hero__next">Software developer</p>
+      <p class="hero__role">{{ t('hero.role') }}</p>
     </div>
     <div class="hero__lede">
       <p class="hero__route">
-        <b>.NET &amp; React expert</b>
+        <b>{{ t('hero.expert') }}</b>
         <span aria-hidden="true"> / </span>
-        <b>{{ yearsOfExperience() }} years experience</b>
+        <b>{{ t('hero.experience', { n: yearsOfExperience() }) }}</b>
         <span aria-hidden="true"> / </span>
-        Physics background
+        {{ t('hero.physics') }}
       </p>
       <div class="hero__actions">
-        <CutTab variant="solid" :href="`mailto:${EMAIL}`">Email Dieter</CutTab>
+        <CutTab variant="solid" :href="`mailto:${EMAIL}`">{{ t('hero.email') }}</CutTab>
         <CutTab v-for="l of LINKS" :key="l.label" variant="stitched" :href="l.href" target="_blank" rel="noopener">
           {{ l.label }} <LinkExternal height="1em" aria-hidden="true" />
         </CutTab>
@@ -69,10 +72,10 @@ import LeadPanel from './LeadPanel.vue';
   box-shadow: 0 -6px 10px -6px rgb(0 0 0 / 0.5);
 }
 /* the next course, half through the window */
-.hero__next {
+.hero__role {
   font-family: var(--font-legend);
   font-weight: 800;
-  font-size: clamp(2.5rem, 6.5vw, 5.5rem);
+  font-size: clamp(2.25rem, 6.5vw, 5.25rem);
   line-height: 1;
   text-transform: uppercase;
   color: var(--color-sand);

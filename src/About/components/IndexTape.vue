@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import { useText } from '@/i18n';
+
 defineProps<{ items: { id: string; label: string }[]; active: string }>();
+const { t } = useText();
 </script>
 
 <template>
-  <nav class="tape" aria-label="Sections">
+  <nav class="tape" :aria-label="t('nav.sections')">
     <a
       v-for="item of items"
       :key="item.id"

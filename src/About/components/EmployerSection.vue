@@ -5,9 +5,11 @@ import { spanOf, type Employer } from '../cv';
 import CutTab from './CutTab.vue';
 import CourseRow from './CourseRow.vue';
 import PeriodTime from './PeriodTime.vue';
+import { useText } from '@/i18n';
 
 defineProps<{ employer: Employer }>();
 const open = ref(false);
+const { t, l } = useText();
 </script>
 
 <template>
@@ -22,11 +24,11 @@ const open = ref(false);
       <div class="employer__id">
         <h2 :id="`${employer.id}-name`" class="employer__name">{{ employer.name }}</h2>
         <p class="employer__meta">
-          <b>{{ employer.activity }}</b>
+          <b>{{ l(employer.activity) }}</b>
           <span aria-hidden="true">/</span>
           <b><PeriodTime :period="employer.period" /></b>
           <span aria-hidden="true">/</span>
-          <b>{{ spanOf(employer.period) }}</b>
+          <b>{{ t('years', spanOf(employer.period)) }}</b>
         </p>
       </div>
       <CutTab
@@ -37,7 +39,7 @@ const open = ref(false);
         :aria-expanded="open"
         :aria-controls="`${employer.id}-about`"
       >
-        About {{ employer.name }}
+        {{ t('employer.about', { name: employer.name }) }}
         <Plus height="1em" aria-hidden="true" class="employer__icon" :class="{ 'employer__icon--open': open }" />
       </CutTab>
     </div>
@@ -48,10 +50,10 @@ const open = ref(false);
       :class="{ 'employer__about--open': open }"
       :inert="!open"
     >
-      <div lang="nl" v-html="employer.description"></div>
+      <div v-html="l(employer.description)"></div>
     </div>
-    <ol class="courses" :aria-label="`Assignments at ${employer.name}`">
-      <CourseRow v-for="c of employer.courses" :key="`${c.img}-${c.name}`" :course="c" />
+    <ol class="courses" :aria-label="t('employer.assignments', { name: employer.name })">
+      <CourseRow v-for="c of employer.courses" :key="`${c.img}-${c.period}`" :course="c" />
     </ol>
   </section>
 </template>

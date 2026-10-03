@@ -1,35 +1,38 @@
 <script setup lang="ts">
 import { EMAIL } from '../cv';
 import me from '../img/me.jpg';
+import { useText } from '@/i18n';
+
+const { t } = useText();
 </script>
 
 <template>
-  <aside class="lead" aria-label="Profile">
+  <aside class="lead" :aria-label="t('lead.profile')">
     <figure class="lead__photo">
-      <img :src="me" alt="Dieter Van Broeck in front of the Rainbow Mountains" />
+      <img :src="me" :alt="t('lead.photo')" />
       <figcaption>
-        <a href="https://maps.app.goo.gl/fwdgWsmg1QdTn8MQ6" target="_blank" rel="noopener"> Rainbow Mountains, Peru </a>
+        <a href="https://maps.app.goo.gl/fwdgWsmg1QdTn8MQ6" target="_blank" rel="noopener">{{ t('peru') }}</a>
       </figcaption>
     </figure>
     <dl class="lead__facts">
       <div>
-        <dt>Based in</dt>
+        <dt>{{ t('lead.basedIn') }}</dt>
         <dd>
-          <a href="https://www.google.com/maps/place/Zoersel" target="_blank" rel="noopener">Zoersel, Belgium</a>
+          <a href="https://www.google.com/maps/place/Zoersel" target="_blank" rel="noopener">{{ t('place') }}</a>
         </dd>
       </div>
       <div>
-        <dt>Mail</dt>
+        <dt>{{ t('lead.mail') }}</dt>
         <dd>
           <a :href="`mailto:${EMAIL}`">{{ EMAIL }}</a>
         </dd>
       </div>
       <div>
-        <dt>Driving licence</dt>
+        <dt>{{ t('lead.licence') }}</dt>
         <dd>B</dd>
       </div>
       <div>
-        <dt>Born</dt>
+        <dt>{{ t('lead.born') }}</dt>
         <dd><time datetime="1991">1991</time></dd>
       </div>
     </dl>

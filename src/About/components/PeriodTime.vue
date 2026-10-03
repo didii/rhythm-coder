@@ -1,10 +1,16 @@
 <script setup lang="ts">
 // "MM/YYYY – MM/YYYY", "MM/YYYY – now" or "MM/YYYY", with machine-readable <time> elements
+import { computed } from 'vue';
+import { useText } from '@/i18n';
+
 const props = defineProps<{ period: string }>();
-const parts = props.period.split(' – ').map((p) => {
-  const [m, y] = p.split('/');
-  return { text: p, datetime: y ? `${y}-${m}` : undefined };
-});
+const { t } = useText();
+const parts = computed(() =>
+  props.period.split(' – ').map((p) => {
+    const [m, y] = p.split('/');
+    return { text: p === 'now' ? t('now') : p, datetime: y ? `${y}-${m}` : undefined };
+  }),
+);
 </script>
 
 <template>

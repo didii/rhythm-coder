@@ -4,44 +4,40 @@ import { ref } from 'vue';
 import { skillOverview, skills } from '../cv';
 import CutTab from './CutTab.vue';
 import SectionPanel from './SectionPanel.vue';
+import { useText } from '@/i18n';
 
 const open = ref(false);
+const { t, l } = useText();
 </script>
 
 <template>
-  <SectionPanel id="skills" title="Skills">
+  <SectionPanel id="skills" :title="t('skills.title')">
     <div class="skills">
-      <div v-for="cat of skills" :key="cat.name" class="skills__cat">
-        <h3 class="skills__name">{{ cat.name }}</h3>
+      <div v-for="cat of skills" :key="l(cat.name)" class="skills__cat">
+        <h3 class="skills__name">{{ l(cat.name) }}</h3>
         <ul>
-          <li v-for="s of cat.skills" :key="s.name" class="skill">
-            <span class="skill__name">{{ s.name }}</span>
-            <span class="skill__rating" role="img" :aria-label="`${s.rating} out of 7`">
+          <li v-for="s of cat.skills" :key="l(s.name)" class="skill">
+            <span class="skill__name">{{ l(s.name) }}</span>
+            <span class="skill__rating" role="img" :aria-label="t('skills.rating', { n: s.rating })">
               <span v-for="n in 7" :key="n" class="punch" :class="{ 'punch--through': n <= s.rating }"></span>
             </span>
-            <span class="skill__desc">{{ s.description }}</span>
+            <span class="skill__desc">{{ l(s.description) }}</span>
           </li>
         </ul>
       </div>
     </div>
     <h3 class="skills__name skills__name--overview">
-      <CutTab
-        type="button"
-        variant="ink"
-        :aria-expanded="open"
-        aria-controls="skills-overview"
-        @click="open = !open"
-      >
-        Full overview
+      <CutTab type="button" variant="ink" :aria-expanded="open" aria-controls="skills-overview" @click="open = !open">
+        {{ t('skills.overview') }}
         <Plus height="1em" aria-hidden="true" class="overview__icon" :class="{ 'overview__icon--open': open }" />
       </CutTab>
     </h3>
     <div id="skills-overview" class="overview-roll" :class="{ 'overview-roll--open': open }" :inert="!open">
       <dl class="overview">
-        <div v-for="cat of skillOverview" :key="cat.name" class="overview__cat">
-          <dt class="overview__name">{{ cat.name }}</dt>
+        <div v-for="cat of skillOverview" :key="l(cat.name)" class="overview__cat">
+          <dt class="overview__name">{{ l(cat.name) }}</dt>
           <dd class="overview__list">
-            <span v-for="s of cat.skills" :key="s" class="overview__item">{{ s }}</span>
+            <span v-for="s of cat.skills" :key="l(s)" class="overview__item">{{ l(s) }}</span>
           </dd>
         </div>
       </dl>

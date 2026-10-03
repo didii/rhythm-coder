@@ -2,11 +2,12 @@
 import Plus from '@iconify-vue/fe/plus';
 import { onBeforeUnmount, onMounted, reactive, ref } from 'vue';
 import { presentations } from '../cv';
+import { useText } from '@/i18n';
 
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const { l } = useText();
 const talks = presentations.map((t) => {
   const [m, y] = t.period.split('/') as [string, string];
-  return { ...t, month: MONTHS[Number(m) - 1], year: y, datetime: `${y}-${m}` };
+  return { ...t, month: Number(m) - 1, year: y, datetime: `${y}-${m}` };
 });
 
 // always expanded on desktop; collapsible only on mobile.
@@ -31,14 +32,14 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
 <template>
   <section
     id="talks"
-    data-section="Presentations"
+    :data-section="$t('talks.title')"
     class="talks"
     :class="{ 'talks--ready': ready }"
     aria-labelledby="talks-title"
   >
     <div class="talks__head">
-      <h2 id="talks-title" class="talks__title">Presentations</h2>
-      <p class="talks__sub">Internal talks @ Kenze</p>
+      <h2 id="talks-title" class="talks__title">{{ $t('talks.title') }}</h2>
+      <p class="talks__sub">{{ $t('talks.sub') }}</p>
     </div>
     <ol class="talks__list">
       <li
@@ -61,13 +62,13 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
             >
               <span>{{ t.title }}</span>
               <span class="talk__tab">
-                {{ isOpen(t.title) ? 'Close' : 'Read' }}
+                {{ isOpen(t.title) ? $t('close') : $t('read') }}
                 <Plus class="talk__icon" height="1em" aria-hidden="true" />
               </span>
             </button>
             <span v-else>{{ t.title }}</span>
           </h3>
-          <time class="talk__date" :datetime="t.datetime">{{ t.month }} {{ t.year }}</time>
+          <time class="talk__date" :datetime="t.datetime">{{ $t(`months.${t.month}`) }} {{ t.year }}</time>
           <p class="talk__topics">
             <template v-for="(k, j) of t.topics" :key="k">
               <span v-if="j" class="talk__sep" aria-hidden="true"> / </span><span>{{ k }}</span>
@@ -76,7 +77,7 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
         </div>
         <div :id="`talk-${i}`" class="talk__panel" :inert="!isOpen(t.title)">
           <div class="talk__clip">
-            <div class="talk__desc" lang="nl" v-html="t.description"></div>
+            <div class="talk__desc" v-html="l(t.description)"></div>
           </div>
         </div>
       </li>

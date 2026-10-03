@@ -2,6 +2,9 @@
 import LinkExternal from '@iconify-vue/fe/link-external';
 import { EMAIL, LINKS } from '../cv';
 import CutTab from './CutTab.vue';
+import { useText } from '@/i18n';
+
+const { t } = useText();
 </script>
 
 <template>
@@ -12,7 +15,7 @@ import CutTab from './CutTab.vue';
         {{ l.label }} <LinkExternal height="1em" aria-hidden="true" />
       </CutTab>
     </div>
-    <p class="close__addr">Zoersel, Belgium</p>
+    <p class="close__addr">{{ t('place') }}</p>
   </section>
 </template>
 

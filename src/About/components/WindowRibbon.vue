@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import Mail from '@iconify-vue/fe/mail';
 import { EMAIL } from '../cv';
+import { LOCALES, useText } from '@/i18n';
 
 defineProps<{ current: string; previous: string; stepDir: 'down' | 'up'; tick: number }>();
+const { t, locale } = useText();
 </script>
 
 <template>
@@ -21,7 +23,20 @@ defineProps<{ current: string; previous: string; stepDir: 'down' | 'up'; tick: n
         <span v-else>{{ current }}</span>
       </span>
     </span>
-    <a class="ribbon__mail" :href="`mailto:${EMAIL}`">
+    <div class="ribbon__lang" role="group" :aria-label="t('language')">
+      <button
+        v-for="l of LOCALES"
+        :key="l"
+        type="button"
+        class="ribbon__locale"
+        :lang="l"
+        :aria-pressed="locale === l"
+        @click="locale = l"
+      >
+        {{ l }}
+      </button>
+    </div>
+    <a class="ribbon__mail" :href="`mailto:${EMAIL}`" :aria-label="EMAIL">
       <Mail height="1em" aria-hidden="true" /> <span>{{ EMAIL }}</span>
     </a>
   </header>
@@ -111,6 +126,32 @@ defineProps<{ current: string; previous: string; stepDir: 'down' | 'up'; tick: n
 .ribbon__mail:hover {
   background: var(--color-sand);
 }
+.ribbon__lang {
+  display: flex;
+  gap: 2px;
+}
+.ribbon__locale {
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: inherit;
+  padding: 0.35rem 0.55rem;
+  color: var(--color-mint);
+  border: 1px dashed color-mix(in srgb, var(--color-mint) 55%, transparent);
+  cursor: pointer;
+  transition:
+    background-color 160ms ease-out,
+    color 160ms ease-out;
+}
+.ribbon__locale:hover {
+  color: var(--color-sand);
+}
+.ribbon__locale[aria-pressed='true'] {
+  background: var(--color-mint);
+  border-color: var(--color-mint);
+  color: var(--color-jacket-deep);
+  cursor: default;
+}
 
 @media (max-width: 40rem) {
   .ribbon {
@@ -123,13 +164,12 @@ defineProps<{ current: string; previous: string; stepDir: 'down' | 'up'; tick: n
     border-left: 0;
     padding-left: 0;
   }
-  /* .ribbon__mail span {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-  } */
+  /* the icon alone; the link keeps the address as its aria-label */
+  .ribbon__mail {
+    padding-right: 1.1rem;
+  }
+  .ribbon__mail span {
+    display: none;
+  }
 }
 </style>

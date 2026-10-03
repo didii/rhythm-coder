@@ -2,15 +2,19 @@
 import { education } from '../cv';
 import PeriodTime from './PeriodTime.vue';
 import SectionPanel from './SectionPanel.vue';
+import { useText } from '@/i18n';
+
+const { t, l } = useText();
 </script>
 
 <template>
-  <SectionPanel id="education" title="Education">
+  <SectionPanel id="education" :title="t('education')">
     <ul class="edu">
-      <li v-for="e of education" :key="e.degree" class="edu__item">
-        <h3 class="edu__degree">{{ e.degree }}</h3>
+      <li v-for="e of education" :key="e.period" class="edu__item">
+        <h3 class="edu__degree">{{ l(e.degree) }}</h3>
         <p class="edu__meta">
-          {{ e.school }}<span class="edu__sep" aria-hidden="true">&nbsp;&nbsp;/&nbsp; </span><span class="edu__period"><PeriodTime :period="e.period" /></span>
+          {{ l(e.school) }}<span class="edu__sep" aria-hidden="true">&nbsp;&nbsp;/&nbsp; </span
+          ><span class="edu__period"><PeriodTime :period="e.period" /></span>
         </p>
       </li>
     </ul>

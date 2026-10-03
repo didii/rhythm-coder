@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import Plus from '@iconify-vue/fe/plus';
-import { ref, useId } from 'vue';
+import { computed, ref, useId } from 'vue';
 import type { Course } from '../cv';
 import CutTab from './CutTab.vue';
 import PeriodTime from './PeriodTime.vue';
+import { useText } from '@/i18n';
 
 const props = defineProps<{ course: Course }>();
 const open = ref(false);
+const { t, l } = useText();
 const toggle = ref<HTMLButtonElement>();
 
 function close() {
@@ -14,7 +16,7 @@ function close() {
   toggle.value?.focus();
 }
 const panelId = useId();
-const label = [props.course.name, props.course.line].filter(Boolean).join(' · ');
+const label = computed(() => [l(props.course.name), props.course.line].filter(Boolean).join(' · '));
 const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
 </script>
 
@@ -39,18 +41,18 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
             toggle?.focus();
           "
         >
-          <span class="course__name">{{ course.name }}</span>
+          <span class="course__name">{{ l(course.name) }}</span>
           <template v-if="course.line">
             <span class="course__line">/</span>
             <span class="course__line">{{ course.line }}</span>
           </template>
           <span class="course__tab">
-            {{ open ? 'Close' : 'Read' }}
+            {{ open ? t('close') : t('read') }}
             <Plus class="course__icon" height="1em" aria-hidden="true" />
           </span>
         </button>
         <span v-else>
-          <span class="course__name">{{ course.name }}</span>
+          <span class="course__name">{{ l(course.name) }}</span>
           <template v-if="course.line">
             <span class="course__line">/</span>
             <span class="course__line">{{ course.line }}</span>
@@ -69,9 +71,9 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
     <div v-if="course.description" :id="panelId" class="course__panel" :inert="!open">
       <div class="course__panel-clip">
         <!-- focusable so reading or selecting the description keeps the course active (red) -->
-        <div class="course__panel-inner" tabindex="-1" lang="nl" v-html="course.description"></div>
+        <div class="course__panel-inner" tabindex="-1" v-html="l(course.description)"></div>
         <CutTab type="button" variant="stitched" class="course__close" @click="close">
-          Close
+          {{ t('close') }}
           <Plus class="course__icon" height="1em" aria-hidden="true" />
         </CutTab>
       </div>
