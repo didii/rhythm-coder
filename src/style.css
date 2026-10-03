@@ -1,5 +1,21 @@
 @import 'tailwindcss';
 
+/* self-hosted Mulish (variable, Latin subset); Sofia Sans Extra Condensed still comes from Google Fonts in index.html */
+@font-face {
+  font-family: 'Mulish';
+  src: url('./fonts/mulish.woff2') format('woff2');
+  font-weight: 200 1000;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mulish';
+  src: url('./fonts/mulish-italic.woff2') format('woff2');
+  font-weight: 200 1000;
+  font-style: italic;
+  font-display: swap;
+}
+
 @theme {
   --font-sans: 'Mulish', 'Segoe UI', Roboto, sans-serif;
   --font-legend: 'Sofia Sans Extra Condensed', sans-serif;
