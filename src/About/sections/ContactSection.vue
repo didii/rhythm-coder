@@ -2,16 +2,16 @@
 import { useText } from '@/i18n';
 import LinkExternal from '@iconify-vue/fe/link-external';
 import CutTab from '../components/CutTab.vue';
-import { EMAIL, LINKS } from '../cv.ts';
+import cvData from '../cvData';
 
 const { t } = useText();
 </script>
 
 <template>
   <section id="contact" data-section="Contact" class="close">
-    <a class="close__mail" :href="`mailto:${EMAIL}`">{{ EMAIL }}</a>
+    <a class="close__mail" :href="`mailto:${cvData.email}`">{{ cvData.email }}</a>
     <div class="close__links">
-      <CutTab v-for="l of LINKS" :key="l.label" variant="stitched" :href="l.href" target="_blank" rel="noopener">
+      <CutTab v-for="l of cvData.links" :key="l.label" variant="stitched" :href="l.href" target="_blank" rel="noopener">
         {{ l.label }} <LinkExternal height="1em" aria-hidden="true" />
       </CutTab>
     </div>

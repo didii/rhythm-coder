@@ -3,7 +3,7 @@ import { useText } from '@/i18n';
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import IndexTape from './components/IndexTape.vue';
 import WindowRibbon from './components/WindowRibbon.vue';
-import { employers } from './cv';
+import cvData from './cvData';
 import AboutMeSection from './sections/AboutMeSection.vue';
 import ContactSection from './sections/ContactSection.vue';
 import EducationSection from './sections/EducationSection.vue';
@@ -16,7 +16,7 @@ const { t, locale } = useText();
 const index = computed(() => [
   // sections share eyelets: no room for one each on a landscape phone
   { id: 'top', label: t('nav.about') },
-  { id: employers[0]!.id, label: t('nav.work') },
+  { id: cvData.employers[0]!.id, label: t('nav.work') },
   { id: 'education', label: t('nav.education') },
   { id: 'skills', label: t('nav.skills') },
   { id: 'talks', label: t('nav.talks') },
@@ -32,7 +32,7 @@ const activeSection = ref('top');
 // sections without an eyelet of their own light up the one they share
 const eyeletOf: Record<string, string> = {
   about: 'top',
-  ...Object.fromEntries(employers.map((e) => [e.id, employers[0]!.id])),
+  ...Object.fromEntries(cvData.employers.map((e) => [e.id, cvData.employers[0]!.id])),
 };
 
 let observer: IntersectionObserver | undefined;
@@ -88,12 +88,12 @@ onBeforeUnmount(() => observer?.disconnect());
 <template>
   <div class="roll">
     <IndexTape :items="index" :active="activeSection" />
-    <WindowRibbon :current="current" :previous="previous" :step-dir="stepDir" :tick="tick" />
+    <WindowRibbon :email="cvData.email" :current="current" :previous="previous" :step-dir="stepDir" :tick="tick" />
 
     <main class="main">
       <HeroSection />
       <AboutMeSection />
-      <EmployerSection v-for="emp of employers" :key="emp.id" :employer="emp" />
+      <EmployerSection v-for="emp of cvData.employers" :key="emp.id" :employer="emp" />
       <EducationSection />
       <SkillsSection />
       <PresentationsSection />

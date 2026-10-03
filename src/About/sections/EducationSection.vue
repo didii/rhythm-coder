@@ -2,7 +2,7 @@
 import { useText } from '@/i18n';
 import PeriodTime from '../components/PeriodTime.vue';
 import SectionPanel from '../components/SectionPanel.vue';
-import { education } from '../cv.ts';
+import cvData from '../cvData';
 
 const { t, l } = useText();
 </script>
@@ -10,7 +10,7 @@ const { t, l } = useText();
 <template>
   <SectionPanel id="education" :title="t('education')">
     <ul class="edu">
-      <li v-for="e of education" :key="e.period" class="edu__item">
+      <li v-for="e of cvData.educations" :key="e.period" class="edu__item">
         <h3 class="edu__degree">{{ l(e.degree) }}</h3>
         <p class="edu__meta">
           {{ l(e.school) }}<span class="edu__sep" aria-hidden="true">&nbsp;&nbsp;/&nbsp; </span

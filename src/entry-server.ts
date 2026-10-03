@@ -2,7 +2,7 @@
 import { createSSRApp } from 'vue';
 import { createMemoryHistory } from 'vue-router';
 import { renderToString } from 'vue/server-renderer';
-import { EMAIL, LINKS, education, employers, skillOverview, skills } from './About/cv';
+import cvData from './About/cvData';
 import me from './About/img/me.jpg';
 import App from './App.vue';
 import { createAppI18n, pick } from './i18n.ts';
@@ -33,12 +33,12 @@ export function head() {
     description: DESCRIPTION,
     url: SITE,
     image,
-    email: `mailto:${EMAIL}`,
-    sameAs: LINKS.map((l) => l.href),
+    email: `mailto:${cvData.email}`,
+    sameAs: cvData.links.map((l) => l.href),
     address: { '@type': 'PostalAddress', addressLocality: 'Zoersel', addressCountry: 'BE' },
-    worksFor: { '@type': 'Organization', name: employers[0]!.name },
-    alumniOf: { '@type': 'CollegeOrUniversity', name: pick(education[0]!.school, 'en') },
-    hasCredential: education.map((e) => ({
+    worksFor: { '@type': 'Organization', name: cvData.employers[0]!.name },
+    alumniOf: { '@type': 'CollegeOrUniversity', name: pick(cvData.educations[0]!.school, 'en') },
+    hasCredential: cvData.educations.map((e) => ({
       '@type': 'EducationalOccupationalCredential',
       credentialCategory: 'degree',
       name: pick(e.degree, 'en'),
@@ -46,8 +46,8 @@ export function head() {
     })),
     knowsLanguage: ['nl', 'en', 'fr'],
     knowsAbout: [
-      ...skills.filter((c) => pick(c.name, 'en') !== 'Spoken languages').flatMap((c) => c.skills.map((s) => pick(s.name, 'en'))),
-      ...skillOverview.filter((c) => pick(c.name, 'en') !== 'Soft skills').flatMap((c) => c.skills.slice(0, 3).map((s) => pick(s, 'en'))),
+      ...cvData.mainSkills.filter((c) => pick(c.name, 'en') !== 'Spoken languages').flatMap((c) => c.skills.map((s) => pick(s.name, 'en'))),
+      ...cvData.skills.filter((c) => pick(c.name, 'en') !== 'Soft skills').flatMap((c) => c.skills.slice(0, 3).map((s) => pick(s, 'en'))),
     ],
   };
   const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;');

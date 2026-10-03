@@ -2,10 +2,10 @@
 import { useText } from '@/i18n';
 import Plus from '@iconify-vue/fe/plus';
 import { onBeforeUnmount, onMounted, reactive, ref } from 'vue';
-import { presentations } from '../cv';
+import cvData from '../cvData';
 
 const { l } = useText();
-const talks = presentations.map((t) => {
+const talks = cvData.presentations.map((t) => {
   const [m, y] = t.period.split('/') as [string, string];
   return { ...t, month: Number(m) - 1, year: y, datetime: `${y}-${m}` };
 });

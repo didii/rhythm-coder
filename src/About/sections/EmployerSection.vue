@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import Plus from '@iconify-vue/fe/plus';
-import { ref } from 'vue';
-import { spanOf, type Employer } from '../cv.ts';
-import CutTab from '../components/CutTab.vue';
-import CourseRow from '../components/CourseRow.vue';
-import PeriodTime from '../components/PeriodTime.vue';
 import { useText } from '@/i18n';
+import Plus from '@iconify-vue/fe/plus';
+import { defineProps, ref } from 'vue';
+import CourseRow from '../components/CourseRow.vue';
+import CutTab from '../components/CutTab.vue';
+import PeriodTime from '../components/PeriodTime.vue';
+import type { Employer } from '../models.ts';
+import { spanOf } from '../utils.ts';
 
 defineProps<{ employer: Employer }>();
 const open = ref(false);

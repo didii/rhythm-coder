@@ -4,7 +4,7 @@ import Plus from '@iconify-vue/fe/plus';
 import { ref } from 'vue';
 import CutTab from '../components/CutTab.vue';
 import SectionPanel from '../components/SectionPanel.vue';
-import { skillOverview, skills } from '../cv.ts';
+import cvData from '../cvData';
 
 const open = ref(false);
 const { t, l } = useText();
@@ -13,7 +13,7 @@ const { t, l } = useText();
 <template>
   <SectionPanel id="skills" :title="t('skills.title')">
     <div class="skills">
-      <div v-for="cat of skills" :key="l(cat.name)" class="skills__cat">
+      <div v-for="cat of cvData.mainSkills" :key="l(cat.name)" class="skills__cat">
         <h3 class="skills__name">{{ l(cat.name) }}</h3>
         <ul>
           <li v-for="s of cat.skills" :key="l(s.name)" class="skill">
@@ -34,7 +34,7 @@ const { t, l } = useText();
     </h3>
     <div id="skills-overview" class="overview-roll" :class="{ 'overview-roll--open': open }" :inert="!open">
       <dl class="overview">
-        <div v-for="cat of skillOverview" :key="l(cat.name)" class="overview__cat">
+        <div v-for="cat of cvData.skills" :key="l(cat.name)" class="overview__cat">
           <dt class="overview__name">{{ l(cat.name) }}</dt>
           <dd class="overview__list">
             <span v-for="s of cat.skills" :key="l(s)" class="overview__item">{{ l(s) }}</span>

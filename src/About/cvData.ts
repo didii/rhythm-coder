@@ -16,60 +16,41 @@ import securexLogo from './img/securex.png';
 import technicolorLogo from './img/technicolor.png';
 import typescriptLogo from './img/typescript.png';
 import vlmLogo from './img/vlm.png';
+import type { CvData } from './models';
 
-import type { Text } from '../i18n';
-
-export const EMAIL = 'cv@rhythm-coder.dev';
-
-export const LINKS = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/dieter-van-broeck-476092142/' },
-  { label: 'GitHub', href: 'https://github.com/didii' },
-];
-
-// Full years between two "MM/YYYY" dates; "now" (or nothing) means today.
-export const yearsBetween = (from: string, to = 'now') => {
-  const months = (d: string) => {
-    if (d === 'now') return new Date().getFullYear() * 12 + new Date().getMonth();
-    const [m, y] = d.split('/').map(Number) as [number, number];
-    return y * 12 + m - 1;
-  };
-  return Math.floor((months(to) - months(from)) / 12);
-};
-// full years in "MM/YYYY – MM/YYYY" or "MM/YYYY – now"
-export const spanOf = (period: string) => yearsBetween(...(period.split(' – ') as [string, string]));
-
-// Since the first professional job (Ordina); student jobs don't count.
-export const yearsOfExperience = () => yearsBetween('08/2017');
-
-export interface Course {
-  img?: string;
-  name: Text;
-  role?: string;
-  line?: string;
-  period: string;
-  keywords: string[];
-  description?: Text; // HTML
-}
-
-export interface Employer {
-  id: string;
-  name: string;
-  logo: string;
-  period: string;
-  activity: Text;
-  description?: Text; // HTML
-  courses: Course[];
-}
-
-export const employers: Employer[] = [
-  {
-    id: 'kenze',
-    name: 'Kenze',
-    logo: kenzeLogo,
-    period: '10/2021 – now',
-    activity: { en: '.NET developer consultant', nl: '.NET-consultant' },
-    description: {
-      en: `
+const cvData: CvData = {
+  name: 'Van Broeck Dieter',
+  function: { en: 'Software developer', nl: 'Softwareontwikkelaar' },
+  email: 'cv@rhythm-coder.dev',
+  aboutMe: {
+    en: `
+      <p>
+        I'm a passionate .NET and Full-stack developer with a physics background, turning complex analytical problems into elegant, maintainable
+        solutions. Thrives in open environments that encourage initiative, bridging technical execution with product and business vision. Outside of
+        coding, enjoys cooking, listening to music, and playing music.
+      </p>
+    `,
+    nl: `
+      <p>
+        Gepassioneerde .NET- en full-stackontwikkelaar met een achtergrond in fysica, die complexe analytische problemen omzet in elegante,
+        onderhoudbare oplossingen. Floreert in open omgevingen die initiatief aanmoedigen en slaat de brug tussen technische uitvoering en product- en
+        bedrijfsvisie. Naast het programmeren is hij graag bezig met koken, muziek luisteren en muziek spelen.
+      </p>
+    `,
+  },
+  links: [
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/dieter-van-broeck-476092142/' },
+    { label: 'GitHub', href: 'https://github.com/didii' },
+  ],
+  employers: [
+    {
+      id: 'kenze',
+      name: 'Kenze',
+      logo: kenzeLogo,
+      period: '10/2021 – now',
+      activity: { en: '.NET developer consultant', nl: '.NET-consultant' },
+      description: {
+        en: `
         <p>
           Kenze is an IT consultancy where Dieter has worked as a .NET consultant since October 2021. The company invests heavily in a good match
           between consultant and client: every salesperson has a technical background, so assignments fit the consultant's profile in substance.
@@ -79,28 +60,28 @@ export const employers: Employer[] = [
           investigated with the help of external parties.
         </p>
       `,
-      nl: `
+        nl: `
       <p>
         Kenze is een IT-consultancybedrijf waar Dieter sinds oktober 2021 als .NET-consultant werkt. Het bedrijf zet sterk in op een goede match
-        tussen consultant en klant: elke salesmedewerker heeft zelf een technische achtergrond, waardoor opdrachten inhoudelijk goed aansluiten bij
-        het profiel van de consultant.
+        tussen consultant en klant: elke salesmedewerker heeft namelijk een technische achtergrond, waardoor ze opdrachten inhoudelijk goed kunnen
+        laten aansluiten bij het profiel van de consultant.
       </p>
       <p>
         Daarnaast heeft Kenze een open feedbackcultuur. Wanneer meerdere medewerkers gelijkaardige feedback geven, wordt die actief opgevolgd en
         indien nodig met hulp van externe partijen onderzocht.
       </p>
     `,
-    },
-    courses: [
-      {
-        img: hendriksLogo,
-        name: 'Taxi Hendriks',
-        role: 'Technical Lead / Fullstack .NET Developer',
-        line: 'Transport',
-        period: '09/2024 – now',
-        keywords: ['Domain-Driven Design (DDD)', 'Microservices Architecture', 'React (+Native)', 'CQRS'],
-        description: {
-          en: `
+      },
+      courses: [
+        {
+          img: hendriksLogo,
+          name: 'Taxi Hendriks',
+          role: 'Technical Lead / Fullstack .NET Developer',
+          line: 'Transport',
+          period: '09/2024 – now',
+          keywords: ['Domain-Driven Design (DDD)', 'Microservices Architecture', 'React (+Native)', 'CQRS'],
+          description: {
+            en: `
             <p>
               Taxi Hendriks specialises in transport for people with reduced mobility and hospital transport. For hospital transport, a new software
               platform was built to replace an outdated legacy system that no longer scaled. The new application supports the full process, from back
@@ -116,7 +97,7 @@ export const employers: Employer[] = [
               between different systems and processes.
             </p>
           `,
-          nl: `
+            nl: `
           <p>
             Taxi Hendriks is gespecialiseerd in mindervalidentransport en ziekenhuistransport. Voor het ziekenhuistransport werd een nieuw
             softwareplatform ontwikkeld ter vervanging van een verouderd legacy-systeem dat niet langer schaalbaar was. De nieuwe applicatie
@@ -133,17 +114,17 @@ export const employers: Employer[] = [
             om gegevens betrouwbaar tussen verschillende systemen en processen uit te wisselen.
           </p>
         `,
+          },
         },
-      },
-      {
-        img: odotLogo,
-        name: 'Odot',
-        role: 'Fullstack .NET Developer',
-        line: 'EMP',
-        period: '08/2023 – 09/2024',
-        keywords: ['React', 'TypeScript', 'ASP.NET (Web API)', 'Azure', 'CQRS', 'SignalR'],
-        description: {
-          en: `
+        {
+          img: odotLogo,
+          name: 'Odot',
+          role: 'Fullstack .NET Developer',
+          line: 'EMP',
+          period: '08/2023 – 09/2024',
+          keywords: ['React', 'TypeScript', 'ASP.NET (Web API)', 'Azure', 'CQRS', 'SignalR'],
+          description: {
+            en: `
             <p>
               Odot operates in the energy market and offers both internal and external applications to support the purchase and follow-up of energy.
               Through the Energy Management Platform (EMP), the internal application, employees manage companies, contracts and meters and buy energy in
@@ -152,7 +133,7 @@ export const employers: Employer[] = [
               energy use and the associated costs.
             </p>
           `,
-          nl: `
+            nl: `
           <p>
             Odot is actief binnen de energiemarkt en biedt zowel interne als externe applicaties ter ondersteuning van de aankoop en opvolging van
             energie. Via het Energy Management Platform (EMP), de interne applicatie, kunnen medewerkers bedrijven, contracten en meters beheren en
@@ -161,17 +142,17 @@ export const employers: Employer[] = [
             gebruiksvriendelijke manier en geeft klanten zo meer inzicht in hun energiegebruik en de bijbehorende kosten.
           </p>
         `,
+          },
         },
-      },
-      {
-        img: actemiumLogo,
-        name: 'Actemium',
-        role: '.NET Developer',
-        line: 'Testplan debugger',
-        period: '05/2023 – 08/2023',
-        keywords: ['Analyst', 'Akka.NET', 'gRPC', 'RabbitMQ', 'WPF', 'Entity Framework'],
-        description: {
-          en: `
+        {
+          img: actemiumLogo,
+          name: 'Actemium',
+          role: '.NET Developer',
+          line: 'Testplan debugger',
+          period: '05/2023 – 08/2023',
+          keywords: ['Analyst', 'Akka.NET', 'gRPC', 'RabbitMQ', 'WPF', 'Entity Framework'],
+          description: {
+            en: `
             <p>
               Actemium builds software to test and validate industrial machines. The application offers a very flexible drag-and-drop interface in which
               test flows are built as a graph of nodes. These nodes represent actions that can run sequentially or in parallel, with support for
@@ -187,7 +168,7 @@ export const employers: Employer[] = [
               approach and execution.
             </p>
           `,
-          nl: `
+            nl: `
         <p>
           Actemium ontwikkelt software voor het testen en valideren van industriële machines. De applicatie biedt een zeer flexibele
           drag-and-drop-interface waarmee testflows worden opgebouwd als een graphstructuur van nodes. Deze nodes stellen acties voor die sequentieel
@@ -204,17 +185,17 @@ export const employers: Employer[] = [
           ervaren binnen het team, waarbij de tech lead zich positief verrast toonde door de aanpak en uitvoering.
         </p>
         `,
+          },
         },
-      },
-      {
-        img: cascadorLogo,
-        name: 'Cascador',
-        role: 'Technical Coach',
-        line: 'Tech support',
-        period: '09/2022 – 02/2025',
-        keywords: ['React', 'TypeScript', 'Frontend Architecture', 'Mentoring & Code Reviews', 'Startup Environment'],
-        description: {
-          en: `
+        {
+          img: cascadorLogo,
+          name: 'Cascador',
+          role: 'Technical Coach',
+          line: 'Tech support',
+          period: '09/2022 – 02/2025',
+          keywords: ['React', 'TypeScript', 'Frontend Architecture', 'Mentoring & Code Reviews', 'Startup Environment'],
+          description: {
+            en: `
             <p>
               Cascador collects medical data from sources such as hospitals, anonymises it and forwards it to clients such as pharmaceutical companies.
               This makes data that is often lost in healthcare institutions usable after all, with the aim of improving the development of medicines
@@ -226,7 +207,7 @@ export const employers: Employer[] = [
               architecture.
             </p>
           `,
-          nl: `
+            nl: `
           <p>
             Cascador richt zich op het verzamelen van medische data uit onder meer ziekenhuizen, het anonimiseren ervan en het doorsturen naar klanten
             zoals farmaceutische bedrijven. Hierdoor wordt data die vaak verloren gaat in zorginstellingen alsnog capteerbaar gemaakt, met als doel de
@@ -238,17 +219,17 @@ export const employers: Employer[] = [
             vraag en het uitwerken van een verbeterstrategie voor de frontendarchitectuur.
           </p>
         `,
+          },
         },
-      },
-      {
-        img: gosselinLogo,
-        name: 'Gosselin',
-        role: 'Fullstack .NET Developer',
-        line: 'Gosselin',
-        period: '12/2022 – 04/2023',
-        keywords: ['Frontend lead', 'React', 'ASP.NET (Web API)', '.NET Core', 'Code Reviews'],
-        description: {
-          en: `
+        {
+          img: gosselinLogo,
+          name: 'Gosselin',
+          role: 'Fullstack .NET Developer',
+          line: 'Gosselin',
+          period: '12/2022 – 04/2023',
+          keywords: ['Frontend lead', 'React', 'ASP.NET (Web API)', '.NET Core', 'Code Reviews'],
+          description: {
+            en: `
             <p>
               Gosselin is a major logistics company based in Antwerp and has been a partner of the US Department of Defense for many years. The company
               handles the first- and last-mile shipping of personal goods for US Army personnel on bases in Europe. With the renewal of the latest
@@ -257,7 +238,7 @@ export const employers: Employer[] = [
               further.
             </p>
           `,
-          nl: `
+            nl: `
           <p>
             Gosselin is een grote logistieke speler gevestigd in Antwerpen en is al meerdere jaren partner van het Amerikaanse Department of Defense.
             Het bedrijf staat in voor de first- en last-mile verzending van persoonlijke goederen van US Army-personeel op bases in Europa. Met de
@@ -266,17 +247,17 @@ export const employers: Employer[] = [
             uit te bouwen en zo tijdig aan de vereisten van de opdracht te voldoen.
           </p>
         `,
+          },
         },
-      },
-      {
-        img: connectiveLogo,
-        name: 'Connective',
-        role: 'Teamlead / Frontend Developer',
-        line: 'e-signing',
-        period: '10/2021 – 12/2022',
-        keywords: ['React', 'Design Systems', 'Storybook', 'From Scratch', 'TypeScript', 'Automated UI Testing'],
-        description: {
-          en: `
+        {
+          img: connectiveLogo,
+          name: 'Connective',
+          role: 'Teamlead / Frontend Developer',
+          line: 'e-signing',
+          period: '10/2021 – 12/2022',
+          keywords: ['React', 'Design Systems', 'Storybook', 'From Scratch', 'TypeScript', 'Automated UI Testing'],
+          description: {
+            en: `
             <p>
               Connective mainly provides digital signing of documents and supports several signing methods. The frontend application for signers,
               called WYSIWYS (What You See Is What You Sign), was due for a redesign, both in code quality and user experience. There was a strong focus
@@ -284,7 +265,7 @@ export const employers: Employer[] = [
               and the library supported.
             </p>
           `,
-          nl: `
+            nl: `
           <p>
             Connective verzorgt voornamelijk digitale ondertekening van documenten en ondersteunt verschillende ondertekenmethodes. De
             frontendapplicatie voor ondertekenaars, genaamd WYSIWYS (What You See Is What You Sign), was toe aan een herontwerp, zowel op vlak van
@@ -292,18 +273,18 @@ export const employers: Employer[] = [
             werd geïntroduceerd, evenals een systeem voor aanpasbare theming dat door klanten kon worden gekozen en ondersteund door de library.
           </p>
         `,
+          },
         },
-      },
-    ],
-  },
-  {
-    id: 'ordina',
-    name: 'Ordina Belgium',
-    logo: ordinaLogo,
-    period: '08/2017 – 09/2021',
-    activity: { en: '.NET developer consultant', nl: '.NET-consultant' },
-    description: {
-      en: `
+      ],
+    },
+    {
+      id: 'ordina',
+      name: 'Ordina Belgium',
+      logo: ordinaLogo,
+      period: '08/2017 – 09/2021',
+      activity: { en: '.NET developer consultant', nl: '.NET-consultant' },
+      description: {
+        en: `
         <p>
           Ordina is an IT service provider in the Benelux and the place where Dieter started his career as a consultant. As a starter he received an
           excellent series of trainings that gave him a solid foundation in professional software development, even before he started at his first
@@ -314,7 +295,7 @@ export const employers: Employer[] = [
           of toys was ready, from rovers and drones to VR headsets, leaving plenty of room to try new things and learn from each other.
         </p>
       `,
-      nl: `
+        nl: `
       <p>
         Ordina is een IT-dienstverlener in de Benelux en was de plek waar Dieter zijn carrière als consultant startte. Als starter kreeg hij
         er een uitstekende reeks opleidingen die hem een stevige basis gaven in professionele softwareontwikkeling, nog voor hij bij zijn
@@ -326,36 +307,36 @@ export const employers: Employer[] = [
         proberen en van elkaar te leren.
       </p>
     `,
-    },
-    courses: [
-      {
-        name: { en: 'Internship supervisor', nl: 'Stagebegeleider' },
-        period: '03/2021 – 05/2021',
-        keywords: ['Supporting role', 'VR meeting app', 'Unity 3D', 'Brainstorming'],
-        description: {
-          en: `
+      },
+      courses: [
+        {
+          name: { en: 'Internship supervisor', nl: 'Stagebegeleider' },
+          period: '03/2021 – 05/2021',
+          keywords: ['Supporting role', 'VR meeting app', 'Unity 3D', 'Brainstorming'],
+          description: {
+            en: `
             <p>
               Dieter supervised two interns building a playful VR meeting room. Besides helping them structure their code, his focus was mainly on
               organising and following up the work and on brainstorming ideas and features.
             </p>
           `,
-          nl: `
+            nl: `
           <p>
             Dieter begeleidde twee stagiairs bij het bouwen van een speelse VR-vergaderruimte. Naast hulp bij het structureren van hun code
             lag zijn focus vooral op het organiseren en opvolgen van het werk en op het brainstormen over ideeën en functionaliteiten.
           </p>
         `,
+          },
         },
-      },
-      {
-        img: vlmLogo,
-        name: 'VLM',
-        line: 'Mestbank',
-        role: 'Teamlead / Fullstack .NET Developer',
-        period: '09/2019 – 05/2021',
-        keywords: ['Frontend lead', 'UX focus', '4 new applications', 'Applying Angular knowledge', 'Azure pipelines', '.NET Core'],
-        description: {
-          en: `
+        {
+          img: vlmLogo,
+          name: 'VLM',
+          line: 'Mestbank',
+          role: 'Teamlead / Fullstack .NET Developer',
+          period: '09/2019 – 05/2021',
+          keywords: ['Frontend lead', 'UX focus', '4 new applications', 'Applying Angular knowledge', 'Azure pipelines', '.NET Core'],
+          description: {
+            en: `
             <p>
               Between 2019 and 2021, Dieter worked at VLM on several evolutions of the MTIL and TOMAS systems, applications that digitise and enforce
               complex agricultural and manure transport regulations. MTIL 2.5 focused on extending an existing web application for requesting and
@@ -376,7 +357,7 @@ export const employers: Employer[] = [
               vision and attention to further evolution.
             </p>
           `,
-          nl: `
+            nl: `
           <p>
             Tussen 2019 en 2021 werkte Dieter bij VLM aan meerdere evoluties van de MTIL- en TOMAS-systemen, applicaties die complexe landbouw- en
             mesttransportreglementering digitaliseren en handhaven. MTIL 2.5 focuste op het uitbreiden van een bestaande webapplicatie voor het
@@ -399,17 +380,17 @@ export const employers: Employer[] = [
             scope van de initiële release, met een duidelijke technische visie en aandacht voor verdere evolutie.
           </p>
         `,
+          },
         },
-      },
-      {
-        img: fluxysLogo,
-        name: 'Fluxys',
-        role: '.NET Developer',
-        line: 'Connect',
-        period: '03/2019 – 11/2019',
-        keywords: ['ASP.NET (MVC)', 'jQuery', 'Knockout JS', 'T-SQL', 'Angular', 'XML / XSLT', 'Message Queues'],
-        description: {
-          en: `
+        {
+          img: fluxysLogo,
+          name: 'Fluxys',
+          role: '.NET Developer',
+          line: 'Connect',
+          period: '03/2019 – 11/2019',
+          keywords: ['ASP.NET (MVC)', 'jQuery', 'Knockout JS', 'T-SQL', 'Angular', 'XML / XSLT', 'Message Queues'],
+          description: {
+            en: `
             <p>
               Fluxys is a company specialised in gas transport in Belgium. Dieter's team focused mainly on the communication software Connect, which
               handles communication with customers and between internal Fluxys applications. This software follows the pipes-and-filters pattern with
@@ -428,7 +409,7 @@ export const employers: Employer[] = [
               with enough time to document the work and hand it over to the next developer.
             </p>
           `,
-          nl: `
+            nl: `
           <p>
             Fluxys is een bedrijf gespecialiseerd in het transport van gas in België. Het team waarin Dieter werkte focuste voornamelijk op de
             communicatiesoftware Connect, die instaat voor communicatie met klanten en tussen interne Fluxys-applicaties. Deze software is opgezet
@@ -449,17 +430,17 @@ export const employers: Employer[] = [
             volgende ontwikkelaar.
           </p>
         `,
+          },
         },
-      },
-      {
-        img: imecLogo,
-        name: 'IMEC',
-        role: 'Technical Architect / Fullstack .NET Developer',
-        line: 'PTW',
-        period: '02/2019 – 03/2019',
-        keywords: ['Short Deadline', 'Microsoft Azure', 'React', '.NET Core', 'Performance Optimization', 'From Scratch'],
-        description: {
-          en: `
+        {
+          img: imecLogo,
+          name: 'IMEC',
+          role: 'Technical Architect / Fullstack .NET Developer',
+          line: 'PTW',
+          period: '02/2019 – 03/2019',
+          keywords: ['Short Deadline', 'Microsoft Azure', 'React', '.NET Core', 'Performance Optimization', 'From Scratch'],
+          description: {
+            en: `
             <p>
               IMEC organises two scientific conferences a year and built a SharePoint application for them that lets clients browse all available
               presentations. Entering presentations and managing access rights is currently done through an Excel file and a PowerShell script that
@@ -477,7 +458,7 @@ export const employers: Employer[] = [
               the groundwork.
             </p>
           `,
-          nl: `
+            nl: `
           <p>
             IMEC organiseert twee wetenschappelijke conferenties per jaar en heeft hiervoor een SharePoint-applicatie ontwikkeld waarmee klanten alle
             beschikbare presentaties kunnen raadplegen. Het invoeren van presentaties en het beheren van toegangsrechten gebeurt momenteel via een
@@ -495,17 +476,17 @@ export const employers: Employer[] = [
             hebben we de volledige visie niet kunnen verwezenlijken, maar wel de eerste aanzet gegeven.
           </p>
         `,
+          },
         },
-      },
-      {
-        img: vlmLogo,
-        name: 'VLM',
-        line: 'MTIL 2.0',
-        role: 'Fullstack Developer',
-        period: '06/2018 – 12/2018',
-        keywords: ['Complex Legacy Modernization', 'High-stakes Holiday Release', 'Business Logic', 'Small team'],
-        description: {
-          en: `
+        {
+          img: vlmLogo,
+          name: 'VLM',
+          line: 'MTIL 2.0',
+          role: 'Fullstack Developer',
+          period: '06/2018 – 12/2018',
+          keywords: ['Complex Legacy Modernization', 'High-stakes Holiday Release', 'Business Logic', 'Small team'],
+          description: {
+            en: `
             <p>
               The old MTIL application dated from before the turn of the millennium and the client decided it was time for a renewal. Farmers and
               manure transporters use this application to submit transport requests, after which it checks whether the transport is allowed. Since
@@ -521,7 +502,7 @@ export const employers: Employer[] = [
               matching the predefined scope, was seen as a strong result.
             </p>
           `,
-          nl: `
+            nl: `
           <p>
             De oude MTIL-applicatie dateerde van vóór de millenniumwissel en de klant besloot dat het tijd was voor een vernieuwing. Deze applicatie
             wordt gebruikt door landbouwers en mesttransporteurs om transportaanvragen in te dienen, waarna gecontroleerd wordt of het transport
@@ -538,17 +519,17 @@ export const employers: Employer[] = [
             volledig overeenkwam met de vooraf gedefinieerde scope, werd als een sterk resultaat ervaren.
           </p>
         `,
+          },
         },
-      },
-      {
-        img: securexLogo,
-        name: 'Securex',
-        role: 'Technical Analyst',
-        line: 'Elastic Stack Research',
-        period: '05/2018',
-        keywords: ['Elasticsearch', 'Logging & Monitoring', 'Research', 'Demo'],
-        description: {
-          en: `
+        {
+          img: securexLogo,
+          name: 'Securex',
+          role: 'Technical Analyst',
+          line: 'Elastic Stack Research',
+          period: '05/2018',
+          keywords: ['Elasticsearch', 'Logging & Monitoring', 'Research', 'Demo'],
+          description: {
+            en: `
             <p>
               This was a short pre-sales project in which a demo was built around the possibilities, strengths and limitations of the ELK stack
               (Elasticsearch, Logstash and Kibana) for a client. The focus was on storing log data from different applications centrally and making it
@@ -561,7 +542,7 @@ export const employers: Employer[] = [
               to implement the log centralisation themselves, no follow-up project came of it.
             </p>
           `,
-          nl: `
+            nl: `
           <p>
             Dit was een kort pre-sales project waarbij een demo werd ontwikkeld rond de mogelijkheden, sterktes en beperkingen van de ELK-stack
             (Elasticsearch, Logstash en Kibana) voor een klant. De focus lag op het centraal opslaan en doorzoekbaar maken van logdata uit
@@ -576,17 +557,17 @@ export const employers: Employer[] = [
             stand.
           </p>
         `,
+          },
         },
-      },
-      {
-        img: digipolisLogo,
-        name: 'Digipolis Antwerpen',
-        line: 'Generiek Dossier Platform (GDP)',
-        role: '.NET Developer',
-        period: '04/2018 – 05/2018',
-        keywords: ['TDD', 'Integration Testing', 'Load / Performance Testing', 'Performance Optimization', 'PostgreSQL', 'EF Core'],
-        description: {
-          en: `
+        {
+          img: digipolisLogo,
+          name: 'Digipolis Antwerpen',
+          line: 'Generiek Dossier Platform (GDP)',
+          role: '.NET Developer',
+          period: '04/2018 – 05/2018',
+          keywords: ['TDD', 'Integration Testing', 'Load / Performance Testing', 'Performance Optimization', 'PostgreSQL', 'EF Core'],
+          description: {
+            en: `
             <p>
               GDP was meant as a document store to manage cases with structured and dynamic data, including task management, history and access through
               a Web API. Although most of the functionality was in place, the application suffered from serious performance problems and an unclear
@@ -603,7 +584,7 @@ export const employers: Employer[] = [
               performance was improved significantly.
             </p>
           `,
-          nl: `
+            nl: `
           <p>
             GDP was bedoeld als een document store voor het beheren van cases met gestructureerde en dynamische data, inclusief taakbeheer, historie
             en ontsluiting via een Web API. Hoewel de functionaliteit grotendeels werd gerealiseerd, kampte de applicatie met ernstige
@@ -620,79 +601,79 @@ export const employers: Employer[] = [
             significante performantieverbetering van de applicatie gerealiseerd.
           </p>
         `,
+          },
         },
-      },
-      {
-        img: intrumLogo,
-        name: 'Intrum',
-        role: '.NET Developer',
-        line: 'Maintenance',
-        period: '12/2017 – 02/2018',
-        keywords: ['Oracle Database', 'Stored Procedures', '.NET Framework', 'Scrum', 'Support'],
-        description: {
-          en: `
+        {
+          img: intrumLogo,
+          name: 'Intrum',
+          role: '.NET Developer',
+          line: 'Maintenance',
+          period: '12/2017 – 02/2018',
+          keywords: ['Oracle Database', 'Stored Procedures', '.NET Framework', 'Scrum', 'Support'],
+          description: {
+            en: `
             <p>
               Intrum is a debt collection agency where most processes, such as sending text messages, letters and emails or assigning bailiffs, are
               automated according to the specific instructions of their clients. All data is stored in an Oracle database, while the automated
               processes are managed and run by a set of .NET applications.
             </p>
           `,
-          nl: `
+            nl: `
           <p>
             Intrum is een incassobureau waar de meeste processen, zoals het versturen van sms-berichten, brieven en e-mails of het toewijzen van
             gerechtsdeurwaarders, geautomatiseerd verlopen volgens de specifieke instructies van hun klanten. Alle gegevens worden opgeslagen in een
             Oracle-database, terwijl de geautomatiseerde processen worden beheerd en uitgevoerd door een reeks .NET-applicaties.
           </p>
         `,
+          },
         },
-      },
-      {
-        img: digipolisLogo,
-        name: 'Digipolis Antwerpen',
-        line: 'Delivery Request Registration',
-        role: 'Fullstack .NET Developer',
-        period: '09/2017 – 11/2017',
-        keywords: ['.NET Core', 'Angular', 'PostgreSQL', 'Docker', 'Hangfire', 'EF Core'],
-        description: {
-          en: `
+        {
+          img: digipolisLogo,
+          name: 'Digipolis Antwerpen',
+          line: 'Delivery Request Registration',
+          role: 'Fullstack .NET Developer',
+          period: '09/2017 – 11/2017',
+          keywords: ['.NET Core', 'Angular', 'PostgreSQL', 'Docker', 'Hangfire', 'EF Core'],
+          description: {
+            en: `
             <p>
               This project digitised the application for identity cards and other official documents for the city of Antwerp. It covered everything from
               the administration application to forwarding requests to the postal service, so these products could be delivered to people's homes.
             </p>
           `,
-          nl: `
+            nl: `
           <p>
             De aanvraag voor identiteitskaarten en andere officiële documenten werd in dit project gedigitaliseerd voor de stad Antwerpen. Dit project
             hield de administratieapplicatie in tot het doorsturen van aanvragen naar de post om deze producten tot thuis te kunnen laten leveren.
           </p>
         `,
+          },
         },
-      },
-    ],
-  },
-  {
-    id: 'technicolor',
-    name: 'Technicolor',
-    logo: technicolorLogo,
-    period: '07/2015 – 07/2017',
-    activity: { en: 'Student software developer', nl: 'Student-softwareontwikkelaar' },
-    courses: [
-      {
-        img: technicolorLogo,
-        name: { en: 'Internal tooling', nl: 'Interne tooling' },
-        role: 'Software Developer',
-        line: 'Test & reporting',
-        period: '07/2015 – 07/2017',
-        keywords: ['WPF', '.NET Framework', 'MongoDB', 'Jenkins (CI/CD)', 'Automated UI Testing'],
-        description: {
-          en: `
+      ],
+    },
+    {
+      id: 'technicolor',
+      name: 'Technicolor',
+      logo: technicolorLogo,
+      period: '07/2015 – 07/2017',
+      activity: { en: 'Student software developer', nl: 'Student-softwareontwikkelaar' },
+      courses: [
+        {
+          img: technicolorLogo,
+          name: { en: 'Internal tooling', nl: 'Interne tooling' },
+          role: 'Software Developer',
+          line: 'Test & reporting',
+          period: '07/2015 – 07/2017',
+          keywords: ['WPF', '.NET Framework', 'MongoDB', 'Jenkins (CI/CD)', 'Automated UI Testing'],
+          description: {
+            en: `
             <p>
               During his student jobs at Technicolor, Dieter built internal software solutions in C#/.NET (WPF) to support testing, reporting and
               analysis processes. He worked on automating test comparisons, building user-friendly reporting tools, setting up a central MongoDB data
               layer for test results and extending the Continuous Integration environment with Jenkins.
             </p>
           `,
-          nl: `
+            nl: `
           <p>
             Tijdens Dieter zijn studentenjobs bij Technicolor ontwikkelde hij interne softwareoplossingen in C#/.NET (WPF) ter ondersteuning van
             test-, rapporterings- en analyseprocessen. Hij werkte onder meer aan de automatisering van testvergelijkingen, de ontwikkeling van
@@ -700,41 +681,257 @@ export const employers: Employer[] = [
             Continuous Integration-omgeving via Jenkins.
           </p>
         `,
+          },
         },
-      },
-    ],
-  },
-];
-
-export interface Education {
-  degree: Text;
-  school: Text;
-  period: string;
-}
-
-// ponytail: periods copied from Flowcase as-is; they overlap oddly (bachelor ending after the master), verify.
-const UA = { en: 'University of Antwerp', nl: 'Universiteit Antwerpen' };
-export const education: Education[] = [
-  { degree: { en: 'Master in Physics', nl: 'Master in de Fysica' }, school: UA, period: '09/2014 – 07/2018' },
-  { degree: { en: 'Bachelor in Physics', nl: 'Bachelor in de Fysica' }, school: UA, period: '09/2010 – 07/2016' },
-];
-
-export interface Presentation {
-  title: string;
-  period: string; // "MM/YYYY"
-  img: string;
-  topics: string[];
-  description: Text; // HTML
-}
-
-export const presentations: Presentation[] = [
-  {
-    title: 'React Internals',
-    img: reactLogo,
-    period: '11/2024',
-    topics: ['Mounting', 'JSX', 'Render cycles', 'State', 'useRef & useCallback'],
-    description: {
-      en: `
+      ],
+    },
+  ],
+  educations: [
+    {
+      degree: { en: 'Master in Physics', nl: 'Master in de Fysica' },
+      school: { en: 'University of Antwerp', nl: 'Universiteit Antwerpen' },
+      period: '09/2014 – 07/2018',
+    },
+    {
+      degree: { en: 'Bachelor in Physics', nl: 'Bachelor in de Fysica' },
+      school: { en: 'University of Antwerp', nl: 'Universiteit Antwerpen' },
+      period: '09/2010 – 07/2016',
+    },
+  ],
+  mainSkills: [
+    {
+      name: { en: 'Programming languages', nl: 'Programmeertalen' },
+      skills: [
+        {
+          name: 'TypeScript',
+          rating: 7,
+          description: { en: 'Daily use, deep knowledge', nl: 'Dagelijks gebruik, diepgaande kennis' },
+        },
+        {
+          name: 'C#',
+          rating: 7,
+          description: { en: 'Daily use, deep knowledge', nl: 'Dagelijks gebruik, diepgaande kennis' },
+        },
+        {
+          name: 'JavaScript',
+          rating: 6,
+          description: {
+            en: 'Indirect use, familiar with most of its quirks',
+            nl: 'Onrechtstreeks gebruik, kent de meeste eigenaardigheden',
+          },
+        },
+      ],
+    },
+    {
+      name: 'Frameworks',
+      skills: [
+        {
+          name: 'React',
+          rating: 7,
+          description: { en: 'Daily use, knows its ins and outs', nl: 'Dagelijks gebruik, kent het door en door' },
+        },
+        {
+          name: 'ASP.NET',
+          rating: 6,
+          description: { en: 'Daily use for any server app', nl: 'Dagelijks gebruik voor elke serverapp' },
+        },
+        {
+          name: 'Vue.js',
+          rating: 5,
+          description: { en: 'Go-to framework in spare time', nl: 'Favoriete framework in de vrije tijd' },
+        },
+      ],
+    },
+    {
+      name: { en: 'Spoken languages', nl: 'Talen' },
+      skills: [
+        { name: { en: 'Dutch', nl: 'Nederlands' }, rating: 7, description: { en: 'Mother tongue', nl: 'Moedertaal' } },
+        {
+          name: { en: 'English', nl: 'Engels' },
+          rating: 6,
+          description: { en: 'Fluent understanding and writing', nl: 'Vloeiend begrip en schrijven' },
+        },
+        { name: { en: 'French', nl: 'Frans' }, rating: 2, description: { en: 'Basic understanding', nl: 'Basisbegrip' } },
+      ],
+    },
+  ],
+  skills: [
+    {
+      name: 'Frontend',
+      skills: [
+        'React',
+        'TypeScript',
+        'NPM',
+        'Webpack / Vite',
+        'i18next',
+        'Angular',
+        'jQuery',
+        'HeroUI',
+        'TanStack Query',
+        'Knockout JS',
+        'Sass',
+        'WPF',
+        'CSS3',
+        'Vue.js',
+        'WinForms',
+      ],
+    },
+    {
+      name: 'Backend',
+      skills: [
+        '.NET Core',
+        'ASP.NET (MVC)',
+        'Entity Framework Core',
+        'ASP.NET (Web API)',
+        'Background Services',
+        '.NET Framework',
+        'NHibernate',
+        '.NET Aspire',
+        'Dapper',
+        'LINQ',
+        'MediatR',
+        'MassTransit',
+        'Akka.NET',
+        'gRPC',
+        'SignalR',
+        'NodeJS',
+        'Entity Framework',
+        'AutoMapper',
+        'Hangfire',
+        'Asynchronous Programming',
+        'Web Services',
+      ],
+    },
+    {
+      name: 'Testing',
+      skills: [
+        'Unit Testing',
+        'Integration Testing',
+        'xUnit',
+        'NSubstitute',
+        'Respawn',
+        'Automated UI Testing',
+        'NUnit',
+        'Snapshot Testing',
+        'Karma',
+        'End-to-End Testing',
+        'Load / Performance Testing',
+        'Jest',
+      ],
+    },
+    {
+      name: 'Cloud & DevOps',
+      skills: [
+        'RabbitMQ',
+        'Azure Functions',
+        'Azure Service Bus',
+        'Azure Storage',
+        'Azure DevOps',
+        'Application Insights',
+        'Docker',
+        'GitHub Actions',
+        'Message Queues',
+        'Azure App Services',
+        'Azure Pipelines',
+        'Microsoft Azure',
+        'Azure Container Apps',
+        'Azure App Configuration',
+        'GitHub',
+        'Bash',
+      ],
+    },
+    {
+      name: 'Databases',
+      skills: [
+        'Azure SQL',
+        'SQL Server',
+        'PostgreSQL',
+        'T-SQL',
+        'Dacpac',
+        'Oracle',
+        'Elasticsearch',
+        'Stored Procedures',
+        'SQL',
+        'NoSQL',
+        'Data Migrations',
+        'Indexing / Query Optimization',
+        'Backup & Restore',
+      ],
+    },
+    {
+      name: { en: 'Architecture', nl: 'Architectuur' },
+      skills: [
+        'CQRS',
+        'Domain-Driven Design',
+        'Microservices',
+        'Vertical Slice Architecture',
+        'Layered / N-tier',
+        'Event-Driven Architecture',
+        'Modular Monoliths',
+        'Onion Architecture',
+        'MVC',
+        'API Design',
+        'SOLID',
+        'Clean Code',
+        'DRY',
+        'Design Patterns',
+        'Dependency Injection',
+        'Inversion of Control',
+        'Loose Coupling',
+        'Component-based Architecture',
+        'OOP / OOD',
+        'ORM',
+      ],
+    },
+    {
+      name: { en: 'Methodologies', nl: 'Methodologieën' },
+      skills: ['Code Reviews', 'Scrum', 'Agile', 'CI/CD', 'Pair Programming', 'User Stories', 'TDD'],
+    },
+    {
+      name: 'Security',
+      skills: ['Authentication', 'Authorization', 'Keycloak', 'OAuth2', 'ASP.NET Core Identity'],
+    },
+    {
+      name: 'UX / UI / Design',
+      skills: ['Figma', 'Responsive / Mobile-first', 'Tailwind', 'Design Systems', 'Component Libraries', 'User-Centered Design'],
+    },
+    {
+      name: 'Tools',
+      skills: ['Google Maps', 'OpenTelemetry', 'OpenAPI', 'Portainer', 'NuGet', 'Swagger', 'Git', 'Jira', 'Rider'],
+    },
+    {
+      name: { en: 'Other', nl: 'Overige' },
+      skills: [
+        'Logging & Monitoring',
+        'React Native',
+        'Claude Code',
+        'JSON / XML / XSLT / YAML',
+        'Performance Optimization',
+        'Caching',
+        'Exception Handling',
+        'Localization',
+      ],
+    },
+    {
+      name: 'Soft skills',
+      skills: [
+        'Coach & Mentor',
+        { en: 'Eye for detail', nl: 'Oog voor detail' },
+        { en: 'Task-oriented', nl: 'Taakgericht' },
+        { en: 'Cross-functional collaborator', nl: 'Teamspeler' },
+        { en: 'Communicative', nl: 'Communicatief' },
+        { en: 'Creative problem solver', nl: 'Creatieve probleemoplosser' },
+      ],
+    },
+  ],
+  presentations: [
+    {
+      title: 'React Internals',
+      img: reactLogo,
+      period: '11/2024',
+      topics: ['Mounting', 'JSX', 'Render cycles', 'State', 'useRef & useCallback'],
+      description: {
+        en: `
         <p>
           A technical deep dive into the inner workings of React, based on its source code. The presentation covered how a React application is
           mounted, how JSX is processed under the hood and how React builds pages and manages render cycles. It also went deeper into state
@@ -742,7 +939,7 @@ export const presentations: Presentation[] = [
           <code>useCallback</code> can be used deliberately to avoid unnecessary renders and optimise applications.
         </p>
       `,
-      nl: `
+        nl: `
       <p>
         Een technische deep dive in de interne werking van React op basis van de broncode. De presentatie behandelde onder meer hoe een
         React-applicatie wordt gemount, hoe JSX achterliggend wordt verwerkt en hoe React pagina's opbouwt en render cycles beheert. Daarnaast
@@ -751,15 +948,15 @@ export const presentations: Presentation[] = [
         vermijden en applicaties te optimaliseren.
       </p>
     `,
+      },
     },
-  },
-  {
-    title: 'TypeScript Shenanigans',
-    img: typescriptLogo,
-    period: '02/2023',
-    topics: ['Compile-time vs runtime', 'Pitfalls', 'String types', 'Mapped types', 'Decorators'],
-    description: {
-      en: `
+    {
+      title: 'TypeScript Shenanigans',
+      img: typescriptLogo,
+      period: '02/2023',
+      topics: ['Compile-time vs runtime', 'Pitfalls', 'String types', 'Mapped types', 'Decorators'],
+      description: {
+        en: `
         <p>
           About what TypeScript can do when the language is used correctly and deliberately. The presentation covered how TypeScript works behind the
           scenes, including the translation to JavaScript and the fundamental difference between compile time and runtime. It also discussed less
@@ -767,7 +964,7 @@ export const presentations: Presentation[] = [
           advanced ways, including complex string types, mapped types, decorators and types for JSON structures.
         </p>
       `,
-      nl: `
+        nl: `
       <p>
         Over de mogelijkheden van TypeScript wanneer de taal correct en bewust wordt ingezet. De presentatie behandelde de werking van TypeScript
         achter de schermen, waaronder de vertaling naar JavaScript en het fundamentele verschil tussen compile-time en runtime. Daarnaast werden
@@ -776,15 +973,15 @@ export const presentations: Presentation[] = [
         types, mapped types, decorators en types voor JSON-structuren.
       </p>
     `,
+      },
     },
-  },
-  {
-    title: 'Angular Spaghetti',
-    img: angularLogo,
-    period: '09/2022',
-    topics: ['Smart & dumb components', 'Stateful services', 'State management', 'Architecture'],
-    description: {
-      en: `
+    {
+      title: 'Angular Spaghetti',
+      img: angularLogo,
+      period: '09/2022',
+      topics: ['Smart & dumb components', 'Stateful services', 'State management', 'Architecture'],
+      description: {
+        en: `
         <p>
           An accessible explanation of what spaghetti code means in Angular and how a well-structured application can be built more like a lasagne.
           The presentation literally included a recipe for a healthy Angular architecture, with attention to the right structure of components, the
@@ -792,7 +989,7 @@ export const presentations: Presentation[] = [
           principles, it also explained in detail how to apply this structure in practice in existing and new Angular projects.
         </p>
       `,
-      nl: `
+        nl: `
       <p>
         Een toegankelijke uitleg over wat spaghetti-code binnen Angular betekent en hoe een goed gestructureerde applicatie eerder als een
         lasagne kan worden opgebouwd. De presentatie bevatte letterlijk een recept voor een gezonde Angular-architectuur, met aandacht voor de
@@ -801,235 +998,9 @@ export const presentations: Presentation[] = [
         bestaande en nieuwe Angular-projecten.
       </p>
     `,
+      },
     },
-  },
-];
+  ],
+};
 
-// Full keyword list per category, most used first.
-export const skillOverview: { name: Text; skills: Text[] }[] = [
-  {
-    name: 'Frontend',
-    skills: [
-      'React',
-      'TypeScript',
-      'NPM',
-      'Webpack / Vite',
-      'i18next',
-      'Angular',
-      'jQuery',
-      'HeroUI',
-      'TanStack Query',
-      'Knockout JS',
-      'Sass',
-      'WPF',
-      'CSS3',
-      'Vue.js',
-      'WinForms',
-    ],
-  },
-  {
-    name: 'Backend',
-    skills: [
-      '.NET Core',
-      'ASP.NET (MVC)',
-      'Entity Framework Core',
-      'ASP.NET (Web API)',
-      'Background Services',
-      '.NET Framework',
-      'NHibernate',
-      '.NET Aspire',
-      'Dapper',
-      'LINQ',
-      'MediatR',
-      'MassTransit',
-      'Akka.NET',
-      'gRPC',
-      'SignalR',
-      'NodeJS',
-      'Entity Framework',
-      'AutoMapper',
-      'Hangfire',
-      'Asynchronous Programming',
-      'Web Services',
-    ],
-  },
-  {
-    name: 'Testing',
-    skills: [
-      'Unit Testing',
-      'Integration Testing',
-      'xUnit',
-      'NSubstitute',
-      'Respawn',
-      'Automated UI Testing',
-      'NUnit',
-      'Snapshot Testing',
-      'Karma',
-      'End-to-End Testing',
-      'Load / Performance Testing',
-      'Jest',
-    ],
-  },
-  {
-    name: 'Cloud & DevOps',
-    skills: [
-      'RabbitMQ',
-      'Azure Functions',
-      'Azure Service Bus',
-      'Azure Storage',
-      'Azure DevOps',
-      'Application Insights',
-      'Docker',
-      'GitHub Actions',
-      'Message Queues',
-      'Azure App Services',
-      'Azure Pipelines',
-      'Microsoft Azure',
-      'Azure Container Apps',
-      'Azure App Configuration',
-      'GitHub',
-      'Bash',
-    ],
-  },
-  {
-    name: 'Databases',
-    skills: [
-      'Azure SQL',
-      'SQL Server',
-      'PostgreSQL',
-      'T-SQL',
-      'Dacpac',
-      'Oracle',
-      'Elasticsearch',
-      'Stored Procedures',
-      'SQL',
-      'NoSQL',
-      'Data Migrations',
-      'Indexing / Query Optimization',
-      'Backup & Restore',
-    ],
-  },
-  {
-    name: { en: 'Architecture', nl: 'Architectuur' },
-    skills: [
-      'CQRS',
-      'Domain-Driven Design',
-      'Microservices',
-      'Vertical Slice Architecture',
-      'Layered / N-tier',
-      'Event-Driven Architecture',
-      'Modular Monoliths',
-      'Onion Architecture',
-      'MVC',
-      'API Design',
-      'SOLID',
-      'Clean Code',
-      'DRY',
-      'Design Patterns',
-      'Dependency Injection',
-      'Inversion of Control',
-      'Loose Coupling',
-      'Component-based Architecture',
-      'OOP / OOD',
-      'ORM',
-    ],
-  },
-  {
-    name: { en: 'Methodologies', nl: 'Methodologieën' },
-    skills: ['Code Reviews', 'Scrum', 'Agile', 'CI/CD', 'Pair Programming', 'User Stories', 'TDD'],
-  },
-  {
-    name: 'Security',
-    skills: ['Authentication', 'Authorization', 'Keycloak', 'OAuth2', 'ASP.NET Core Identity'],
-  },
-  {
-    name: 'UX / UI / Design',
-    skills: ['Figma', 'Responsive / Mobile-first', 'Tailwind', 'Design Systems', 'Component Libraries', 'User-Centered Design'],
-  },
-  {
-    name: 'Tools',
-    skills: ['Google Maps', 'OpenTelemetry', 'OpenAPI', 'Portainer', 'NuGet', 'Swagger', 'Git', 'Jira', 'Rider'],
-  },
-  {
-    name: { en: 'Other', nl: 'Overige' },
-    skills: [
-      'Logging & Monitoring',
-      'React Native',
-      'Claude Code',
-      'JSON / XML / XSLT / YAML',
-      'Performance Optimization',
-      'Caching',
-      'Exception Handling',
-      'Localization',
-    ],
-  },
-  {
-    name: 'Soft skills',
-    skills: [
-      { en: 'Coach & Mentor', nl: 'Coach & mentor' },
-      { en: 'Eye for detail', nl: 'Oog voor detail' },
-      { en: 'Task-oriented', nl: 'Taakgericht' },
-      { en: 'Cross-functional collaborator', nl: 'Teamspeler over disciplines heen' },
-      { en: 'Communicative', nl: 'Communicatief' },
-      { en: 'Creative problem solver', nl: 'Creatieve probleemoplosser' },
-    ],
-  },
-];
-
-export const skills: { name: Text; skills: { name: Text; rating: number; description: Text }[] }[] = [
-  {
-    name: { en: 'Programming languages', nl: 'Programmeertalen' },
-    skills: [
-      {
-        name: 'TypeScript',
-        rating: 7,
-        description: { en: 'Daily use, deep knowledge', nl: 'Dagelijks gebruik, diepgaande kennis' },
-      },
-      {
-        name: 'C#',
-        rating: 7,
-        description: { en: 'Daily use, deep knowledge', nl: 'Dagelijks gebruik, diepgaande kennis' },
-      },
-      {
-        name: 'JavaScript',
-        rating: 6,
-        description: {
-          en: 'Indirect use, familiar with most of its quirks',
-          nl: 'Onrechtstreeks gebruik, kent de meeste eigenaardigheden',
-        },
-      },
-    ],
-  },
-  {
-    name: 'Frameworks',
-    skills: [
-      {
-        name: 'React',
-        rating: 7,
-        description: { en: 'Daily use, knows its ins and outs', nl: 'Dagelijks gebruik, kent het door en door' },
-      },
-      {
-        name: 'ASP.NET',
-        rating: 6,
-        description: { en: 'Daily use for any server app', nl: 'Dagelijks gebruik voor elke serverapp' },
-      },
-      {
-        name: 'Vue.js',
-        rating: 5,
-        description: { en: 'Go-to framework in spare time', nl: 'Favoriete framework in de vrije tijd' },
-      },
-    ],
-  },
-  {
-    name: { en: 'Spoken languages', nl: 'Talen' },
-    skills: [
-      { name: { en: 'Dutch', nl: 'Nederlands' }, rating: 7, description: { en: 'Mother tongue', nl: 'Moedertaal' } },
-      {
-        name: { en: 'English', nl: 'Engels' },
-        rating: 6,
-        description: { en: 'Fluent understanding and writing', nl: 'Vloeiend begrip en schrijven' },
-      },
-      { name: { en: 'French', nl: 'Frans' }, rating: 2, description: { en: 'Basic understanding', nl: 'Basisbegrip' } },
-    ],
-  },
-];
+export default cvData;

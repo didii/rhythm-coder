@@ -1,18 +1,19 @@
 <script setup lang="ts">
 import { useText } from '@/i18n';
 import SectionPanel from '../components/SectionPanel.vue';
+import cvData from '../cvData.ts';
 
-const { t } = useText();
+const { t, l } = useText();
 </script>
 
 <template>
   <SectionPanel id="about" :title="t('about.title')">
-    <p class="prose">{{ t('about.prose') }}</p>
+    <div class="prose" :inner-h-t-m-l="l(cvData.aboutMe)"></div>
   </SectionPanel>
 </template>
 
 <style lang="css" scoped>
-.prose {
+.prose ::deep(div) {
   margin-top: 1rem;
   font-size: clamp(1.125rem, 1.6vw, 1.375rem);
   line-height: 1.55;

@@ -3,7 +3,8 @@ import { useText } from '@/i18n';
 import LinkExternal from '@iconify-vue/fe/link-external';
 import CutTab from '../components/CutTab.vue';
 import LeadPanel from '../components/LeadPanel.vue';
-import { EMAIL, LINKS, yearsOfExperience } from '../cv.ts';
+import cvData from '../cvData';
+import { yearsOfExperience } from '../utils.ts';
 
 const { t } = useText();
 </script>
@@ -24,14 +25,14 @@ const { t } = useText();
         {{ t('hero.physics') }}
       </p>
       <div class="hero__actions">
-        <CutTab variant="solid" :href="`mailto:${EMAIL}`">{{ t('hero.email') }}</CutTab>
-        <CutTab v-for="l of LINKS" :key="l.label" variant="stitched" :href="l.href" target="_blank" rel="noopener">
+        <CutTab variant="solid" :href="`mailto:${cvData.email}`">{{ t('hero.email') }}</CutTab>
+        <CutTab v-for="l of cvData.links" :key="l.label" variant="stitched" :href="l.href" target="_blank" rel="noopener">
           {{ l.label }} <LinkExternal height="1em" aria-hidden="true" />
         </CutTab>
       </div>
     </div>
 
-    <LeadPanel />
+    <LeadPanel :email="cvData.email" />
   </section>
 </template>
 

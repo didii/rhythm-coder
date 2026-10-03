@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { useText } from '@/i18n';
-import { EMAIL } from '../cv';
+import { defineProps } from 'vue';
 import me from '../img/me.jpg';
 
+const props = defineProps<{ email: string }>();
 const { t } = useText();
 </script>
 
@@ -24,7 +25,7 @@ const { t } = useText();
       <div>
         <dt>{{ t('lead.mail') }}</dt>
         <dd>
-          <a :href="`mailto:${EMAIL}`">{{ EMAIL }}</a>
+          <a :href="`mailto:${props.email}`">{{ props.email }}</a>
         </dd>
       </div>
       <div>

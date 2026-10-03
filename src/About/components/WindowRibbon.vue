@@ -2,9 +2,8 @@
 import { LOCALES, useText } from '@/i18n';
 import Mail from '@iconify-vue/fe/mail';
 import { defineProps } from 'vue';
-import { EMAIL } from '../cv';
 
-defineProps<{ current: string; previous: string; stepDir: 'down' | 'up'; tick: number }>();
+const props = defineProps<{ email: string; current: string; previous: string; stepDir: 'down' | 'up'; tick: number }>();
 const { t, locale } = useText();
 </script>
 
@@ -29,8 +28,8 @@ const { t, locale } = useText();
         {{ l }}
       </button>
     </div>
-    <a class="ribbon__mail" :href="`mailto:${EMAIL}`" :aria-label="EMAIL">
-      <Mail height="1em" aria-hidden="true" /> <span>{{ EMAIL }}</span>
+    <a class="ribbon__mail" :href="`mailto:${props.email}`" :aria-label="props.email">
+      <Mail height="1em" aria-hidden="true" /> <span>{{ props.email }}</span>
     </a>
   </header>
 </template>
