@@ -14,8 +14,8 @@ import { employers } from './cv';
 
 const { t, locale } = useText();
 const index = computed(() => [
-  { id: 'top', label: t('nav.top') },
-  { id: 'about', label: t('nav.about') },
+  // hero and about share one eyelet: no room for both on a landscape phone
+  { id: 'top', label: t('nav.about') },
   ...employers.map((e) => ({ id: e.id, label: e.ribbonName })),
   { id: 'education', label: t('nav.education') },
   { id: 'skills', label: t('nav.skills') },
@@ -62,7 +62,7 @@ onMounted(() => {
       for (const e of entries) {
         const el = e.target as HTMLElement;
         if (e.isIntersecting) {
-          if (el.dataset.section) activeSection.value = el.id;
+          if (el.dataset.section && index.value.some((i) => i.id === el.id)) activeSection.value = el.id;
           next = el;
         } else if (el === currentEl && e.boundingClientRect.top > e.rootBounds!.top) {
           // the first course left downwards: back into its section's head, which never re-enters (it never left)
