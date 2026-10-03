@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router';
+import AboutMe from './About/AboutMe.vue';
 </script>
 
 <template>
-  <RouterView />
+  <AboutMe />
 </template>
-
-<style scoped></style>

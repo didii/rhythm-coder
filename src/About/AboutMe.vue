@@ -24,7 +24,7 @@ const index = computed(() => [
 ]);
 
 // The window ribbon: names the course currently under the top edge and steps one course on change.
-const current = ref('Van Broeck Dieter');
+const current = ref(cvData.name);
 const previous = ref('');
 const stepDir = ref<'down' | 'up'>('down');
 const tick = ref(0);

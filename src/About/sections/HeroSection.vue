@@ -6,15 +6,15 @@ import LeadPanel from '../components/LeadPanel.vue';
 import cvData from '../cvData';
 import { yearsOfExperience } from '../utils.ts';
 
-const { t } = useText();
+const { t, l } = useText();
 </script>
 
 <template>
-  <section id="top" data-section="Van Broeck Dieter" class="hero">
+  <section id="top" :data-section="cvData.name" class="hero">
     <div class="hero__window">
-      <h1 class="hero__name">Van Broeck Dieter</h1>
+      <h1 class="hero__name">{{ cvData.name }}</h1>
       <div class="hero__seam" aria-hidden="true"></div>
-      <p class="hero__role">{{ t('hero.role') }}</p>
+      <p class="hero__role">{{ l(cvData.function) }}</p>
     </div>
     <div class="hero__lede">
       <p class="hero__route">

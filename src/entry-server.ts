@@ -1,24 +1,17 @@
 // Build-time entry for scripts/prerender.mjs: renders the page to HTML and builds the <head> tags for scrapers.
 import { createSSRApp } from 'vue';
-import { createMemoryHistory } from 'vue-router';
 import { renderToString } from 'vue/server-renderer';
 import cvData from './About/cvData';
 import me from './About/img/me.jpg';
 import App from './App.vue';
 import { createAppI18n, pick } from './i18n.ts';
-import { createAppRouter } from './router.ts';
 
 const SITE = 'https://rhythm-coder.dev/';
 const TITLE = 'Dieter Van Broeck · CV';
 const DESCRIPTION = 'CV of Dieter Van Broeck, .NET and full-stack developer with a physics background.';
 
-export async function render(url: string) {
-  const app = createSSRApp(App);
-  const router = createAppRouter(createMemoryHistory());
-  app.use(router).use(createAppI18n());
-  await router.push(url);
-  await router.isReady();
-  return renderToString(app);
+export function render() {
+  return renderToString(createSSRApp(App).use(createAppI18n()));
 }
 
 export function head() {
