@@ -9,6 +9,8 @@
     "mail": "Mail"
   },
   "language": "Taal",
+  "skip": "Naar de inhoud",
+  "contact": "Contact",
   "newTab": "opent in een nieuw tabblad",
   "hero": {
     "role": "Softwareontwikkelaar",

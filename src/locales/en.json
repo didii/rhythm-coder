@@ -9,6 +9,8 @@
     "mail": "Mail"
   },
   "language": "Language",
+  "skip": "Skip to content",
+  "contact": "Contact",
   "newTab": "opens in a new tab",
   "hero": {
     "role": "Software developer",

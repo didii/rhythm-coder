@@ -87,10 +87,11 @@ onBeforeUnmount(() => observer?.disconnect());
 
 <template>
   <div class="roll">
+    <a class="skip" href="#main">{{ t('skip') }}</a>
     <IndexTape :items="index" :active="activeSection" />
     <WindowRibbon :email="cvData.email" :current="current" :previous="previous" :step-dir="stepDir" :tick="tick" />
 
-    <main class="main">
+    <main id="main" class="main">
       <HeroSection />
       <AboutMeSection />
       <EmployerSection v-for="emp of cvData.employers" :key="emp.id" :employer="emp" />
@@ -109,6 +110,29 @@ onBeforeUnmount(() => observer?.disconnect());
   --ribbon: 3.5rem;
   --gutter: clamp(1rem, 3vw, 2.5rem);
   min-height: 100vh;
+}
+
+/* skip link: off screen until a keyboard user tabs onto it */
+.skip {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 40;
+  padding: 0.6rem 1.1rem;
+  background: var(--color-mint);
+  color: var(--color-jacket-deep);
+  font-family: var(--font-legend);
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+.skip:focus-visible {
+  transform: none;
+  outline-color: currentColor;
+  outline-offset: -5px;
 }
 
 .main {

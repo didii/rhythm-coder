@@ -8,7 +8,9 @@ const { t } = useText();
 </script>
 
 <template>
-  <section id="contact" data-section="Contact" class="close">
+  <section id="contact" data-section="Contact" class="close" aria-labelledby="contact-title">
+    <!-- the address is the headline; this names the section for heading navigation -->
+    <h2 id="contact-title" class="sr-only">{{ t('contact') }}</h2>
     <a class="close__mail" :href="`mailto:${cvData.email}`">{{ cvData.email }}</a>
     <div class="close__links">
       <CutTab v-for="l of cvData.links" :key="l.label" variant="stitched" :href="l.href" target="_blank" rel="noopener">
