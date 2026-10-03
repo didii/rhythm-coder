@@ -22,11 +22,11 @@ A .NET and full-stack developer with a physics background who turns complex anal
 - Search engines and link previews read the prerendered HTML and the schema.org `Person` data, so the content must be complete without JavaScript.
 
 ## Capabilities and Constraints
-- Vue 3 + Vite single page with vue-router, vue-i18n, Tailwind CSS v4 and `@iconify-vue/fe` icons, prerendered at build time and hosted on GitHub Pages. This Vue app is the CV that ships; the sibling `astro/` and `next/` projects are separate experiments.
+- Vue 3 + Vite single page with vue-i18n, Tailwind CSS v4 and `@iconify-vue/fe` icons, prerendered at build time and hosted on GitHub Pages. This Vue app is the CV that ships; the sibling `astro/` and `next/` projects are separate experiments.
 - Sections: hero (name, role, headline facts, email), profile panel (photo, location, contact, driving licence, birth date), About me, Work experience (one section per employer, collapsible assignments), Education, Skills (rated categories on a 7-point punch scale, plus an expandable overview of all skills), Talks (collapsible presentations) and Contact.
 - Navigation: an index tape of section eyelets and a window ribbon that names the section or assignment under the top edge while scrolling.
 - **Language:** English and Dutch, switchable by the visitor. The choice is remembered; the first visit follows the browser language. The prerendered page is English.
-- All CV content lives in `src/About/cv.ts`; UI strings live in `src/locales/{en,nl}.json`.
+- All CV content lives in `src/About/cvData.ts`; UI strings live in `src/locales/{en,nl}.json`.
 
 ## Brand Commitments
 - Name as shown: "Van Broeck Dieter", role "Software developer". Personal domain and handle: rhythm-coder.

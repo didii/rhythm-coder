@@ -149,7 +149,7 @@ Four colours sampled from the profile photo, plus ink. Jacket blue is the field,
 **Display Font:** Sofia Sans Extra Condensed (with sans-serif)
 **Body Font:** Mulish (with Segoe UI, Roboto, sans-serif)
 
-**Character:** Two families. The extra-condensed Sofia Sans cut in heavy uppercase does the blind lettering. Mulish in roman weights does the reading. Both load from Google Fonts: Mulish at 400–800 with italics, Extra Condensed at 500–900. Tabular numerals are on globally, so periods and codes line up.
+**Character:** Two families. The extra-condensed Sofia Sans cut in heavy uppercase does the blind lettering. Mulish in roman weights does the reading. Mulish is self-hosted (variable, roman and italic); Extra Condensed loads from Google Fonts at 500–900. Tabular numerals are on globally, so periods and codes line up.
 
 ### Hierarchy
 - **Display** (900, clamp(4.25rem, 11.5vw, 10rem), 0.86): The name in the hero window only. Mint, uppercase, balanced.
