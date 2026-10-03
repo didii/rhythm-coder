@@ -9,7 +9,7 @@ const { t, l } = useText();
 
 <template>
   <SectionPanel id="education" :title="t('education')">
-    <ul class="edu">
+    <ul class="edu" role="list">
       <li v-for="e of cvData.educations" :key="e.period" class="edu__item">
         <h3 class="edu__degree">{{ l(e.degree) }}</h3>
         <p class="edu__meta">

@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { LOCALES, useText } from '@/i18n';
+import { LOCALES, useText, type Locale } from '@/i18n';
 import Mail from '@iconify-vue/fe/mail';
 
 const props = defineProps<{ email: string; current: string; previous: string; stepDir: 'down' | 'up'; tick: number }>();
 const { t, locale } = useText();
+// each language named in itself, so it reads the same whichever is active
+const LANGUAGES: Record<Locale, string> = { en: 'English', nl: 'Nederlands' };
 </script>
 
 <template>
@@ -23,7 +25,7 @@ const { t, locale } = useText();
       </span>
     </span>
     <div class="ribbon__lang" role="group" :aria-label="t('language')">
-      <button v-for="l of LOCALES" :key="l" type="button" class="ribbon__locale" :lang="l" :aria-pressed="locale === l" @click="locale = l">
+      <button v-for="l of LOCALES" :key="l" type="button" class="ribbon__locale" :lang="l" :aria-label="LANGUAGES[l]" :aria-pressed="locale === l" @click="locale = l">
         {{ l }}
       </button>
     </div>
@@ -113,6 +115,11 @@ const { t, locale } = useText();
   text-decoration: none;
   clip-path: polygon(0 0, 100% 0, calc(100% - 0.5rem) 100%, 0 100%);
   transition: background-color 160ms ease-out;
+}
+/* clip-path cuts away an outside focus ring */
+.ribbon__mail:focus-visible {
+  outline-color: currentColor;
+  outline-offset: -4px;
 }
 .ribbon__mail:hover {
   background: var(--color-sand);

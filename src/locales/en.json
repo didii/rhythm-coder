@@ -9,6 +9,7 @@
     "mail": "Mail"
   },
   "language": "Language",
+  "newTab": "opens in a new tab",
   "hero": {
     "role": "Software developer",
     "expert": ".NET & React expert",

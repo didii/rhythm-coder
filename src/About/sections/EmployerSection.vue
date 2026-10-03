@@ -43,7 +43,7 @@ const { t, l } = useText();
     <div v-if="employer.description" :id="`${employer.id}-about`" class="employer__about" :class="{ 'employer__about--open': open }" :inert="!open">
       <div v-html="l(employer.description)"></div>
     </div>
-    <ol class="courses" :aria-label="t('employer.assignments', { name: employer.name })">
+    <ol class="courses" role="list" :aria-label="t('employer.assignments', { name: employer.name })">
       <CourseRow v-for="c of employer.courses" :key="`${c.img}-${c.period}`" :course="c" />
     </ol>
   </section>

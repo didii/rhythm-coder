@@ -15,7 +15,7 @@ const { t, l } = useText();
     <div class="skills">
       <div v-for="cat of cvData.mainSkills" :key="l(cat.name)" class="skills__cat">
         <h3 class="skills__name">{{ l(cat.name) }}</h3>
-        <ul>
+        <ul role="list">
           <li v-for="s of cat.skills" :key="l(s.name)" class="skill">
             <span class="skill__name">{{ l(s.name) }}</span>
             <span class="skill__rating" role="img" :aria-label="t('skills.rating', { n: s.rating })">

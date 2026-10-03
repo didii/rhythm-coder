@@ -28,7 +28,7 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
       <span v-if="course.img" class="course__img" :style="{ '--logo': `url(${course.img})` }"></span>
     </div>
     <div class="course__body">
-      <h4 class="course__legend">
+      <h3 class="course__legend">
         <button
           v-if="course.description"
           type="button"
@@ -43,22 +43,22 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
         >
           <span class="course__name">{{ l(course.name) }}</span>
           <template v-if="course.line">
-            <span class="course__line">/</span>
+            <span class="course__line" aria-hidden="true">/</span>
             <span class="course__line">{{ course.line }}</span>
           </template>
           <span class="course__tab">
-            {{ open ? t('close') : t('read') }}
+            {{ t('read') }}
             <Plus class="course__icon" height="1em" aria-hidden="true" />
           </span>
         </button>
         <span v-else>
           <span class="course__name">{{ l(course.name) }}</span>
           <template v-if="course.line">
-            <span class="course__line">/</span>
+            <span class="course__line" aria-hidden="true">/</span>
             <span class="course__line">{{ course.line }}</span>
           </template>
         </span>
-      </h4>
+      </h3>
       <p v-if="course.role" class="course__role">{{ course.role }}</p>
       <!-- one line while closed (the browser adds … when it overflows); the full list once opened -->
       <p class="course__keywords" :class="{ 'course__keywords--clamped': course.description && !open }">

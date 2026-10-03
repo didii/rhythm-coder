@@ -1,10 +1,15 @@
 <script setup lang="ts">
+import { useText } from '@/i18n';
+
 defineProps<{ variant: 'solid' | 'stitched' | 'ink' }>();
+const { t } = useText();
 </script>
 
 <template>
   <!-- a link when given an href, a button otherwise -->
-  <component :is="$attrs.href ? 'a' : 'button'" class="tab" :class="`tab--${variant}`"><slot /></component>
+  <component :is="$attrs.href ? 'a' : 'button'" class="tab" :class="`tab--${variant}`"
+    ><slot /><span v-if="$attrs.target === '_blank'" class="sr-only"> ({{ t('newTab') }})</span></component
+  >
 </template>
 
 <style scoped>
@@ -25,6 +30,11 @@ defineProps<{ variant: 'solid' | 'stitched' | 'ink' }>();
     background-color 160ms ease-out,
     color 160ms ease-out;
 }
+/* clip-path cuts away an outside focus ring: draw it inside, in the text colour (--focus can match the fill) */
+.tab:focus-visible {
+  outline-color: currentColor;
+  outline-offset: -5px;
+}
 .tab--solid {
   background: var(--color-mint);
   color: var(--color-jacket-deep);
@@ -38,6 +48,11 @@ defineProps<{ variant: 'solid' | 'stitched' | 'ink' }>();
   outline: 1px dashed var(--color-mint);
   outline-offset: -5px;
   padding-right: 1.1rem;
+}
+/* not clipped, and the stitch already sits inside: focus moves it out and thickens it */
+.tab--stitched:focus-visible {
+  outline-width: 2px;
+  outline-offset: 3px;
 }
 .tab--stitched:hover {
   background: color-mix(in srgb, var(--color-mint) 12%, transparent);

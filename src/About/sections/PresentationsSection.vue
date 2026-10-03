@@ -35,7 +35,7 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
       <h2 id="talks-title" class="talks__title">{{ $t('talks.title') }}</h2>
       <p class="talks__sub">{{ $t('talks.sub') }}</p>
     </div>
-    <ol class="talks__list">
+    <ol class="talks__list" role="list">
       <li v-for="(t, i) of talks" :key="t.title" class="talk" :class="{ 'talk--open': isOpen(t.title) }" :data-course="t.title">
         <div class="talk__band">
           <span class="talk__img" :style="{ '--logo': `url(${t.img})` }" aria-hidden="true"></span>
@@ -50,7 +50,7 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
             >
               <span>{{ t.title }}</span>
               <span class="talk__tab">
-                {{ isOpen(t.title) ? $t('close') : $t('read') }}
+                {{ $t('read') }}
                 <Plus class="talk__icon" height="1em" aria-hidden="true" />
               </span>
             </button>
