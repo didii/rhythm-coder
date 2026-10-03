@@ -14,12 +14,12 @@ const { t, locale } = useText();
       <span :key="tick" class="ribbon__strip" :class="tick ? `ribbon__strip--${stepDir}` : ''">
         <template v-if="tick && stepDir === 'down'"
           ><span>{{ previous }}</span
-          ><span>{{ current }}</span></template
-        >
+          ><span>{{ current }}</span>
+        </template>
         <template v-else-if="tick"
           ><span>{{ current }}</span
-          ><span>{{ previous }}</span></template
-        >
+          ><span>{{ previous }}</span>
+        </template>
         <span v-else>{{ current }}</span>
       </span>
     </span>
