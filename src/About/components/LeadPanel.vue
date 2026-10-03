@@ -11,14 +11,18 @@ const { t } = useText();
     <figure class="lead__photo">
       <img :src="me" :alt="t('lead.photo')" />
       <figcaption>
-        <a href="https://maps.app.goo.gl/fwdgWsmg1QdTn8MQ6" target="_blank" rel="noopener">{{ t('peru') }}<span class="sr-only"> ({{ t('newTab') }})</span></a>
+        <a href="https://maps.app.goo.gl/fwdgWsmg1QdTn8MQ6" target="_blank" rel="noopener">
+          {{ t('peru') }}<span class="sr-only"> ({{ t('newTab') }})</span>
+        </a>
       </figcaption>
     </figure>
     <dl class="lead__facts">
       <div>
         <dt>{{ t('lead.basedIn') }}</dt>
         <dd>
-          <a href="https://www.google.com/maps/place/Zoersel" target="_blank" rel="noopener">{{ t('place') }}<span class="sr-only"> ({{ t('newTab') }})</span></a>
+          <a href="https://www.google.com/maps/place/Zoersel" target="_blank" rel="noopener">
+            {{ t('place') }}<span class="sr-only"> ({{ t('newTab') }})</span>
+          </a>
         </dd>
       </div>
       <div>
@@ -65,7 +69,9 @@ const { t } = useText();
 .lead__photo a,
 .lead__facts a {
   color: inherit;
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
 }
 .lead__photo a:hover,
 .lead__facts a:hover {

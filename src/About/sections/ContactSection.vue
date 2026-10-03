@@ -17,7 +17,9 @@ const { t } = useText();
         {{ l.label }} <LinkExternal height="1em" aria-hidden="true" />
       </CutTab>
     </div>
-    <p class="close__addr">{{ t('place') }}</p>
+    <div class="close__addr">
+      <a href="https://www.google.com/maps/place/Zoersel">{{ t('place') }}</a>
+    </div>
   </section>
 </template>
 
@@ -53,5 +55,11 @@ const { t } = useText();
   margin-top: 1rem;
   font-size: 1.125rem;
   color: var(--color-sand);
+}
+.close__addr a {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--color-mint);
 }
 </style>

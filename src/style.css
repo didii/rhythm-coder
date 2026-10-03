@@ -41,6 +41,7 @@
   a {
     text-underline-offset: 0.2em;
     text-decoration-thickness: 1px;
+    text-decoration-color: var(--color-mint-deep);
   }
   /* print / save as PDF: keep the cloth colours, unroll every panel, drop the navigation chrome.
      !important because the component rules are scoped (attribute selectors) and win otherwise. */
