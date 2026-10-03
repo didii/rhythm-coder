@@ -2,9 +2,9 @@
 import { useText } from '@/i18n';
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import IndexTape from './components/IndexTape.vue';
-import SectionPanel from './components/SectionPanel.vue';
 import WindowRibbon from './components/WindowRibbon.vue';
 import { employers } from './cv';
+import AboutMeSection from './sections/AboutMeSection.vue';
 import ContactSection from './sections/ContactSection.vue';
 import EducationSection from './sections/EducationSection.vue';
 import EmployerSection from './sections/EmployerSection.vue';
@@ -90,13 +90,9 @@ onBeforeUnmount(() => observer?.disconnect());
     <IndexTape :items="index" :active="activeSection" />
     <WindowRibbon :current="current" :previous="previous" :step-dir="stepDir" :tick="tick" />
 
-    <main>
+    <main class="main">
       <HeroSection />
-
-      <SectionPanel id="about" :title="t('about.title')">
-        <p class="panel__prose">{{ t('about.prose') }}</p>
-      </SectionPanel>
-
+      <AboutMeSection />
       <EmployerSection v-for="emp of employers" :key="emp.id" :employer="emp" />
       <EducationSection />
       <SkillsSection />
@@ -115,16 +111,10 @@ onBeforeUnmount(() => observer?.disconnect());
   min-height: 100vh;
 }
 
-main {
+.main {
   margin-left: var(--tape);
   padding-inline: var(--gutter);
   max-width: calc(78rem + var(--tape));
-}
-
-.panel__prose {
-  margin-top: 1rem;
-  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
-  line-height: 1.55;
 }
 
 /* ---------- narrow ---------- */
@@ -134,7 +124,7 @@ main {
     --ribbon: 3rem;
   }
 
-  main {
+  .main {
     padding-bottom: 4.5rem;
   }
 }
