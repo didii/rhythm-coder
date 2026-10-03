@@ -54,7 +54,6 @@ export interface Course {
 export interface Employer {
   id: string;
   name: string;
-  ribbonName: string;
   logo: string;
   period: string;
   activity: Text;
@@ -66,7 +65,6 @@ export const employers: Employer[] = [
   {
     id: 'kenze',
     name: 'Kenze',
-    ribbonName: 'Kenze',
     logo: kenzeLogo,
     period: '10/2021 – now',
     activity: { en: '.NET developer consultant', nl: '.NET-consultant' },
@@ -301,7 +299,6 @@ export const employers: Employer[] = [
   {
     id: 'ordina',
     name: 'Ordina Belgium',
-    ribbonName: 'Ordina',
     logo: ordinaLogo,
     period: '08/2017 – 09/2021',
     activity: { en: '.NET developer consultant', nl: '.NET-consultant' },
@@ -697,7 +694,6 @@ export const employers: Employer[] = [
   {
     id: 'technicolor',
     name: 'Technicolor',
-    ribbonName: 'Student',
     logo: technicolorLogo,
     period: '07/2015 – 07/2017',
     activity: { en: 'Student software developer', nl: 'Student-softwareontwikkelaar' },

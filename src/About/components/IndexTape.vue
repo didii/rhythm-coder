@@ -88,10 +88,6 @@ const { t } = useText();
     min-width: 2.75rem;
     padding-block: 0.25rem;
   }
-  /* no room in the bottom bar; the student years sit right under Ordina anyway */
-  .eyelet[data-id='technicolor'] {
-    display: none;
-  }
   .eyelet__ring {
     width: 1.1rem;
     height: 1.1rem;

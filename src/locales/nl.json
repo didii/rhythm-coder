@@ -2,6 +2,7 @@
   "nav": {
     "sections": "Secties",
     "about": "Over",
+    "work": "Werk",
     "education": "Opleiding",
     "skills": "Skills",
     "talks": "Talks",
@@ -47,18 +48,5 @@
     "title": "Presentaties",
     "sub": "Interne talks {'@'} Kenze"
   },
-  "months": [
-    "jan",
-    "feb",
-    "mrt",
-    "apr",
-    "mei",
-    "jun",
-    "jul",
-    "aug",
-    "sep",
-    "okt",
-    "nov",
-    "dec"
-  ]
+  "months": ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"]
 }

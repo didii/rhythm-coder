@@ -14,9 +14,9 @@ import { employers } from './cv';
 
 const { t, locale } = useText();
 const index = computed(() => [
-  // hero and about share one eyelet: no room for both on a landscape phone
+  // sections share eyelets: no room for one each on a landscape phone
   { id: 'top', label: t('nav.about') },
-  ...employers.map((e) => ({ id: e.id, label: e.ribbonName })),
+  { id: employers[0]!.id, label: t('nav.work') },
   { id: 'education', label: t('nav.education') },
   { id: 'skills', label: t('nav.skills') },
   { id: 'talks', label: t('nav.talks') },
@@ -29,6 +29,11 @@ const previous = ref('');
 const stepDir = ref<'down' | 'up'>('down');
 const tick = ref(0);
 const activeSection = ref('top');
+// sections without an eyelet of their own light up the one they share
+const eyeletOf: Record<string, string> = {
+  about: 'top',
+  ...Object.fromEntries(employers.map((e) => [e.id, employers[0]!.id])),
+};
 
 let observer: IntersectionObserver | undefined;
 let targets: HTMLElement[] = [];
@@ -62,7 +67,7 @@ onMounted(() => {
       for (const e of entries) {
         const el = e.target as HTMLElement;
         if (e.isIntersecting) {
-          if (el.dataset.section && index.value.some((i) => i.id === el.id)) activeSection.value = el.id;
+          if (el.dataset.section) activeSection.value = eyeletOf[el.id] ?? el.id;
           next = el;
         } else if (el === currentEl && e.boundingClientRect.top > e.rootBounds!.top) {
           // the first course left downwards: back into its section's head, which never re-enters (it never left)
