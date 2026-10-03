@@ -26,7 +26,6 @@ coverage
 
 *.tsbuildinfo
 
-.eslintcache
 
 # Cypress
 /cypress/videos/
@@ -70,3 +69,9 @@ plugins/impeccable-live.client.ts
 app/plugins/impeccable-live.client.ts
 src/plugins/impeccable-live.client.ts
 # impeccable-live-ignore-end
+
+# local AI tooling
+.impeccable/
+.agents/
+.claude/skills/
+skills-lock.json
