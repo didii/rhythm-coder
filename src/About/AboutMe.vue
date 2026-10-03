@@ -73,7 +73,7 @@ onMounted(() => {
       if (next) show(next);
     },
     // a thin band just under the ribbon is "the window"
-    { rootMargin: '-25% 0px -85% 0px' },
+    { rootMargin: '-25% 0px -74% 0px' },
   );
   targets.forEach((t) => observer!.observe(t));
 });
