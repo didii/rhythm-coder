@@ -35,6 +35,6 @@ Deploy: every push to `main` builds and publishes `dist/` to GitHub Pages (`.git
 
 - `PRODUCT.md` — audience (recruiters), purpose, content rules. Do not invent descriptions, achievements or metrics to fill content gaps.
 - `DESIGN.md` — the visual system ("depot destination blind"): color tokens, Sofia Sans Extra Condensed + Mulish type, square corners, spacing. Follow it for UI changes. The impeccable plugin uses it as well; its `.impeccable/` folder is local only (gitignored), like `.agents/` and `.claude/skills/`.
-- Fonts: Mulish is self-hosted from `src/fonts/` (variable woff2, Latin subset, OFL licence); Sofia Sans Extra Condensed still loads from Google Fonts in `index.html`.
+- Fonts: Mulish and Sofia Sans Extra Condensed are self-hosted from `src/fonts/` (variable woff2, Latin subset, OFL licences).
 - Logos in `src/About/img/` are at most 64×64 px, the size they display at.
 - The `@/` path alias maps to `src/`.
