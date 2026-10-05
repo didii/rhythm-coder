@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { useText } from '@/i18n';
+import { useText, type Text } from '@/i18n';
 import me from '../img/me.jpg';
 
-const props = defineProps<{ email: string }>();
-const { t } = useText();
+const props = defineProps<{ location: Text; email: string; driverLicense: string; yearOfBirth: number }>();
+const { t, l } = useText();
 </script>
 
 <template>
@@ -21,7 +21,7 @@ const { t } = useText();
         <dt>{{ t('lead.basedIn') }}</dt>
         <dd>
           <a href="https://www.google.com/maps/place/Zoersel" target="_blank" rel="noopener">
-            {{ t('place') }}<span class="sr-only"> ({{ t('newTab') }})</span>
+            {{ l(props.location) }}<span class="sr-only"> ({{ t('newTab') }})</span>
           </a>
         </dd>
       </div>
@@ -33,11 +33,13 @@ const { t } = useText();
       </div>
       <div>
         <dt>{{ t('lead.licence') }}</dt>
-        <dd>B</dd>
+        <dd>{{ props.driverLicense }}</dd>
       </div>
       <div>
         <dt>{{ t('lead.born') }}</dt>
-        <dd><time datetime="1991">1991</time></dd>
+        <dd>
+          <time datetime="1991">{{ props.yearOfBirth }}</time>
+        </dd>
       </div>
     </dl>
   </aside>

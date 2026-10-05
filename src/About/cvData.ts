@@ -22,6 +22,10 @@ const cvData: CvData = {
   name: 'Van Broeck Dieter',
   function: { en: 'Software developer', nl: 'Softwareontwikkelaar' },
   email: 'cv@rhythm-coder.dev',
+  location: { en: 'Zoersel, Belgium', nl: 'Zoersel, België' },
+  locationHref: 'https://www.google.com/maps/place/Zoersel',
+  drivingLicense: 'B',
+  yearOfBirth: 1991,
   aboutMe: {
     en: `
       <p>

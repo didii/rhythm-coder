@@ -3,7 +3,11 @@ import type { Text } from '../i18n';
 export interface CvData {
   name: string;
   function: Text;
+  location: Text;
+  locationHref: string;
   email: string;
+  drivingLicense: string;
+  yearOfBirth: number;
   aboutMe: Text;
   links: LinkInfo[];
   employers: Employer[];

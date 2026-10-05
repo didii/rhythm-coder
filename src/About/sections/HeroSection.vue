@@ -32,7 +32,7 @@ const { t, l } = useText();
       </div>
     </div>
 
-    <LeadPanel :email="cvData.email" />
+    <LeadPanel :location="cvData.location" :email="cvData.email" :driver-license="cvData.drivingLicense" :year-of-birth="cvData.yearOfBirth" />
   </section>
 </template>
 
