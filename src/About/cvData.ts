@@ -147,7 +147,7 @@ const cvData = {
           id: 'odot2023' as const,
           img: odotLogo,
           name: 'Odot',
-          role: 'Fullstack .NET Developer',
+          role: 'Full-stack .NET Developer',
           line: 'EMP',
           period: '08/2023 – 09/2024',
           keywords: ['React', 'TypeScript', 'ASP.NET (Web API)', 'Azure', 'CQRS', 'SignalR'],
@@ -231,7 +231,7 @@ const cvData = {
           id: 'gosselin2022' as const,
           img: gosselinLogo,
           name: 'Gosselin',
-          role: 'Fullstack .NET Developer',
+          role: 'Full-stack .NET Developer',
           line: 'Gosselin',
           period: '12/2022 – 04/2023',
           keywords: ['Frontend lead', 'React', 'ASP.NET (Web API)', '.NET Core', 'Code Reviews'],
@@ -704,14 +704,18 @@ const cvData = {
           img: digipolisLogo,
           name: 'Digipolis Antwerpen',
           line: 'Delivery Request Registration',
-          role: 'Fullstack .NET Developer',
+          role: 'Full-stack .NET Developer',
           period: '09/2017 – 11/2017',
-          keywords: ['.NET Core', 'Angular', 'PostgreSQL', 'Docker', 'Hangfire', 'EF Core'],
+          keywords: ['.NET Core', 'Angular', 'PostgreSQL', 'Docker', 'Hangfire', 'EF Core', 'Scrum'],
           description: {
             en: `
               <p>
                 This project digitized the application for identity cards and other official documents for the city of Antwerp. It covered everything
                 from the administration application to forwarding requests to the postal service, so these products could be delivered to people's homes.
+              </p>
+              <p>
+                This was my first assignment. Together with another starter, I implemented the application, from the Angular frontend to the .NET
+                backend. It was also my introduction to working in a Scrum team, with daily stand-ups, sprints and close collaboration within the team.
               </p>
             `,
             nl: `
@@ -719,6 +723,11 @@ const cvData = {
                 De aanvraag voor identiteitskaarten en andere officiële documenten werd in dit project gedigitaliseerd voor de stad Antwerpen. Dit
                 project hield de administratieapplicatie in tot het doorsturen van aanvragen naar de post om deze producten tot thuis te kunnen laten
                 leveren.
+              </p>
+              <p>
+                Dit was mijn eerste opdracht. Samen met een andere starter implementeerde ik de applicatie, van de Angular-frontend tot de
+                .NET-backend. Het was ook mijn kennismaking met werken in een Scrum-team, met dagelijkse stand-ups, sprints en nauwe samenwerking
+                binnen het team.
               </p>
             `,
           },
