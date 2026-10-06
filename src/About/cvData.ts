@@ -60,7 +60,7 @@ const cvData: CvData = {
             strong frontend knowledge and focus, and in the office, colleagues often come to me for advice.
           </p>
           <p>
-            I also put effort into strong bonds between colleagues, by organising board game nights and trips to theme parks such as Phantasialand and
+            I also put effort into strong bonds between colleagues, by organizing board game nights and trips to theme parks such as Phantasialand and
             Europa-Park.
           </p>
         `,
@@ -70,8 +70,8 @@ const cvData: CvData = {
             sterke frontendkennis en -focus, en op kantoor komen collega's vaak bij mij langs voor advies.
           </p>
           <p>
-            Daarnaast zet ik in op sterke banden tussen collega's, door bordspelavonden te organiseren en samen naar pretparken zoals Phantasialand en
-            Europa-Park te gaan.
+            Daarnaast zet ik in op sterke banden tussen collega's, door bordspeelavonden te organiseren en samen naar pretparken zoals Phantasialand
+            en Europa-Park te gaan.
           </p>
         `,
       },
@@ -86,7 +86,7 @@ const cvData: CvData = {
           description: {
             en: `
               <p>
-                Taxi Hendriks specialises in transport for people with reduced mobility and hospital transport. For hospital transport, I built most
+                Taxi Hendriks specializes in transport for people with reduced mobility and hospital transport. For hospital transport, I built most
                 of a new software platform to replace an outdated legacy system that no longer scaled. The new application supports the full process,
                 from back office and planning to live tracking of transports, a mobile scanning app and a platform to request transports. Urgency,
                 real-time follow-up and conditioning, including live temperature monitoring, are especially important. The platform also supports the
@@ -144,7 +144,7 @@ const cvData: CvData = {
               </p>
               <p>
                 We built both portals in React on a shared .NET backend, in close communication with the business and the product owner. The internal
-                portal is built for efficiency. The customer portal follows the designs closely and focuses on readability, visualising data in graphs
+                portal is built for efficiency. The customer portal follows the designs closely and focuses on readability, visualizing data in graphs
                 such as consumption, costs and the yield of solar panels.
               </p>
               <p>
@@ -182,7 +182,7 @@ const cvData: CvData = {
                 Actemium builds software to test and validate industrial machines. The application offers a very flexible drag-and-drop interface in
                 which test flows are built as a graph of nodes. These nodes represent actions that can run sequentially or in parallel, with support
                 for different success and failure scenarios. Testing these flows is complex: tests are typically "setup-and-run", where every step has
-                to complete without any chance of manual inspection during execution. Errors can only be analysed afterwards through logs, which makes
+                to complete without any chance of manual inspection during execution. Errors can only be analyzed afterwards through logs, which makes
                 debugging and iterative development hard, especially for end users.
               </p>
               <p>
@@ -239,7 +239,7 @@ const cvData: CvData = {
                 als doel de ontwikkeling van geneesmiddelen en behandelingen te verbeteren.
               </p>
               <p>
-                Binnen deze start-upomgeving, waar de middelen beperkt zijn, werd ondersteuning gevraagd voor de frontendontwikkeling omdat deze
+                Binnen deze startup-omgeving, waar de middelen beperkt zijn, werd ondersteuning gevraagd voor de frontendontwikkeling omdat deze
                 onvoldoende vooruitgang boekte. Ik nam hierbij een begeleidende rol op me, met regelmatige code reviews, technische ondersteuning op
                 vraag en het uitwerken van een verbeterstrategie voor de frontendarchitectuur.
               </p>
@@ -258,7 +258,7 @@ const cvData: CvData = {
               <p>
                 Gosselin is a major logistics company based in Antwerp and has been a partner of the US Department of Defense for many years. The
                 company handles the first- and last-mile shipping of personal goods for US Army personnel on bases in Europe. With the renewal of the
-                latest tender came the need to modernise the existing software landscape and to provide more data integrations with other partners in
+                latest tender came the need to modernize the existing software landscape and to provide more data integrations with other partners in
                 the DoD ecosystem. To meet the requirements of the contract in time, Gosselin took over an existing software product from a partner to
                 develop further.
               </p>
@@ -294,7 +294,7 @@ const cvData: CvData = {
               <p>
                 Connective mainly provides digital signing of documents and supports several signing methods. The frontend application for signers,
                 called WYSIWYS (What You See Is What You Sign), was due for a redesign, both in code quality and user experience. There was a strong
-                focus on setting up a component library: I introduced Storybook for it, along with a customisable theming system that the library
+                focus on setting up a component library: I introduced Storybook for it, along with a customizable theming system that the library
                 supported and clients could choose from.
               </p>
             `,
@@ -349,7 +349,7 @@ const cvData: CvData = {
           description: {
             en: `
               <p>
-                I supervised two interns building a playful VR meeting room. Besides helping them structure their code, I focused mainly on organising
+                I supervised two interns building a playful VR meeting room. Besides helping them structure their code, I focused mainly on organizing
                 and following up the work and on brainstorming ideas and features.
               </p>
             `,
@@ -371,7 +371,7 @@ const cvData: CvData = {
           description: {
             en: `
               <p>
-                Between 2019 and 2021, I worked at VLM on several evolutions of the MTIL and TOMAS systems, applications that digitise and enforce
+                Between 2019 and 2021, I worked at VLM on several evolutions of the MTIL and TOMAS systems, applications that digitize and enforce
                 complex agricultural and manure transport regulations. MTIL 2.5 focused on extending an existing web application for requesting and
                 validating manure transports. The emphasis was on improving stability, maintainability and separation of concerns in the architecture,
                 resulting in a stable release with new features and positive user feedback.
@@ -425,7 +425,7 @@ const cvData: CvData = {
           description: {
             en: `
               <p>
-                Fluxys is a company specialised in gas transport in Belgium. My team focused mainly on the communication software Connect, which
+                Fluxys is a company specialized in gas transport in Belgium. My team focused mainly on the communication software Connect, which
                 handles communication with customers and between internal Fluxys applications. This software follows the pipes-and-filters pattern
                 with message queues, and the codebase consists largely of XML transformations.
               </p>
@@ -474,9 +474,9 @@ const cvData: CvData = {
                 partners, which pushed the Excel file to its limits.
               </p>
               <p>
-                We were asked both to build a new management application for presentations and access control and to optimise the client app. The
+                We were asked both to build a new management application for presentations and access control and to optimize the client app. The
                 implementation was left entirely to us. We moved most of the project to Azure to improve performance and control, with the intention
-                of depending on SharePoint as little as possible. Because of the short 30-day deadline we could not realise the full vision, but we
+                of depending on SharePoint as little as possible. Because of the short 30-day deadline we could not realize the full vision, but we
                 did lay the groundwork.
               </p>
             `,
@@ -555,13 +555,13 @@ const cvData: CvData = {
               <p>
                 This was a short pre-sales project in which we built a demo for a client around the possibilities, strengths and limitations of the
                 ELK stack (Elasticsearch, Logstash and Kibana). The focus was on storing log data from different applications centrally and making it
-                searchable, and on visualising business data across a chain of applications through logging. The latter proved complex, since
+                searchable, and on visualizing business data across a chain of applications through logging. The latter proved complex, since
                 Elasticsearch expects data in the shape it will be queried in, and Logstash is not designed to aggregate and restructure datasets.
               </p>
               <p>
-                We advised the client to use the ELK stack to centralise log data, since that is a typical use case the stack is well suited for. At
-                the same time, we pointed out that the ELK stack is less suited to visualising business data. Because the client had enough in-house
-                knowledge to implement the log centralisation themselves, no follow-up project came of it.
+                We advised the client to use the ELK stack to centralize log data, since that is a typical use case the stack is well suited for. At
+                the same time, we pointed out that the ELK stack is less suited to visualizing business data. Because the client had enough in-house
+                knowledge to implement the log centralization themselves, no follow-up project came of it.
               </p>
             `,
             nl: `
@@ -596,8 +596,8 @@ const cvData: CvData = {
                 unclear architecture and business logic.
               </p>
               <p>
-                Digipolis called in support to stabilise and improve the application. We worked in phases: first, we tested the system as a black box
-                to better understand its behaviour. Next, we analysed and optimised performance, using these tests as regression protection. In a
+                Digipolis called in support to stabilize and improve the application. We worked in phases: first, we tested the system as a black box
+                to better understand its behavior. Next, we analyzed and optimized performance, using these tests as regression protection. In a
                 final phase, we worked on structural improvements and a redesign of the application. The project was eventually paused due to external
                 complications at GDP's clients.
               </p>
