@@ -8,7 +8,7 @@ import { createAppI18n, pick } from './i18n.ts';
 
 const SITE = 'https://rhythm-coder.dev/';
 const TITLE = 'Dieter Van Broeck · CV';
-const DESCRIPTION = 'CV of Dieter Van Broeck, .NET and full-stack developer with a physics background.';
+const DESCRIPTION = 'CV of Dieter Van Broeck, senior full-stack .NET developer with a physics background.';
 
 export function render() {
   return renderToString(createSSRApp(App).use(createAppI18n()));
@@ -22,7 +22,7 @@ export function head() {
     name: 'Dieter Van Broeck',
     givenName: 'Dieter',
     familyName: 'Van Broeck',
-    jobTitle: '.NET and full-stack developer',
+    jobTitle: pick(cvData.function, 'en'),
     description: DESCRIPTION,
     url: SITE,
     image,
@@ -39,8 +39,8 @@ export function head() {
     })),
     knowsLanguage: ['nl', 'en', 'fr'],
     knowsAbout: [
-      ...cvData.mainSkills.filter((c) => pick(c.name, 'en') !== 'Spoken languages').flatMap((c) => c.skills.map((s) => pick(s.name, 'en'))),
-      ...cvData.skills.filter((c) => pick(c.name, 'en') !== 'Soft skills').flatMap((c) => c.skills.slice(0, 3).map((s) => pick(s, 'en'))),
+      ...cvData.mainSkills.filter((c) => c.id !== 'spokenLanguages').flatMap((c) => c.skills.map((s) => pick(s.name, 'en'))),
+      ...cvData.skills.filter((c) => c.id !== 'softSkills').flatMap((c) => c.skills.slice(0, 3).map((s) => pick(s, 'en'))),
     ],
   };
   const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;');

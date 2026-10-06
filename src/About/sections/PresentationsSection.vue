@@ -4,7 +4,7 @@ import Plus from '@iconify-vue/fe/plus';
 import { onBeforeUnmount, onMounted, reactive, ref } from 'vue';
 import cvData from '../cvData';
 
-const { l } = useText();
+const { t, l } = useText();
 const talks = cvData.presentations.map((t) => {
   const [m, y] = t.period.split('/') as [string, string];
   return { ...t, month: Number(m) - 1, year: y, datetime: `${y}-${m}` };
@@ -30,42 +30,42 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
 </script>
 
 <template>
-  <section id="talks" :data-section="$t('talks.title')" class="talks" :class="{ 'talks--ready': ready }" aria-labelledby="talks-title">
+  <section id="talks" :data-section="t('talks.title')" class="talks" :class="{ 'talks--ready': ready }" aria-labelledby="talks-title">
     <div class="talks__head">
-      <h2 id="talks-title" class="talks__title">{{ $t('talks.title') }}</h2>
-      <p class="talks__sub">{{ $t('talks.sub') }}</p>
+      <h2 id="talks-title" class="talks__title">{{ t('talks.title') }}</h2>
+      <p class="talks__sub">{{ t('talks.sub') }}</p>
     </div>
     <ol class="talks__list" role="list">
-      <li v-for="(t, i) of talks" :key="t.title" class="talk" :class="{ 'talk--open': isOpen(t.title) }" :data-course="t.title">
+      <li v-for="(talk, i) of talks" :key="talk.title" class="talk" :class="{ 'talk--open': isOpen(talk.title) }" :data-course="talk.title">
         <div class="talk__band">
-          <span class="talk__img" :style="{ '--logo': `url(${t.img})` }" aria-hidden="true"></span>
+          <span class="talk__img" :style="{ '--logo': `url(${talk.img})` }" aria-hidden="true"></span>
           <h3 class="talk__name">
             <button
               v-if="mobile"
               type="button"
               class="talk__toggle"
-              :aria-expanded="isOpen(t.title)"
+              :aria-expanded="isOpen(talk.title)"
               :aria-controls="`talk-${i}`"
-              @click="open[t.title] = !open[t.title]"
+              @click="open[talk.title] = !open[talk.title]"
             >
-              <span>{{ t.title }}</span>
+              <span>{{ talk.title }}</span>
               <span class="talk__tab">
-                {{ $t('read') }}
+                {{ t('read') }}
                 <Plus class="talk__icon" height="1em" aria-hidden="true" />
               </span>
             </button>
-            <span v-else>{{ t.title }}</span>
+            <span v-else>{{ talk.title }}</span>
           </h3>
-          <time class="talk__date" :datetime="t.datetime">{{ $t(`months.${t.month}`) }} {{ t.year }}</time>
+          <time class="talk__date" :datetime="talk.datetime">{{ t(`months.${talk.month}`) }} {{ talk.year }}</time>
           <p class="talk__topics">
-            <template v-for="(k, j) of t.topics" :key="k">
+            <template v-for="(k, j) of talk.topics" :key="k">
               <span v-if="j" class="talk__sep" aria-hidden="true"> / </span><span>{{ k }}</span>
             </template>
           </p>
         </div>
-        <div :id="`talk-${i}`" class="talk__panel" :inert="!isOpen(t.title)">
+        <div :id="`talk-${i}`" class="talk__panel" :inert="!isOpen(talk.title)">
           <div class="talk__clip">
-            <div class="talk__desc" v-html="l(t.description)"></div>
+            <div class="talk__desc" v-html="l(talk.description)"></div>
           </div>
         </div>
       </li>

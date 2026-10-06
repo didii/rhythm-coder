@@ -13,7 +13,7 @@ Recruiters and hiring employers deciding whether Dieter Van Broeck is worth cont
 A personal online CV at `rhythm-coder.dev` (single page at `/`). It presents who Dieter is, where he has worked, what he did on each assignment and which skills he brings. It succeeds when a recruiter can see fit and seniority in seconds, drill into any assignment for depth, and reach out.
 
 ## Positioning
-A .NET and full-stack developer with a physics background who turns complex analytical problems into maintainable solutions and connects technical work with product and business vision. The CV is also a working sample of that craft: it is hand-built by the candidate himself, not generated from a template.
+A senior full-stack .NET developer with a physics background who turns complex analytical problems into maintainable solutions and connects technical work with product and business vision. The CV is also a working sample of that craft: it is hand-built by the candidate himself, not generated from a template.
 
 ## Operating Context
 - Recruiters read it on desktop and on mobile, usually in one quick pass, with optional drill-down.
@@ -29,7 +29,7 @@ A .NET and full-stack developer with a physics background who turns complex anal
 - All CV content lives in `src/About/cvData.ts`; UI strings live in `src/locales/{en,nl}.json`.
 
 ## Brand Commitments
-- Name as shown: "Van Broeck Dieter", role "Software developer". Personal domain and handle: rhythm-coder.
+- Name as shown: "Van Broeck Dieter", role "Senior full-stack .NET developer". Personal domain and handle: rhythm-coder.
 - Existing assets: `src/About/img/me.jpg` (profile photo, Rainbow Mountains, Peru), plus employer, client and technology logos in `src/About/img/`.
 - Visual system: see `DESIGN.md`.
 

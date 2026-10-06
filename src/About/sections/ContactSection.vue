@@ -4,7 +4,7 @@ import LinkExternal from '@iconify-vue/fe/link-external';
 import CutTab from '../components/CutTab.vue';
 import cvData from '../cvData';
 
-const { t } = useText();
+const { t, l } = useText();
 </script>
 
 <template>
@@ -13,12 +13,14 @@ const { t } = useText();
     <h2 id="contact-title" class="sr-only">{{ t('contact') }}</h2>
     <a class="contact__mail" :href="`mailto:${cvData.email}`">{{ cvData.email }}</a>
     <div class="contact__links">
-      <CutTab v-for="l of cvData.links" :key="l.label" variant="stitched" :href="l.href" target="_blank" rel="noopener">
-        {{ l.label }} <LinkExternal height="1em" aria-hidden="true" />
+      <CutTab v-for="link of cvData.links" :key="link.label" variant="stitched" :href="link.href" target="_blank" rel="noopener">
+        {{ link.label }} <LinkExternal height="1em" aria-hidden="true" />
       </CutTab>
     </div>
     <div class="contact__addr">
-      <a href="https://www.google.com/maps/place/Zoersel">{{ t('place') }}</a>
+      <a :href="cvData.locationHref" target="_blank" rel="noopener">
+        {{ l(cvData.location) }} <LinkExternal height="1em" aria-hidden="true" /><span class="sr-only"> ({{ t('newTab') }})</span>
+      </a>
     </div>
   </section>
 </template>
@@ -61,5 +63,11 @@ const { t } = useText();
   text-decoration-style: dotted;
   text-decoration-thickness: 1px;
   text-decoration-color: var(--color-mint);
+  display: flex;
+  align-items: center;
+  column-gap: 0.25rem;
+}
+.contact__addr svg {
+  display: inline;
 }
 </style>

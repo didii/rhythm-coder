@@ -33,6 +33,7 @@ export interface Employer {
 }
 
 export interface Course {
+  id: string;
   img?: string;
   name: Text;
   role?: string;
@@ -57,6 +58,7 @@ export interface Presentation {
 }
 
 export interface MainSkillCategory {
+  id: string;
   name: Text;
   skills: MainSkill[];
 }
@@ -67,6 +69,7 @@ export interface MainSkill {
 }
 
 export interface SkillOverview {
+  id: string;
   name: Text;
   skills: Text[];
 }

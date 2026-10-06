@@ -44,7 +44,7 @@ const { t, l } = useText();
       <div v-html="l(employer.description)"></div>
     </div>
     <ol class="courses" role="list" :aria-label="t('employer.assignments', { name: employer.name })">
-      <CourseRow v-for="c of employer.courses" :key="`${c.name}-${c.period}`" :course="c" />
+      <CourseRow v-for="c of employer.courses" :key="c.id" :course="c" />
     </ol>
   </section>
 </template>

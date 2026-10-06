@@ -7,9 +7,10 @@ const { t } = useText();
 
 <template>
   <!-- a link when given an href, a button otherwise -->
-  <component :is="$attrs.href ? 'a' : 'button'" class="tab" :class="`tab--${variant}`"
-    ><slot /><span v-if="$attrs.target === '_blank'" class="sr-only"> ({{ t('newTab') }})</span></component
-  >
+  <component :is="$attrs.href ? 'a' : 'button'" class="tab" :class="`tab--${variant}`">
+    <slot></slot>
+    <span v-if="$attrs.target === '_blank'" class="sr-only"> ({{ t('newTab') }})</span>
+  </component>
 </template>
 
 <style scoped>

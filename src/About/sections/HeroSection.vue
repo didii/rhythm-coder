@@ -32,7 +32,13 @@ const { t, l } = useText();
       </div>
     </div>
 
-    <LeadPanel :location="cvData.location" :email="cvData.email" :driver-license="cvData.drivingLicense" :year-of-birth="cvData.yearOfBirth" />
+    <LeadPanel
+      :location="cvData.location"
+      :location-href="cvData.locationHref"
+      :email="cvData.email"
+      :driving-license="cvData.drivingLicense"
+      :year-of-birth="cvData.yearOfBirth"
+    />
   </section>
 </template>
 
@@ -76,7 +82,7 @@ const { t, l } = useText();
 .hero__role {
   font-family: var(--font-legend);
   font-weight: 800;
-  font-size: clamp(2.25rem, 6.5vw, 5.25rem);
+  font-size: clamp(2.25rem, 6.5vw, 3.75rem);
   line-height: 1;
   text-transform: uppercase;
   color: var(--color-sand);

@@ -18,9 +18,9 @@ import typescriptLogo from './img/typescript.png';
 import vlmLogo from './img/vlm.png';
 import type { CvData } from './models';
 
-const cvData: CvData = {
+const cvData = {
   name: 'Van Broeck Dieter',
-  function: { en: 'Software developer', nl: 'Softwareontwikkelaar' },
+  function: 'Senior full-stack .NET developer',
   email: 'cv@rhythm-coder.dev',
   location: { en: 'Zoersel, Belgium', nl: 'Zoersel, België' },
   locationHref: 'https://www.google.com/maps/place/Zoersel',
@@ -92,6 +92,7 @@ const cvData: CvData = {
       },
       courses: [
         {
+          id: 'hendriks2024' as const,
           img: hendriksLogo,
           name: 'Taxi Hendriks',
           role: 'Technical Lead / Fullstack .NET Developer',
@@ -143,6 +144,7 @@ const cvData: CvData = {
           },
         },
         {
+          id: 'odot2023' as const,
           img: odotLogo,
           name: 'Odot',
           role: 'Fullstack .NET Developer',
@@ -185,6 +187,7 @@ const cvData: CvData = {
           },
         },
         {
+          id: 'actemium2023' as const,
           img: actemiumLogo,
           name: 'Actemium',
           role: '.NET Developer',
@@ -228,40 +231,7 @@ const cvData: CvData = {
           },
         },
         {
-          img: cascadorLogo,
-          name: 'Cascador',
-          role: 'Technical Coach',
-          line: 'Tech support',
-          period: '09/2022 – 02/2025',
-          keywords: ['React', 'TypeScript', 'Frontend Architecture', 'Mentoring & Code Reviews', 'Startup Environment'],
-          description: {
-            en: `
-              <p>
-                Cascador collects medical data from sources such as hospitals, anonymises it and forwards it to clients such as pharmaceutical
-                companies. This makes data that is often lost in healthcare institutions usable after all, with the aim of improving the development
-                of medicines and treatments.
-              </p>
-              <p>
-                In this start-up environment with limited resources, support was requested for frontend development because it was not progressing
-                enough. I took on a guiding role, with regular code reviews, technical support on request and a strategy to improve the frontend
-                architecture.
-              </p>
-            `,
-            nl: `
-              <p>
-                Cascador richt zich op het verzamelen van medische data uit onder meer ziekenhuizen, het anonimiseren ervan en het doorsturen naar
-                klanten zoals farmaceutische bedrijven. Hierdoor wordt data die vaak verloren gaat in zorginstellingen alsnog capteerbaar gemaakt, met
-                als doel de ontwikkeling van geneesmiddelen en behandelingen te verbeteren.
-              </p>
-              <p>
-                Binnen deze startup-omgeving, waar de middelen beperkt zijn, werd ondersteuning gevraagd voor de frontendontwikkeling omdat deze
-                onvoldoende vooruitgang boekte. Ik nam hierbij een begeleidende rol op me, met regelmatige code reviews, technische ondersteuning op
-                vraag en het uitwerken van een verbeterstrategie voor de frontendarchitectuur.
-              </p>
-            `,
-          },
-        },
-        {
+          id: 'gosselin2022' as const,
           img: gosselinLogo,
           name: 'Gosselin',
           role: 'Fullstack .NET Developer',
@@ -298,6 +268,42 @@ const cvData: CvData = {
           },
         },
         {
+          id: 'cascador2022' as const,
+          img: cascadorLogo,
+          name: 'Cascador',
+          role: 'Technical Coach',
+          line: 'Tech support',
+          period: '09/2022 – 02/2025',
+          keywords: ['React', 'TypeScript', 'Frontend Architecture', 'Mentoring & Code Reviews', 'Startup Environment'],
+          description: {
+            en: `
+              <p>
+                Cascador collects medical data from sources such as hospitals, anonymises it and forwards it to clients such as pharmaceutical
+                companies. This makes data that is often lost in healthcare institutions usable after all, with the aim of improving the development
+                of medicines and treatments.
+              </p>
+              <p>
+                In this start-up environment with limited resources, part-time support was requested for frontend development because it
+                was not progressing as expected. I took on a guiding role, with regular code reviews, technical support on request, and I helped
+                work out a strategy to improve the frontend architecture.
+              </p>
+            `,
+            nl: `
+              <p>
+                Cascador richt zich op het verzamelen van medische data uit onder meer ziekenhuizen, het anonimiseren ervan en het doorsturen naar
+                klanten zoals farmaceutische bedrijven. Hierdoor wordt data die vaak verloren gaat in zorginstellingen alsnog capteerbaar gemaakt, met
+                als doel de ontwikkeling van geneesmiddelen en behandelingen te verbeteren.
+              </p>
+              <p>
+                Binnen deze startup-omgeving, waar de middelen beperkt zijn, werd deeltijdse ondersteuning gevraagd voor de frontendontwikkeling omdat
+                deze niet naar verwachting vooruitgang boekte. Ik nam hierbij een begeleidende rol op me, met regelmatige code reviews, technische
+                ondersteuning op vraag en het uitwerken van een verbeterstrategie voor de frontendarchitectuur.
+              </p>
+            `,
+          },
+        },
+        {
+          id: 'connective2021' as const,
           img: connectiveLogo,
           name: 'Connective',
           role: 'Teamlead / Frontend Developer',
@@ -358,6 +364,7 @@ const cvData: CvData = {
       },
       courses: [
         {
+          id: 'stage2021' as const,
           name: { en: 'Internship supervisor', nl: 'Stagebegeleider' },
           period: '03/2021 – 05/2021',
           keywords: ['Supporting role', 'VR meeting app', 'Unity 3D', 'Brainstorming'],
@@ -377,6 +384,7 @@ const cvData: CvData = {
           },
         },
         {
+          id: 'vlm2019' as const,
           img: vlmLogo,
           name: 'VLM',
           line: 'Mestbank',
@@ -431,6 +439,7 @@ const cvData: CvData = {
           },
         },
         {
+          id: 'fluxys2019' as const,
           img: fluxysLogo,
           name: 'Fluxys',
           role: '.NET Developer',
@@ -470,6 +479,7 @@ const cvData: CvData = {
           },
         },
         {
+          id: 'imec2019' as const,
           img: imecLogo,
           name: 'IMEC',
           role: 'Technical Architect / Fullstack .NET Developer',
@@ -516,6 +526,7 @@ const cvData: CvData = {
           },
         },
         {
+          id: 'vlm2018' as const,
           img: vlmLogo,
           name: 'VLM',
           line: 'MTIL 2.0',
@@ -559,6 +570,7 @@ const cvData: CvData = {
           },
         },
         {
+          id: 'securex2018' as const,
           img: securexLogo,
           name: 'Securex',
           role: 'Technical Analyst',
@@ -597,6 +609,7 @@ const cvData: CvData = {
           },
         },
         {
+          id: 'digipolis2018' as const,
           img: digipolisLogo,
           name: 'Digipolis Antwerpen',
           line: 'Generiek Dossier Platform (GDP)',
@@ -649,6 +662,7 @@ const cvData: CvData = {
           },
         },
         {
+          id: 'intrum2017' as const,
           img: intrumLogo,
           name: 'Intrum',
           role: '.NET Developer',
@@ -673,6 +687,7 @@ const cvData: CvData = {
           },
         },
         {
+          id: 'digipolis2017' as const,
           img: digipolisLogo,
           name: 'Digipolis Antwerpen',
           line: 'Delivery Request Registration',
@@ -705,6 +720,7 @@ const cvData: CvData = {
       activity: { en: 'Student software developer', nl: 'Student-softwareontwikkelaar' },
       courses: [
         {
+          id: 'technicolor2015' as const,
           img: technicolorLogo,
           name: { en: 'Internal tooling', nl: 'Interne tooling' },
           role: 'Software Developer',
@@ -736,7 +752,7 @@ const cvData: CvData = {
     {
       degree: { en: 'Master in Physics', nl: 'Master in de Fysica' },
       school: { en: 'University of Antwerp', nl: 'Universiteit Antwerpen' },
-      period: '09/2014 – 07/2018',
+      period: '09/2014 – 07/2017',
     },
     {
       degree: { en: 'Bachelor in Physics', nl: 'Bachelor in de Fysica' },
@@ -746,6 +762,7 @@ const cvData: CvData = {
   ],
   mainSkills: [
     {
+      id: 'programmingLanguages' as const,
       name: { en: 'Programming languages', nl: 'Programmeertalen' },
       skills: [
         {
@@ -769,6 +786,7 @@ const cvData: CvData = {
       ],
     },
     {
+      id: 'frameworks' as const,
       name: 'Frameworks',
       skills: [
         {
@@ -789,6 +807,7 @@ const cvData: CvData = {
       ],
     },
     {
+      id: 'spokenLanguages' as const,
       name: { en: 'Spoken languages', nl: 'Talen' },
       skills: [
         { name: { en: 'Dutch', nl: 'Nederlands' }, rating: 7, description: { en: 'Mother tongue', nl: 'Moedertaal' } },
@@ -803,6 +822,7 @@ const cvData: CvData = {
   ],
   skills: [
     {
+      id: 'frontend' as const,
       name: 'Frontend',
       skills: [
         'React',
@@ -823,6 +843,7 @@ const cvData: CvData = {
       ],
     },
     {
+      id: 'backend' as const,
       name: 'Backend',
       skills: [
         '.NET Core',
@@ -849,6 +870,7 @@ const cvData: CvData = {
       ],
     },
     {
+      id: 'testing' as const,
       name: 'Testing',
       skills: [
         'Unit Testing',
@@ -866,6 +888,7 @@ const cvData: CvData = {
       ],
     },
     {
+      id: 'cloud' as const,
       name: 'Cloud & DevOps',
       skills: [
         'RabbitMQ',
@@ -887,6 +910,7 @@ const cvData: CvData = {
       ],
     },
     {
+      id: 'databases' as const,
       name: 'Databases',
       skills: [
         'Azure SQL',
@@ -905,6 +929,7 @@ const cvData: CvData = {
       ],
     },
     {
+      id: 'architecture' as const,
       name: { en: 'Architecture', nl: 'Architectuur' },
       skills: [
         'CQRS',
@@ -930,22 +955,27 @@ const cvData: CvData = {
       ],
     },
     {
+      id: 'methodologies' as const,
       name: { en: 'Methodologies', nl: 'Methodologieën' },
       skills: ['Code Reviews', 'Scrum', 'Agile', 'CI/CD', 'Pair Programming', 'User Stories', 'TDD'],
     },
     {
+      id: 'security' as const,
       name: 'Security',
       skills: ['Authentication', 'Authorization', 'Keycloak', 'OAuth2', 'ASP.NET Core Identity'],
     },
     {
+      id: 'design' as const,
       name: 'UX / UI / Design',
       skills: ['Figma', 'Responsive / Mobile-first', 'Tailwind', 'Design Systems', 'Component Libraries', 'User-Centered Design'],
     },
     {
+      id: 'tools' as const,
       name: 'Tools',
       skills: ['Google Maps', 'OpenTelemetry', 'OpenAPI', 'Portainer', 'NuGet', 'Swagger', 'Git', 'Jira', 'Rider'],
     },
     {
+      id: 'other' as const,
       name: { en: 'Other', nl: 'Overige' },
       skills: [
         'Logging & Monitoring',
@@ -959,6 +989,7 @@ const cvData: CvData = {
       ],
     },
     {
+      id: 'softSkills' as const,
       name: 'Soft skills',
       skills: [
         'Coach & Mentor',
@@ -1047,6 +1078,6 @@ const cvData: CvData = {
       },
     },
   ],
-};
+} satisfies CvData;
 
 export default cvData;
