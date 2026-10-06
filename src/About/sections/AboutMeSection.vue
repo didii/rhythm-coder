@@ -19,7 +19,7 @@ const { t, l } = useText();
   line-height: 1.55;
 }
 .about-me :deep(p:not(:last-child)) {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 .about-me :deep(.about-me__footer) {
   font-style: italic;

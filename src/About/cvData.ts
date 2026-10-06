@@ -37,7 +37,7 @@ const cvData: CvData = {
         Beyond the code, I care about elevating the people around me and bringing a vision into technical landscapes. I combine pragmatism with a
         long-term mindset, ensuring every project leaves a lasting, positive mark on both the technology and the team.
       </p>
-      <p class="prose__footer">
+      <p class="about-me__footer">
         Core strengths: Problem solving · Pragmatism · Mentorship
       </p>
     `,
@@ -52,7 +52,7 @@ const cvData: CvData = {
         Naast het coderen hecht ik veel waarde aan het versterken van de mensen rondom mij en het scheppen van een visie in een technisch landschap.
         Door pragmatisme en een langetermijnvisie te combineren, zorg ik voor een duurzame en positieve impact op zowel de techniek als het team.
       </p>
-      <p class="prose__footer">
+      <p class="about-me__footer">
         Kerncompetenties: Probleem oplossend denken · Pragmatisme · Mentorschap
       </p>
     `,
