@@ -29,16 +29,31 @@ const cvData: CvData = {
   aboutMe: {
     en: `
       <p>
-        I'm a passionate .NET and full-stack developer with a physics background, turning complex analytical problems into elegant, maintainable
-        solutions. I thrive in open environments that encourage initiative, where I can bridge technical execution with product and business vision.
-        Outside of coding, I enjoy cooking, listening to music and playing music.
+        Great software isn't just written: it's composed. Backed by a foundation in physics and music, I approach technical challenges with structural
+        creativity: looking for patterns, relationships and underlying structures to make all pieces work together. Having worked across a multitude
+        of industries, I excel at mastering unfamiliar problem spaces.
+      </p>
+      <p>
+        Beyond the code, I care about elevating the people around me and bringing a vision into technical landscapes. I combine pragmatism with a
+        long-term mindset, ensuring every project leaves a lasting, positive mark on both the technology and the team.
+      </p>
+      <p class="prose__footer">
+        Core strengths: Problem solving · Pragmatism · Mentorship
       </p>
     `,
     nl: `
       <p>
-        Ik ben een gepassioneerde .NET- en full-stackontwikkelaar met een achtergrond in fysica, die complexe analytische problemen omzet in elegante,
-        onderhoudbare oplossingen. Ik floreer in open omgevingen die initiatief aanmoedigen, waar ik de brug sla tussen technische uitvoering en
-        product- en bedrijfsvisie. Naast het programmeren ben ik graag bezig met koken, muziek luisteren en muziek spelen.
+        Goede software wordt niet zomaar geschreven: het wordt gecomponeerd. Ondersteund door een achtergrond in fysica en muziek, benader ik
+        technische uitdagingen met structurele creativiteit. Daarbij doorgrond ik patronen, relaties en onderliggende structuren om alle puzzelstukjes
+        in elkaar te laten passen. Dankzij een loopbaan over verscheidene sectoren ligt mijn kracht vooral in het doorgronden van onbekende
+        probleemruimten.
+      </p>
+      <p>
+        Naast het coderen hecht ik veel waarde aan het versterken van de mensen rondom mij en het scheppen van een visie in een technisch landschap.
+        Door pragmatisme en een langetermijnvisie te combineren, zorg ik voor een duurzame en positieve impact op zowel de techniek als het team.
+      </p>
+      <p class="prose__footer">
+        Kerncompetenties: Probleem oplossend denken · Pragmatisme · Mentorschap
       </p>
     `,
   },

@@ -18,4 +18,11 @@ const { t, l } = useText();
   font-size: clamp(1.125rem, 1.6vw, 1.375rem);
   line-height: 1.55;
 }
+.prose :deep(p:not(:last-child)) {
+  margin-bottom: 0.5rem;
+}
+.prose :deep(.prose__footer) {
+  font-style: italic;
+  font-size: 0.95em;
+}
 </style>
