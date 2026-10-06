@@ -124,8 +124,33 @@ const { t, l } = useText();
     grid-template-rows: none;
     min-height: 0;
   }
+}
+/* one line on a phone: a smaller mail tab, and LinkedIn / GitHub as text links (their stitched frames don't fit beside it) */
+@media (max-width: 40rem) {
   .hero__actions {
-    display: none;
+    margin-top: 1.25rem;
+    align-items: center;
+    gap: 0.5rem 1rem;
+  }
+  .hero__actions .tab {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+  }
+  .hero__actions .tab--solid {
+    padding: 0.45rem 1.3rem 0.45rem 0.8rem;
+  }
+  .hero__actions .tab--stitched {
+    gap: 0.3rem;
+    padding: 0.45rem 0;
+    outline-color: transparent;
+    text-decoration: underline dotted 1px;
+    text-underline-offset: 0.25em;
+  }
+  .hero__actions .tab--stitched:hover {
+    background: none;
+    color: var(--color-sand);
+  }
+  .hero__actions .tab--stitched:focus-visible {
+    outline-color: currentColor;
   }
 }
 </style>
