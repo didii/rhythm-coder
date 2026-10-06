@@ -46,7 +46,7 @@ export interface Course {
   role?: string;
   line?: string;
   period: Period;
-  keywords: string[];
+  keywords: Text[];
   description?: Text; // HTML
 }
 

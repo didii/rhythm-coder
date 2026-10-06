@@ -53,8 +53,8 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
       <p v-if="course.role" class="course__role">{{ course.role }}</p>
       <!-- one line while closed (the browser adds … when it overflows); the full list once opened -->
       <p class="course__keywords" :class="{ 'course__keywords--clamped': course.description && !open }">
-        <template v-for="(k, i) of course.keywords" :key="k">
-          <span v-if="i" class="course__sep" aria-hidden="true">&nbsp;&nbsp;/&nbsp; </span><span>{{ k }}</span>
+        <template v-for="(k, i) of course.keywords" :key="i">
+          <span v-if="i" class="course__sep" aria-hidden="true">&nbsp;&nbsp;/&nbsp; </span><span>{{ l(k) }}</span>
         </template>
       </p>
     </div>

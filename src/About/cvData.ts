@@ -98,7 +98,14 @@ const cvData = {
           role: 'Technical Lead / Full-stack .NET Developer',
           line: 'Transport',
           period: '09/2024 – now',
-          keywords: ['Domain-Driven Design (DDD)', 'Microservices Architecture', 'React (+Native)', 'CQRS', 'NATS'],
+          keywords: [
+            { en: 'Medical cargo', nl: 'Medisch transport' },
+            { en: 'Legacy replacement', nl: 'Vervanging legacy-systeem' },
+            'Live tracking',
+            'Domain-Driven Design',
+            'NATS messaging',
+            'React Native',
+          ],
           description: {
             en: `
               <p>
@@ -150,7 +157,12 @@ const cvData = {
           role: 'Full-stack .NET Developer',
           line: 'EMP',
           period: '08/2023 – 09/2024',
-          keywords: ['React', 'TypeScript', 'ASP.NET (Web API)', 'Azure', 'CQRS', 'SignalR'],
+          keywords: [
+            { en: 'Energy market', nl: 'Energiemarkt' },
+            { en: 'Data visualization', nl: 'Datavisualisatie' },
+            { en: 'Database performance', nl: 'Databaseperformantie' },
+            'SignalR',
+          ],
           description: {
             en: `
               <p>
@@ -193,7 +205,12 @@ const cvData = {
           role: '.NET Developer',
           line: 'Testplan debugger',
           period: '05/2023 – 08/2023',
-          keywords: ['Analyst', 'Akka.NET', 'gRPC', 'RabbitMQ', 'WPF', 'Entity Framework'],
+          keywords: [
+            { en: 'Custom debugger', nl: 'Debugger op maat' },
+            'Graph-based workflows',
+            { en: 'Industrial machines', nl: 'Industriële machines' },
+            'Akka.NET',
+          ],
           description: {
             en: `
               <p>
@@ -234,7 +251,13 @@ const cvData = {
           role: 'Full-stack .NET Developer',
           line: 'Gosselin',
           period: '12/2022 – 04/2023',
-          keywords: ['Frontend lead', 'React', 'ASP.NET (Web API)', '.NET Core', 'Code Reviews'],
+          keywords: [
+            'US Department of Defense',
+            'Frontend lead',
+            { en: 'Laying foundations', nl: 'Fundamenten leggen' },
+            { en: 'Inherited product', nl: 'Overgenomen product' },
+            { en: 'Code quality', nl: 'Codekwaliteit' },
+          ],
           description: {
             en: `
               <p>
@@ -271,7 +294,13 @@ const cvData = {
           role: 'Technical Coach',
           line: 'Tech support',
           period: '09/2022 – 02/2025',
-          keywords: ['React', 'TypeScript', 'Frontend Architecture', 'Mentoring & Code Reviews', 'Startup Environment'],
+          keywords: [
+            'Coaching',
+            { en: 'Healthcare data', nl: 'Zorgdata' },
+            'Startup',
+            { en: 'Frontend strategy', nl: 'Frontendstrategie' },
+            'Code reviews',
+          ],
           description: {
             en: `
               <p>
@@ -306,14 +335,14 @@ const cvData = {
           role: 'Frontend Developer',
           line: 'e-signing',
           period: '10/2021 – 12/2022',
-          keywords: ['React', 'Design Systems', 'Storybook', 'From Scratch', 'TypeScript', 'Automated UI Testing'],
+          keywords: ['Design system', { en: 'Client theming', nl: 'Theming per klant' }, 'WCAG', 'Knowledge sharing', 'Storybook', 'UX redesign'],
           description: {
             en: `
               <p>
                 Connective mainly provides digital signing of documents and supports several signing methods. The frontend application for signers,
-                called WYSIWYS (What You See Is What You Sign), was due for a redesign, both in code quality and user experience. There was a strong
-                focus on setting up a component library: I introduced Storybook for it, along with a customizable theming system that the library
-                supported and clients could choose from.
+                called WYSIWYS (What You See Is What You Sign), was due for a redesign, both in code quality, user experience and accessibility. There
+                was a strong focus on setting up a component library: I introduced Storybook for it, along with a customizable theming system that the
+                library supported and clients could choose from.
               </p>
               <p>
                 For the first phase I worked on the application alone. When the team grew, my focus shifted to sharing my knowledge
@@ -372,7 +401,13 @@ const cvData = {
           id: 'stage2021' as const,
           name: { en: 'Internship supervisor', nl: 'Stagebegeleider' },
           period: '03/2021 – 05/2021',
-          keywords: ['Supporting role', 'VR meeting app', 'Unity 3D', 'Brainstorming'],
+          keywords: [
+            { en: 'Mentoring interns', nl: 'Stagiairs begeleiden' },
+            { en: 'VR meeting room', nl: 'VR-vergaderruimte' },
+            'Unity 3D',
+            { en: 'Planning & follow-up', nl: 'Planning & opvolging' },
+            { en: 'Brainstorming', nl: 'Brainstormen' },
+          ],
           description: {
             en: `
               <p>
@@ -395,7 +430,14 @@ const cvData = {
           line: 'Mestbank',
           role: 'Team Lead / Full-stack .NET Developer',
           period: '09/2019 – 05/2021',
-          keywords: ['Frontend lead', 'UX focus', '4 new applications', 'Applying Angular knowledge', 'Azure pipelines', '.NET Core'],
+          keywords: [
+            'Frontend & UX lead',
+            { en: 'Automating regulations', nl: 'Regelgeving automatiseren' },
+            { en: 'Architectural refactoring', nl: 'Architecturale refactoring' },
+            'Angular',
+            'Legacy MVC & jQuery',
+            'Azure Pipelines',
+          ],
           description: {
             en: `
               <p>
@@ -450,7 +492,14 @@ const cvData = {
           role: '.NET Developer',
           line: 'Connect',
           period: '03/2019 – 11/2019',
-          keywords: ['ASP.NET (MVC)', 'jQuery', 'Knockout JS', 'T-SQL', 'Angular', 'XML / XSLT', 'Message Queues'],
+          keywords: [
+            { en: 'Real-time auctions', nl: 'Realtime veilingen' },
+            'Pipes and filters',
+            'At-least-once delivery',
+            'Message queues',
+            'XML / XSLT',
+            'Knockout JS',
+          ],
           description: {
             en: `
               <p>
@@ -490,7 +539,14 @@ const cvData = {
           role: 'Technical Architect / Full-stack .NET Developer',
           line: 'PTW',
           period: '02/2019 – 03/2019',
-          keywords: ['Short Deadline', 'Microsoft Azure', 'React', '.NET Core', 'Performance Optimization', 'From Scratch'],
+          keywords: [
+            { en: 'Short deadline', nl: 'Korte deadline' },
+            { en: 'Moving off SharePoint', nl: 'Weg van SharePoint' },
+            'Microsoft Azure',
+            { en: 'Performance optimization', nl: 'Performantie-optimalisatie' },
+            { en: 'Access control', nl: 'Toegangsbeheer' },
+            'React',
+          ],
           description: {
             en: `
               <p>
@@ -537,7 +593,12 @@ const cvData = {
           line: 'MTIL 2.0',
           role: 'Full-stack Developer',
           period: '06/2018 – 12/2018',
-          keywords: ['Complex Legacy Modernization', 'High-stakes Holiday Release', 'Business Logic', 'Small team'],
+          keywords: [
+            { en: 'Rebuilding legacy', nl: 'Legacy heropbouwen' },
+            { en: 'Manure transport regulations', nl: 'Mesttransportwetgeving' },
+            { en: 'Complex business rules', nl: 'Complexe businessregels' },
+            { en: 'Small team', nl: 'Klein team' },
+          ],
           description: {
             en: `
               <p>
@@ -581,7 +642,13 @@ const cvData = {
           role: 'Technical Analyst',
           line: 'Elastic Stack Research',
           period: '05/2018',
-          keywords: ['Elasticsearch', 'Logging & Monitoring', 'Research', 'Demo'],
+          keywords: [
+            'Elasticsearch',
+            'Logstash',
+            'Kibana',
+            { en: 'Centralized logging', nl: 'Centrale logging' },
+            { en: 'Pre-sales demo', nl: 'Pre-sales-demo' },
+          ],
           description: {
             en: `
               <p>
@@ -620,7 +687,14 @@ const cvData = {
           line: 'Generiek Dossier Platform (GDP)',
           role: '.NET Developer',
           period: '04/2018 – 05/2018',
-          keywords: ['TDD', 'Integration Testing', 'Load / Performance Testing', 'Performance Optimization', 'PostgreSQL', 'EF Core'],
+          keywords: [
+            'Reverse engineering',
+            'Benchmarking',
+            { en: 'Black-box testing', nl: 'Black-box-testen' },
+            { en: 'Integration tests', nl: 'Integratietests' },
+            'PostgreSQL',
+            'EF Core',
+          ],
           description: {
             en: `
               <p>
@@ -673,7 +747,13 @@ const cvData = {
           role: '.NET Developer',
           line: 'Maintenance',
           period: '12/2017 – 02/2018',
-          keywords: ['Oracle Database', 'SQL Optimization', 'Stored Procedures', '.NET Framework', 'Legacy Applications', 'Scrum'],
+          keywords: [
+            'Oracle',
+            { en: 'SQL optimization', nl: 'SQL-optimalisatie' },
+            'Stored procedures',
+            { en: 'Legacy applications', nl: 'Legacy-applicaties' },
+            'Scrum',
+          ],
           description: {
             en: `
               <p>
@@ -706,7 +786,7 @@ const cvData = {
           line: 'Delivery Request Registration',
           role: 'Full-stack .NET Developer',
           period: '09/2017 – 11/2017',
-          keywords: ['.NET Core', 'Angular', 'PostgreSQL', 'Docker', 'Hangfire', 'EF Core', 'Scrum'],
+          keywords: [{ en: 'First assignment', nl: 'Eerste opdracht' }, 'Angular', 'Docker', 'Hangfire', 'PostgreSQL', 'Scrum'],
           description: {
             en: `
               <p>
@@ -748,7 +828,13 @@ const cvData = {
           role: 'Software Developer',
           line: 'Test & reporting',
           period: '07/2015 – 07/2017',
-          keywords: ['WPF', '.NET Framework', 'MongoDB', 'Jenkins (CI/CD)', 'Automated UI Testing'],
+          keywords: [
+            'WPF',
+            'MongoDB',
+            'Jenkins CI',
+            { en: 'Test automation', nl: 'Testautomatisering' },
+            { en: 'Reporting tools', nl: 'Rapporteringstools' },
+          ],
           description: {
             en: `
               <p>
