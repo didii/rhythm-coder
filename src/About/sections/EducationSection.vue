@@ -9,12 +9,12 @@ const { t, l } = useText();
 
 <template>
   <SectionPanel id="education" :title="t('education')">
-    <ul class="edu" role="list">
-      <li v-for="e of cvData.educations" :key="e.period" class="edu__item">
-        <h3 class="edu__degree">{{ l(e.degree) }}</h3>
-        <p class="edu__meta">
-          {{ l(e.school) }}<span class="edu__sep" aria-hidden="true">&nbsp;&nbsp;/&nbsp; </span
-          ><span class="edu__period"><PeriodTime :period="e.period" /></span>
+    <ul class="education" role="list">
+      <li v-for="e of cvData.educations" :key="e.period" class="education__item">
+        <h3 class="education__degree">{{ l(e.degree) }}</h3>
+        <p class="education__meta">
+          {{ l(e.school) }}<span class="education__sep" aria-hidden="true">&nbsp;&nbsp;/&nbsp; </span
+          ><span class="education__period"><PeriodTime :period="e.period" /></span>
         </p>
       </li>
     </ul>
@@ -22,16 +22,16 @@ const { t, l } = useText();
 </template>
 
 <style scoped>
-.edu {
+.education {
   margin-top: 1rem;
 }
-.edu__item {
+.education__item {
   padding-block: 1rem;
 }
-.edu__item + .edu__item {
+.education__item + .education__item {
   border-top: 1px dashed var(--color-mint-deep);
 }
-.edu__degree {
+.education__degree {
   font-family: var(--font-legend);
   font-weight: 800;
   font-size: 2.25rem;
@@ -39,7 +39,7 @@ const { t, l } = useText();
   text-transform: uppercase;
   color: var(--color-jacket);
 }
-.edu__meta {
+.education__meta {
   margin-top: 0.35rem;
   font-family: var(--font-legend);
   font-weight: 700;
@@ -47,15 +47,15 @@ const { t, l } = useText();
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
-.edu__period {
+.education__period {
   white-space: nowrap;
 }
-.edu__sep {
+.education__sep {
   color: var(--color-mint-deep);
 }
 
 @media (max-width: 40rem) {
-  .edu__degree {
+  .education__degree {
     font-size: 1.875rem;
   }
 }
