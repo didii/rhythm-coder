@@ -32,7 +32,7 @@ const { t, l } = useText();
         </dd>
       </div>
       <div>
-        <dt>{{ t('lead.licence') }}</dt>
+        <dt>{{ t('lead.license') }}</dt>
         <dd>{{ props.drivingLicense }}</dd>
       </div>
       <div>
