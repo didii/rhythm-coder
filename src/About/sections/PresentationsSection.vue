@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useText } from '@/i18n';
-import Plus from '@iconify-vue/fe/plus';
 import { onBeforeUnmount, onMounted, reactive, ref } from 'vue';
+import ReadTab from '../components/ReadTab.vue';
 import cvData from '../cvData';
 
 const { t, l } = useText();
@@ -49,10 +49,7 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
               @click="open[talk.title] = !open[talk.title]"
             >
               <span>{{ talk.title }}</span>
-              <span class="talk__tab">
-                {{ t('read') }}
-                <Plus class="talk__icon" height="1em" aria-hidden="true" />
-              </span>
+              <ReadTab :open="isOpen(talk.title)" />
             </button>
             <span v-else>{{ talk.title }}</span>
           </h3>
@@ -147,30 +144,6 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
   content: '';
   position: absolute;
   inset: 0;
-}
-.talk__tab {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.4rem;
-  font-size: 1rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  padding: 0.3rem 1.1rem 0.3rem 0.7rem;
-  background: var(--color-mint);
-  color: var(--color-jacket-deep);
-  clip-path: polygon(0 0, 100% 0, calc(100% - 0.45rem) 100%, 0 100%);
-  transition: background-color 160ms ease-out;
-  width: 5.5rem;
-}
-.talk__toggle:hover .talk__tab {
-  background: var(--color-sand);
-}
-.talk__icon {
-  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-.talk--open .talk__icon {
-  transform: rotate(45deg);
 }
 .talk__date {
   font-family: var(--font-legend);

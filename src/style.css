@@ -80,9 +80,8 @@
     .tape,
     .ribbon,
     .hero__actions,
-    .course__tab,
+    .read-tab,
     .course__close,
-    .talk__tab,
     .employer__head .tab,
     .skills__name--overview .tab svg {
       display: none !important;

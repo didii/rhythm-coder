@@ -5,6 +5,7 @@ import { computed, ref, useId } from 'vue';
 import type { Course } from '../models.ts';
 import CutTab from './CutTab.vue';
 import PeriodTime from './PeriodTime.vue';
+import ReadTab from './ReadTab.vue';
 
 const props = defineProps<{ course: Course }>();
 const open = ref(false);
@@ -46,10 +47,7 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
             <span class="course__line" aria-hidden="true">/</span>
             <span class="course__line">{{ course.line }}</span>
           </template>
-          <span v-if="course.description" class="course__tab">
-            {{ t('read') }}
-            <Plus class="course__icon" height="1em" aria-hidden="true" />
-          </span>
+          <ReadTab v-if="course.description" :open="open" />
         </component>
       </h3>
       <p v-if="course.role" class="course__role">{{ course.role }}</p>
@@ -140,9 +138,6 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
   .course:has(.course__toggle:hover) .course__code:has(+ .course__img) {
     opacity: 0;
   }
-  .course__toggle:hover .course__tab {
-    background: var(--color-sand);
-  }
 }
 /* explicit columns so rows without a logo keep the empty first column */
 .course__body {
@@ -186,21 +181,6 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
   content: '';
   position: absolute;
   inset: 0;
-}
-.course__tab {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.4rem;
-  font-size: 1rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  padding: 0.3rem 1.1rem 0.3rem 0.7rem;
-  background: var(--color-mint);
-  color: var(--color-jacket-deep);
-  clip-path: polygon(0 0, 100% 0, calc(100% - 0.45rem) 100%, 0 100%);
-  transition: background-color 160ms ease-out;
-  width: 5.5rem;
 }
 .course__icon {
   transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
