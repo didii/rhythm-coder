@@ -1,5 +1,12 @@
 import type { Text } from '../i18n';
 
+// "MM/YYYY"; the year is ${number} because a four-digit union (12 × 10⁴ members, squared for a range) is too big for TypeScript
+type Month = '01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | '11' | '12';
+export type MonthYear = `${Month}/${number}`;
+// "MM/YYYY – MM/YYYY" or "MM/YYYY – now", with an en dash
+export type Range = `${MonthYear} – ${MonthYear | 'now'}`;
+export type Period = Range | MonthYear;
+
 export interface CvData {
   name: string;
   function: Text;
@@ -26,7 +33,7 @@ export interface Employer {
   id: string;
   name: string;
   logo: string;
-  period: string;
+  period: Range;
   activity: Text;
   description?: Text; // HTML
   courses: Course[];
@@ -38,7 +45,7 @@ export interface Course {
   name: Text;
   role?: string;
   line?: string;
-  period: string;
+  period: Period;
   keywords: string[];
   description?: Text; // HTML
 }
@@ -46,12 +53,12 @@ export interface Course {
 export interface Education {
   degree: Text;
   school: Text;
-  period: string;
+  period: Range;
 }
 
 export interface Presentation {
   title: string;
-  period: string; // "MM/YYYY"
+  period: MonthYear;
   img: string;
   topics: string[];
   description: Text; // HTML

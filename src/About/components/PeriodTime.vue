@@ -2,8 +2,9 @@
 // "MM/YYYY – MM/YYYY", "MM/YYYY – now" or "MM/YYYY", with machine-readable <time> elements
 import { useText } from '@/i18n';
 import { computed } from 'vue';
+import type { Period } from '../models';
 
-const props = defineProps<{ period: string }>();
+const props = defineProps<{ period: Period }>();
 const { t } = useText();
 const parts = computed(() =>
   props.period.split(' – ').map((p) => {
