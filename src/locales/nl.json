@@ -45,8 +45,7 @@
     "overview": "Trefwoorden"
   },
   "talks": {
-    "title": "Presentaties",
-    "sub": "Interne talks {'@'} Kenze"
+    "title": "Presentaties"
   },
   "months": ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"]
 }

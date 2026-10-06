@@ -45,8 +45,7 @@
     "overview": "Skill keywords"
   },
   "talks": {
-    "title": "Presentations",
-    "sub": "Internal talks {'@'} Kenze"
+    "title": "Presentations"
   },
   "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 }

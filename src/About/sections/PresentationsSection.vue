@@ -33,7 +33,6 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
   <section id="talks" :data-section="t('talks.title')" class="talks" :class="{ 'talks--ready': ready }" aria-labelledby="talks-title">
     <div class="talks__head">
       <h2 id="talks-title" class="talks__title">{{ t('talks.title') }}</h2>
-      <p class="talks__sub">{{ t('talks.sub') }}</p>
     </div>
     <ol class="talks__list" role="list">
       <li v-for="(talk, i) of talks" :key="talk.title" class="talk" :class="{ 'talk--open': isOpen(talk.title) }" :data-course="talk.title">
@@ -88,14 +87,6 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
   line-height: 0.9;
   text-transform: uppercase;
   color: var(--color-mint);
-}
-.talks__sub {
-  font-family: var(--font-legend);
-  font-weight: 700;
-  font-size: 1.375rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--color-sand);
 }
 .talks__list {
   display: grid;
