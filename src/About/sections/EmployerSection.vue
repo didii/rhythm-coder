@@ -55,8 +55,6 @@ const { t, l } = useText();
 }
 .employer__head {
   --focus: var(--color-jacket);
-}
-.employer__head {
   display: flex;
   flex-wrap: wrap;
   align-items: center;

@@ -9,8 +9,12 @@ import PeriodTime from './PeriodTime.vue';
 const props = defineProps<{ course: Course }>();
 const open = ref(false);
 const { t, l } = useText();
-const toggle = ref<HTMLButtonElement>();
+const toggle = ref<HTMLElement>();
 
+function flip() {
+  open.value = !open.value;
+  toggle.value?.focus();
+}
 function close() {
   open.value = false;
   toggle.value?.focus();
@@ -29,16 +33,12 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
     </div>
     <div class="course__body">
       <h3 class="course__legend">
-        <button
-          v-if="course.description"
-          type="button"
+        <!-- a toggle only when there is a description to open -->
+        <component
+          :is="course.description ? 'button' : 'span'"
           ref="toggle"
-          class="course__toggle"
-          :aria-expanded="open"
-          :aria-controls="panelId"
-          @click="
-            open = !open;
-            toggle?.focus();
+          v-bind="
+            course.description ? { type: 'button', class: 'course__toggle', 'aria-expanded': open, 'aria-controls': panelId, onClick: flip } : {}
           "
         >
           <span class="course__name">{{ l(course.name) }}</span>
@@ -46,18 +46,11 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
             <span class="course__line" aria-hidden="true">/</span>
             <span class="course__line">{{ course.line }}</span>
           </template>
-          <span class="course__tab">
+          <span v-if="course.description" class="course__tab">
             {{ t('read') }}
             <Plus class="course__icon" height="1em" aria-hidden="true" />
           </span>
-        </button>
-        <span v-else>
-          <span class="course__name">{{ l(course.name) }}</span>
-          <template v-if="course.line">
-            <span class="course__line" aria-hidden="true">/</span>
-            <span class="course__line">{{ course.line }}</span>
-          </template>
-        </span>
+        </component>
       </h3>
       <p v-if="course.role" class="course__role">{{ course.role }}</p>
       <!-- one line while closed (the browser adds … when it overflows); the full list once opened -->
@@ -281,7 +274,6 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
   outline: none;
 }
 .course--open .course__panel-inner {
-  --focus: var(--color-jacket);
   margin-top: 1rem;
   padding: 1.25rem 1.5rem;
   clip-path: inset(0 0 0 0);

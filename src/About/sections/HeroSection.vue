@@ -87,7 +87,6 @@ const { t, l } = useText();
   text-transform: uppercase;
   color: var(--color-sand);
   padding-top: 0.5rem;
-  /*height: 0.74em;*/
   margin-bottom: 0.5rem;
   box-sizing: content-box;
   overflow: hidden;
