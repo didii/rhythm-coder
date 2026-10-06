@@ -53,7 +53,7 @@ const cvData = {
         Door pragmatisme en een langetermijnvisie te combineren, zorg ik voor een duurzame en positieve impact op zowel de techniek als het team.
       </p>
       <p class="about-me__footer">
-        Kerncompetenties: Probleem oplossend denken · Pragmatisme · Mentorschap
+        Kerncompetenties: Probleemoplossend denken · Pragmatisme · Mentorschap
       </p>
     `,
   },
@@ -95,7 +95,7 @@ const cvData = {
           id: 'hendriks2024' as const,
           img: hendriksLogo,
           name: 'Taxi Hendriks',
-          role: 'Technical Lead / Fullstack .NET Developer',
+          role: 'Technical Lead / Full-stack .NET Developer',
           line: 'Transport',
           period: '09/2024 – now',
           keywords: ['Domain-Driven Design (DDD)', 'Microservices Architecture', 'React (+Native)', 'CQRS', 'NATS'],
@@ -206,9 +206,7 @@ const cvData = {
               <p>
                 I added new debugging functionality to the existing graph-based interface, including breakpoints on nodes, skipping specific steps and
                 stepping through test flows one step at a time. This made the development and testing process considerably more transparent and
-                efficient. I delivered the functionality successfully and integrated it into the existing architecture. The team considered the
-                implementation of the debugger within the complex graph structure particularly strong, and the tech lead was pleasantly surprised by
-                my approach and execution.
+                efficient. I delivered the functionality successfully and integrated it into the existing architecture.
               </p>
             `,
             nl: `
@@ -224,8 +222,7 @@ const cvData = {
                 Ik voegde een nieuwe debugfunctionaliteit toe aan de bestaande graph-based interface, met onder meer breakpoints op nodes, het
                 overslaan van specifieke stappen en de mogelijkheid om testflows stap voor stap te doorlopen. Hierdoor werd het ontwikkel- en
                 testproces aanzienlijk inzichtelijker en efficiënter. Ik leverde de functionaliteit succesvol op en integreerde ze in de bestaande
-                architectuur. De implementatie van de debugger binnen de complexe graphstructuur werd als bijzonder sterk ervaren binnen het team,
-                waarbij de tech lead zich positief verrast toonde door mijn aanpak en uitvoering.
+                architectuur.
               </p>
             `,
           },
@@ -278,7 +275,7 @@ const cvData = {
           description: {
             en: `
               <p>
-                Cascador collects medical data from sources such as hospitals, anonymises it and forwards it to clients such as pharmaceutical
+                Cascador collects medical data from sources such as hospitals, anonymizes it and forwards it to clients such as pharmaceutical
                 companies. This makes data that is often lost in healthcare institutions usable after all, with the aim of improving the development
                 of medicines and treatments.
               </p>
@@ -306,7 +303,7 @@ const cvData = {
           id: 'connective2021' as const,
           img: connectiveLogo,
           name: 'Connective',
-          role: 'Teamlead / Frontend Developer',
+          role: 'Frontend Developer',
           line: 'e-signing',
           period: '10/2021 – 12/2022',
           keywords: ['React', 'Design Systems', 'Storybook', 'From Scratch', 'TypeScript', 'Automated UI Testing'],
@@ -318,6 +315,10 @@ const cvData = {
                 focus on setting up a component library: I introduced Storybook for it, along with a customizable theming system that the library
                 supported and clients could choose from.
               </p>
+              <p>
+                For the first phase I worked on the application alone. When the team grew, my focus shifted to sharing my knowledge
+                of the codebase and the component library with the new developers.
+              </p>
             `,
             nl: `
               <p>
@@ -325,6 +326,10 @@ const cvData = {
                 frontendapplicatie voor ondertekenaars, genaamd WYSIWYS (What You See Is What You Sign), was toe aan een herontwerp, zowel op vlak van
                 codekwaliteit als gebruikerservaring. Er lag hierbij een sterke focus op het opzetten van een componentenbibliotheek: ik introduceerde
                 daarvoor Storybook, evenals een systeem voor aanpasbare theming dat de library ondersteunde en waaruit klanten konden kiezen.
+              </p>
+              <p>
+                In de eerste fase werkte ik alleen aan de applicatie. Toen het team groeide, verschoof mijn focus naar het delen van
+                mijn kennis van de codebase en de componentenbibliotheek met de nieuwe ontwikkelaars.
               </p>
             `,
           },
@@ -388,7 +393,7 @@ const cvData = {
           img: vlmLogo,
           name: 'VLM',
           line: 'Mestbank',
-          role: 'Teamlead / Fullstack .NET Developer',
+          role: 'Team Lead / Full-stack .NET Developer',
           period: '09/2019 – 05/2021',
           keywords: ['Frontend lead', 'UX focus', '4 new applications', 'Applying Angular knowledge', 'Azure pipelines', '.NET Core'],
           description: {
@@ -482,14 +487,14 @@ const cvData = {
           id: 'imec2019' as const,
           img: imecLogo,
           name: 'IMEC',
-          role: 'Technical Architect / Fullstack .NET Developer',
+          role: 'Technical Architect / Full-stack .NET Developer',
           line: 'PTW',
           period: '02/2019 – 03/2019',
           keywords: ['Short Deadline', 'Microsoft Azure', 'React', '.NET Core', 'Performance Optimization', 'From Scratch'],
           description: {
             en: `
               <p>
-                IMEC organises two scientific conferences a year and built a SharePoint application for them that lets clients browse all available
+                IMEC organizes two scientific conferences a year and built a SharePoint application for them that lets clients browse all available
                 presentations. Entering presentations and managing access rights is currently done through an Excel file and a PowerShell script that
                 syncs this data to SharePoint.
               </p>
@@ -530,7 +535,7 @@ const cvData = {
           img: vlmLogo,
           name: 'VLM',
           line: 'MTIL 2.0',
-          role: 'Fullstack Developer',
+          role: 'Full-stack Developer',
           period: '06/2018 – 12/2018',
           keywords: ['Complex Legacy Modernization', 'High-stakes Holiday Release', 'Business Logic', 'Small team'],
           description: {
@@ -668,7 +673,7 @@ const cvData = {
           role: '.NET Developer',
           line: 'Maintenance',
           period: '12/2017 – 02/2018',
-          keywords: ['Oracle Database', 'Stored Procedures', '.NET Framework', 'Scrum', 'Support'],
+          keywords: ['Oracle Database', 'SQL Optimization', 'Stored Procedures', '.NET Framework', 'Legacy Applications', 'Scrum'],
           description: {
             en: `
               <p>
@@ -676,12 +681,20 @@ const cvData = {
                 automated according to the specific instructions of their clients. All data is stored in an Oracle database, while the automated
                 processes are managed and run by a set of .NET applications.
               </p>
+              <p>
+                At the client's request, much of the business logic lived in the database. Working on it gave me in-depth knowledge of SQL and of
+                optimizing queries, along with hands-on experience maintaining legacy applications in a Scrum team.
+              </p>
             `,
             nl: `
               <p>
                 Intrum is een incassobureau waar de meeste processen, zoals het versturen van sms-berichten, brieven en e-mails of het toewijzen van
                 gerechtsdeurwaarders, geautomatiseerd verlopen volgens de specifieke instructies van hun klanten. Alle gegevens worden opgeslagen in
                 een Oracle-database, terwijl de geautomatiseerde processen worden beheerd en uitgevoerd door een reeks .NET-applicaties.
+              </p>
+              <p>
+                Op vraag van de klant zat een groot deel van de businesslogica in de database. Daardoor bouwde ik een grondige kennis op van SQL en
+                het optimaliseren van queries, en deed ik ervaring op met het onderhouden van legacy-applicaties in een Scrum-team.
               </p>
             `,
           },
@@ -697,7 +710,7 @@ const cvData = {
           description: {
             en: `
               <p>
-                This project digitised the application for identity cards and other official documents for the city of Antwerp. It covered everything
+                This project digitized the application for identity cards and other official documents for the city of Antwerp. It covered everything
                 from the administration application to forwarding requests to the postal service, so these products could be delivered to people's homes.
               </p>
             `,
@@ -827,7 +840,6 @@ const cvData = {
       skills: [
         'React',
         'TypeScript',
-        'NPM',
         'Webpack / Vite',
         'i18next',
         'Angular',
@@ -848,7 +860,7 @@ const cvData = {
       skills: [
         '.NET Core',
         'ASP.NET (MVC)',
-        'Entity Framework Core',
+        'Entity Framework (Core)',
         'ASP.NET (Web API)',
         'Background Services',
         '.NET Framework',
@@ -862,7 +874,6 @@ const cvData = {
         'gRPC',
         'SignalR',
         'NodeJS',
-        'Entity Framework',
         'AutoMapper',
         'Hangfire',
         'Asynchronous Programming',
@@ -895,18 +906,15 @@ const cvData = {
         'Azure Functions',
         'Azure Service Bus',
         'Azure Storage',
-        'Azure DevOps',
+        'Azure DevOps / Pipelines',
         'Application Insights',
         'Docker',
         'GitHub Actions',
         'Message Queues',
         'Azure App Services',
-        'Azure Pipelines',
         'Microsoft Azure',
         'Azure Container Apps',
         'Azure App Configuration',
-        'GitHub',
-        'Bash',
       ],
     },
     {
@@ -921,11 +929,9 @@ const cvData = {
         'Oracle',
         'Elasticsearch',
         'Stored Procedures',
-        'SQL',
         'NoSQL',
         'Data Migrations',
         'Indexing / Query Optimization',
-        'Backup & Restore',
       ],
     },
     {
@@ -943,15 +949,10 @@ const cvData = {
         'MVC',
         'API Design',
         'SOLID',
-        'Clean Code',
-        'DRY',
         'Design Patterns',
         'Dependency Injection',
-        'Inversion of Control',
-        'Loose Coupling',
         'Component-based Architecture',
         'OOP / OOD',
-        'ORM',
       ],
     },
     {
@@ -972,30 +973,21 @@ const cvData = {
     {
       id: 'tools' as const,
       name: 'Tools',
-      skills: ['Google Maps', 'OpenTelemetry', 'OpenAPI', 'Portainer', 'NuGet', 'Swagger', 'Git', 'Jira', 'Rider'],
+      skills: ['OpenTelemetry', 'OpenAPI / Swagger', 'Portainer', 'NuGet'],
     },
     {
       id: 'other' as const,
       name: { en: 'Other', nl: 'Overige' },
-      skills: [
-        'Logging & Monitoring',
-        'React Native',
-        'Claude Code',
-        'JSON / XML / XSLT / YAML',
-        'Performance Optimization',
-        'Caching',
-        'Exception Handling',
-        'Localization',
-      ],
+      skills: ['Logging & Monitoring', 'React Native', 'Claude Code', 'XML / XSLT', 'Performance Optimization', 'Caching', 'Localization'],
     },
     {
       id: 'softSkills' as const,
       name: 'Soft skills',
       skills: [
-        'Coach & Mentor',
+        { en: 'Coach & Mentor', nl: 'Coach & mentor' },
         { en: 'Eye for detail', nl: 'Oog voor detail' },
         { en: 'Task-oriented', nl: 'Taakgericht' },
-        { en: 'Cross-functional collaborator', nl: 'Teamspeler' },
+        { en: 'Cross-functional collaborator', nl: 'Multidisciplinaire teamspeler' },
         { en: 'Communicative', nl: 'Communicatief' },
         { en: 'Creative problem solver', nl: 'Creatieve probleemoplosser' },
       ],
@@ -1013,7 +1005,7 @@ const cvData = {
             A technical deep dive into the inner workings of React, based on its source code. The presentation covered how a React application is
             mounted, how JSX is processed under the hood and how React builds pages and manages render cycles. It also went deeper into state
             management and the moments at which React performs a new render. Practical examples showed how hooks such as <code>useRef</code> and
-            <code>useCallback</code> can be used deliberately to avoid unnecessary renders and optimise applications.
+            <code>useCallback</code> can be used deliberately to avoid unnecessary renders and optimize applications.
           </p>
         `,
         nl: `
@@ -1055,7 +1047,7 @@ const cvData = {
     {
       title: 'Angular Spaghetti',
       img: angularLogo,
-      period: '09/2022',
+      period: '09/2020',
       topics: ['Smart & dumb components', 'Stateful services', 'State management', 'Architecture'],
       description: {
         en: `
