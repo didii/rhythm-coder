@@ -240,6 +240,14 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
   overflow: hidden;
   min-height: 0;
 }
+/* only the white box shields the toggle; the empty strip beside it stays clickable */
+.course__panel,
+.course__panel-clip {
+  pointer-events: none;
+}
+.course__panel-inner {
+  pointer-events: auto;
+}
 .course__panel-inner {
   --focus: var(--color-jacket);
   background: var(--color-sand);
