@@ -128,6 +128,14 @@
     .course__panel-clip {
       overflow: visible !important;
     }
+    .course__panel {
+      display: block !important;
+    }
+    .course,
+    .course__panel,
+    .course__panel-inner {
+      break-inside: auto !important;
+    }
     /* the strip heading is inline-block on screen; break-after only works on block boxes */
     .strip {
       display: block !important;
