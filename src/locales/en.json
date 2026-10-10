@@ -30,6 +30,9 @@
   "about": {
     "title": "About me"
   },
+  "ai": {
+    "title": "AI and me"
+  },
   "employer": {
     "about": "About {name}",
     "assignments": "Assignments at {name}"

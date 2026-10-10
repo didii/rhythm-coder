@@ -30,6 +30,9 @@
   "about": {
     "title": "Over mij"
   },
+  "ai": {
+    "title": "AI en ik"
+  },
   "employer": {
     "about": "Over {name}",
     "assignments": "Opdrachten bij {name}"

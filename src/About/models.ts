@@ -6,6 +6,8 @@ export type MonthYear = `${Month}/${number}`;
 // "MM/YYYY – MM/YYYY" or "MM/YYYY – now", with an en dash
 export type Range = `${MonthYear} – ${MonthYear | 'now'}`;
 export type Period = Range | MonthYear;
+/** Same as `Text`, but signifies that it is used with `v-html` */
+export type HtmlText = Text;
 
 export interface CvData {
   name: string;
@@ -15,7 +17,8 @@ export interface CvData {
   email: string;
   drivingLicense: string;
   yearOfBirth: number;
-  aboutMe: Text;
+  aboutMe: HtmlText;
+  ai: HtmlText;
   links: LinkInfo[];
   employers: Employer[];
   educations: Education[];
@@ -35,7 +38,7 @@ export interface Employer {
   logo: string;
   period: Range;
   activity: Text;
-  description?: Text; // HTML
+  description?: HtmlText;
   courses: Course[];
 }
 
@@ -47,7 +50,7 @@ export interface Course {
   line?: string;
   period: Period;
   keywords: Text[];
-  description?: Text; // HTML
+  description?: HtmlText;
 }
 
 export interface Education {
@@ -61,7 +64,7 @@ export interface Presentation {
   period: MonthYear;
   img: string;
   topics: string[];
-  description: Text; // HTML
+  description: HtmlText;
 }
 
 export interface MainSkillCategory {

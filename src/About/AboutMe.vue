@@ -4,6 +4,7 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import IndexTape from './components/IndexTape.vue';
 import WindowRibbon from './components/WindowRibbon.vue';
 import cvData from './cvData';
+import AiSection from './sections/AiSection.vue';
 import AboutMeSection from './sections/AboutMeSection.vue';
 import ContactSection from './sections/ContactSection.vue';
 import EducationSection from './sections/EducationSection.vue';
@@ -32,6 +33,7 @@ const activeSection = ref('top');
 // sections without an eyelet of their own light up the one they share
 const eyeletOf: Record<string, string> = {
   about: 'top',
+  ai: 'top',
   ...Object.fromEntries(cvData.employers.map((e) => [e.id, cvData.employers[0]!.id])),
 };
 
@@ -94,6 +96,7 @@ onBeforeUnmount(() => observer?.disconnect());
     <main id="main" class="main">
       <HeroSection />
       <AboutMeSection />
+      <AiSection />
       <EmployerSection v-for="emp of cvData.employers" :key="emp.id" :employer="emp" />
       <EducationSection />
       <SkillsSection />
