@@ -3,6 +3,7 @@ import { useText, type Text } from '@/i18n';
 import me from '../img/me.jpg';
 
 const props = defineProps<{ location: Text; locationHref: string; email: string; drivingLicense: string; yearOfBirth: number }>();
+const yearsOld = new Date().getUTCFullYear() - props.yearOfBirth;
 const { t, l } = useText();
 </script>
 
@@ -38,7 +39,7 @@ const { t, l } = useText();
       <div>
         <dt>{{ t('lead.born') }}</dt>
         <dd>
-          <time :datetime="String(props.yearOfBirth)">{{ props.yearOfBirth }}</time>
+          <time :datetime="String(props.yearOfBirth)">{{ props.yearOfBirth }}</time> · <time :datetime="`P${yearsOld}Y`">{{ yearsOld }}</time> {{ t('lead.yearsOld') }}
         </dd>
       </div>
     </dl>
