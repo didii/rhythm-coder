@@ -60,49 +60,45 @@ const cvData = {
   ai: {
     en: `
       <p>
-        AI is already powerful enough that I see no reason not to use it, as long as I stay in charge. I validate what it produces instead of
-        assuming it works, and I give it access only to what it needs: read access only where it must read, write access only where it must change.
+        AI is already powerful enough that I see no reason not to use it, as long as I use it responsibly. I validate what it produces instead of
+        assuming it works, and I give it only the access it needs: write access only where it must change something. To learn its weak spots while
+        they are still cheap, I introduce it in stages.
       </p>
       <p>
-        I build up trust in stages, so I learn its weak spots while they are still cheap. At Taxi Hendriks I went from asking for a second opinion,
-        to offloading small tasks, to offloading larger refactors. At Honesty bar I prepare and document an entire feature together with the AI so
-        it can build it step by step, then let it build a new feature in one go, then let it create and review pull requests in Azure DevOps. Now we
-        prepare tickets together and the AI completes the full cycle on its own.
+        At Taxi Hendriks I went from asking for a second opinion, to offloading small tasks, to offloading larger refactors. At Honesty bar we now
+        prepare tickets together and the AI completes the full cycle on its own. Each stage showed something to adapt: without joint
+        preparation the AI makes too many assumptions, and its tests are sub-par. Tests need thorough review, because they are how the AI knows in
+        the future that it has not broken anything.
       </p>
       <p>
-        Each stage showed something to adapt. Letting it pick up a ticket without preparing together failed: too many assumptions, too few
-        questions. It also writes poor tests, either very heavy integration tests or unit tests that merely repeat the logic. So I set strict
-        guardrails and review the tests more closely than the logic, because tests are how the AI knows later that it has not broken anything.
+        Documentation also matters more than ever. Every feature needs a record of why it was built this way: which options were considered, which
+        was chosen and what risks come with it. That knowledge normally lives in the head of a lead or architect and deteriorates over time. Stored
+        next to the code, it is never lost and the AI can make use of it. Without it, I fear AI will only help in producing legacy software faster.
       </p>
       <p>
-        Documentation matters more than ever. With OpenSpec, every feature records why it was built this way: which options were considered,
-        which was chosen and what risks come with it. That knowledge normally lives in the head of a lead or architect. Stored next to the code,
-        the AI can read it and make better decisions later. Without it, AI only produces legacy software faster. The first results are promising,
-        but it will take about a year to know for sure. Honesty bar is how I test that deliberately.
+        The first results are promising, but it will take some time to know for sure. Until then, I keep testing it deliberately.
       </p>
     `,
     nl: `
       <p>
-        AI is nu al krachtig genoeg om er geen reden toe te zien het niet te gebruiken, zolang ik zelf aan het roer blijf. Ik valideer wat het
-        oplevert in plaats van aan te nemen dat het werkt, en ik geef het enkel toegang tot wat het nodig heeft: leestoegang alleen waar het moet
-        lezen, schrijftoegang alleen waar het iets moet wijzigen.
+        AI is al te krachtig om links te laten liggen, zolang het verantwoord ingezet wordt. Ik vertrouw niet blindelings op de output, maar valideer
+        kritisch wat het oplevert en ik geef het enkel de toegang die het nodig heeft: schrijftoegang alleen waar het iets moet wijzigen. Ik
+        introduceer AI stapsgewijs om zo zijn zwakke plekken vroegtijdig en met minimale impact te leren kennen.
       </p>
       <p>
-        Ik bouw vertrouwen in fases op, zodat ik de zwakke plekken leer kennen zolang ze nog weinig kosten. Bij Taxi Hendriks ging ik van een
-        tweede mening vragen, naar kleine taken uitbesteden, naar grotere refactors uitbesteden. Bij Honesty bar bereid ik een volledige feature
-        samen met de AI voor en documenteer ik ze, zodat de AI ze stap voor stap kan bouwen. Daarna liet ik een nieuwe feature in één keer bouwen,
-        en pull requests aanmaken en reviewen in Azure DevOps. Nu bereiden we tickets samen voor en doorloopt de AI zelfstandig de volledige cyclus.
+        Bij Taxi Hendriks begon dat bij een second opinion, naar kleine taken uitbesteden, naar grotere refactors uitbesteden. Bij de Honesty bar
+        bereiden we nu tickets samen voor en doorloopt de AI zelfstandig de volledige cyclus. Elke fase toonde iets om bij te sturen: zonder
+        gezamenlijke voorbereiding maakt de AI te veel aannames, en zijn de tests ondermaats. Testing vraagt een veel grondigere review, deze zijn
+        namelijk cruciaal voor AI om later na te gaan dat er niets breekt.
       </p>
       <p>
-        Elke fase toonde iets om bij te sturen. Een ticket laten oppikken zonder samen voor te bereiden mislukte: te veel aannames, te weinig
-        vragen. Ook schrijft AI zwakke tests: ofwel erg zware integratietests, ofwel unittests die de logica gewoon herhalen. Daarom werk ik met
-        strikte leidraden en review ik de tests grondiger dan de logica, want tests laten de AI later weten dat er niets stuk is gegaan.
+        Documentatie wordt ook belangrijker dan ooit. Elke feature moet beargumenteerd gebouwd zijn: welke opties zijn overwogen, welke is gekozen en
+        welke risico's deze inhouden. Die kennis zit normaal in het hoofd van een lead of architect en vervaagt na verloop van tijd. Deze gedachtegang
+        wordt dan naast de code opgeslagen zodat ze nooit verloren gaat en AI deze kan gebruiken. Zonder dit type van documentatie vrees ik dat AI
+        enkel helpt om sneller legacy-software te maken.
       </p>
       <p>
-        Documentatie wordt belangrijker dan ooit. Met OpenSpec legt elke feature vast waarom ze zo gebouwd is: welke opties overwogen werden,
-        welke gekozen is en welke risico's daarbij horen. Die kennis zit normaal in het hoofd van een lead of architect. Naast de code opgeslagen
-        kan de AI ze lezen en later betere beslissingen nemen. Zonder die documentatie maakt AI enkel sneller legacy-software. De eerste
-        resultaten zijn veelbelovend, maar het duurt ongeveer een jaar voor we het zeker weten. Honesty bar is mijn manier om dat bewust te testen.
+        De eerste resultaten zijn veelbelovend, maar zekerheid vraagt tijd. Tot dan blijf ik het bewust en kritisch testen.
       </p>
     `,
   },
