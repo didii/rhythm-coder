@@ -951,6 +951,10 @@ const cvData = {
       degree: { en: 'Master in Physics', nl: 'Master in de Fysica' },
       school: { en: 'University of Antwerp', nl: 'Universiteit Antwerpen' },
       period: '09/2014 – 07/2017',
+      notice: {
+        en: 'Degree not completed, left to start career as software developer',
+        nl: 'Diploma niet behaald, vertrokken om als softwareontwikkelaar te starten',
+      },
     },
     {
       degree: { en: 'Bachelor in Physics', nl: 'Bachelor in de Fysica' },

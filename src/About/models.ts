@@ -57,6 +57,7 @@ export interface Education {
   degree: Text;
   school: Text;
   period: Range;
+  notice?: Text;
 }
 
 export interface Presentation {

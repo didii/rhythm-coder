@@ -39,7 +39,10 @@ const { t, l } = useText();
       <div>
         <dt>{{ t('lead.born') }}</dt>
         <dd>
-          <time :datetime="String(props.yearOfBirth)">{{ props.yearOfBirth }}</time> · <time :datetime="`P${yearsOld}Y`">{{ yearsOld }}</time> {{ t('lead.yearsOld') }}
+          <time :datetime="String(props.yearOfBirth)">{{ props.yearOfBirth }}</time>
+          ·
+          <time :datetime="`P${yearsOld}Y`">{{ yearsOld }}</time>
+          {{ t('lead.yearsOld') }}
         </dd>
       </div>
     </dl>

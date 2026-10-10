@@ -31,12 +31,14 @@ export function head() {
     address: { '@type': 'PostalAddress', addressLocality: 'Zoersel', addressCountry: 'BE' },
     worksFor: { '@type': 'Organization', name: cvData.employers[0]!.name },
     alumniOf: { '@type': 'CollegeOrUniversity', name: pick(cvData.educations[0]!.school, 'en') },
-    hasCredential: cvData.educations.map((e) => ({
-      '@type': 'EducationalOccupationalCredential',
-      credentialCategory: 'degree',
-      name: pick(e.degree, 'en'),
-      recognizedBy: { '@type': 'CollegeOrUniversity', name: pick(e.school, 'en') },
-    })),
+    hasCredential: cvData.educations
+      .filter((e) => !('notice' in e))
+      .map((e) => ({
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'degree',
+        name: pick(e.degree, 'en'),
+        recognizedBy: { '@type': 'CollegeOrUniversity', name: pick(e.school, 'en') },
+      })),
     knowsLanguage: ['nl', 'en', 'fr'],
     knowsAbout: [
       ...cvData.mainSkills.filter((c) => c.id !== 'spokenLanguages').flatMap((c) => c.skills.map((s) => pick(s.name, 'en'))),

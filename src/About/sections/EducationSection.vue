@@ -16,6 +16,7 @@ const { t, l } = useText();
           {{ l(e.school) }}<span class="education__sep" aria-hidden="true">&nbsp;&nbsp;/&nbsp; </span
           ><span class="education__period"><PeriodTime :period="e.period" /></span>
         </p>
+        <p v-if="e.notice" class="education__notice">{{ l(e.notice) }}</p>
       </li>
     </ul>
   </SectionPanel>
@@ -46,6 +47,11 @@ const { t, l } = useText();
   font-size: 1.25rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+}
+.education__notice {
+  margin-top: 0.35rem;
+  font-size: 0.875rem;
+  font-style: italic;
 }
 .education__period {
   white-space: nowrap;
