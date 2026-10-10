@@ -141,6 +141,42 @@ const cvData = {
       },
       courses: [
         {
+          id: 'honestybar2026' as const,
+          img: kenzeLogo,
+          name: 'Honesty bar',
+          role: 'Internal project',
+          line: 'Kenze',
+          period: '09/2026 – now',
+          keywords: [
+            { en: 'AI-assisted development', nl: 'AI-ondersteunde ontwikkeling' },
+            { en: 'Internal project', nl: 'Intern project' },
+            'OpenSpec',
+            'Impeccable',
+          ],
+          description: {
+            en: `
+              <p>
+                Honesty bar is a digital app to buy drinks, built on trust: people are expected to use the app before they take a drink.
+              </p>
+              <p>
+                Above all, it is a test project to see how far we can get with creating traditional software with AI by slowly increasing the . With OpenSpec, we make sure knowledge about specific decisions is not lost over time, so we do not end up creating legacy
+                software very quickly. With Impeccable, we create and edit the UI designs quickly and efficiently.
+              </p>
+            `,
+            nl: `
+              <p>
+                Honesty bar is een digitale app om drankjes te kopen, gebouwd op vertrouwen: mensen worden verwacht de app te gebruiken voor ze een
+                drankje nemen.
+              </p>
+              <p>
+                Bovenal is het een testproject om te zien hoe ver we kunnen gaan met het bouwen van traditionele software met AI. Met OpenSpec zorgen
+                we dat kennis over specifieke beslissingen niet verloren gaat in de tijd, zodat we niet razendsnel legacy-software maken. Met
+                Impeccable maken en bewerken we de UI-designs snel en efficiënt.
+              </p>
+            `,
+          },
+        },
+        {
           id: 'hendriks2024' as const,
           img: hendriksLogo,
           name: 'Taxi Hendriks',
