@@ -247,6 +247,9 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
   font-size: 1.0625rem;
   line-height: 1.6;
   max-width: 72ch;
+  /* spacing stays on while closed; the 0fr clip hides it, so it collapses smoothly */
+  margin-top: 1rem;
+  padding: 1.25rem 1.5rem;
   clip-path: inset(0 0 100% 0);
   transition: clip-path 360ms cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -254,8 +257,6 @@ const code = props.course.period.match(/\d{4}/)?.[0].slice(2);
   outline: none;
 }
 .course--open .course__panel-inner {
-  margin-top: 1rem;
-  padding: 1.25rem 1.5rem;
   clip-path: inset(0 0 0 0);
 }
 .course__panel-inner :deep(p + p) {
