@@ -154,6 +154,7 @@ const cvData = {
             'Domain-Driven Design',
             'NATS messaging',
             'React Native',
+            'Claude Code',
           ],
           description: {
             en: `
@@ -175,6 +176,10 @@ const cvData = {
                 systems and Chiron, the system that reports taxi rides to the government. Messaging was a key part of this, to exchange data reliably
                 between different systems and processes.
               </p>
+              <p>
+                This project is where I first experimented with Claude Code. I offload tasks that would otherwise take me a considerable amount of
+                time, and I use it as a reviewer for my own work.
+              </p>
             `,
             nl: `
               <p>
@@ -195,6 +200,10 @@ const cvData = {
                 infrastructuur en software rond het mindervalidentransport. Hierbij werkte ik aan communicatie met boordcomputers, HR-systemen en
                 Chiron, het systeem voor de rapportering van taxiritten aan de overheid. Messaging vormde hierbij een belangrijk onderdeel om gegevens
                 betrouwbaar tussen verschillende systemen en processen uit te wisselen.
+              </p>
+              <p>
+                In dit project experimenteerde ik voor het eerst met Claude Code. Ik laat er taken door uitvoeren die mij anders aanzienlijk veel tijd
+                zouden kosten, en gebruik het als reviewer van mijn eigen werk.
               </p>
             `,
           },
