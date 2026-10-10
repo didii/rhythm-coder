@@ -1221,6 +1221,9 @@ const cvData = {
             less obvious pitfalls and hard-to-detect bugs. Practical demos then showed how TypeScript types can be used and combined in creative and
             advanced ways, including complex string types, mapped types, decorators and types for JSON structures.
           </p>
+          <p>
+            The demos are available on <a href="https://github.com/didii/ts-shenanigans" target="_blank" rel="noopener">GitHub</a>.
+          </p>
         `,
         nl: `
           <p>
@@ -1229,6 +1232,9 @@ const cvData = {
             minder voor de hand liggende valkuilen en moeilijk te detecteren bugs besproken. Aan de hand van praktische demo's werd vervolgens
             getoond hoe TypeScript-types op creatieve en geavanceerde manieren kunnen worden ingezet en gecombineerd, met onder andere complexe string
             types, mapped types, decorators en types voor JSON-structuren.
+          </p>
+          <p>
+            De demo's zijn beschikbaar op <a href="https://github.com/didii/ts-shenanigans" target="_blank" rel="noopener">GitHub</a>.
           </p>
         `,
       },

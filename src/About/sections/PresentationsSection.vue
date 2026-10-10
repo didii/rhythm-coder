@@ -190,6 +190,13 @@ const isOpen = (title: string) => !mobile.value || !!open[title];
 .talk__desc :deep(code) {
   font-weight: 700;
 }
+.talk__desc :deep(p + p) {
+  margin-top: 0.75rem;
+}
+.talk__desc :deep(a) {
+  font-weight: 700;
+  text-decoration: underline;
+}
 
 @media (max-width: 40rem) {
   .talk {
