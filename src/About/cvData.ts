@@ -79,24 +79,23 @@ const cvData = {
     `,
     nl: `
       <p>
-        AI is al te krachtig om links te laten liggen, zolang het verantwoord ingezet wordt. Ik vertrouw niet blindelings op de output, maar valideer
-        kritisch wat het oplevert en ik geef het enkel de toegang die het nodig heeft: schrijftoegang alleen waar het iets moet wijzigen. Ik
-        introduceer AI stapsgewijs om zo zijn zwakke plekken vroegtijdig en met minimale impact te leren kennen.
+        Ik zet AI in als een gefaseerd onderdeel van hoe ik software bouw, niet als shortcut. Bij Taxi Hendriks ging ik van een second opinion
+        vragen, naar kleine taken, naar grotere refactors. In een intern project bij Kenze bereiden we nu samen tickets voor en schrijft de AI de
+        code en tests en opent ze de pull request, die door een andere agent en een persoon wordt gereviewd.
       </p>
       <p>
-        Bij Taxi Hendriks begon dat bij een second opinion, naar kleine taken uitbesteden, naar grotere refactors uitbesteden. Bij de Honesty bar
-        bereiden we nu tickets samen voor en doorloopt de AI zelfstandig de volledige cyclus. Elke fase toonde iets om bij te sturen: zonder
-        gezamenlijke voorbereiding maakt de AI te veel aannames, en zijn de tests ondermaats. Testing vraagt een veel grondigere review, deze zijn
-        namelijk cruciaal voor AI om later na te gaan dat er niets breekt.
+        Tot nu toe drie lessen. Ten eerste: voorbereiding bepaalt het resultaat. Zonder duidelijke specificatie maakt de AI te veel aannames en
+        schrijft ze wat ik klassieke juniorcode noem. Het werkt, maar houdt geen rekening met de codestructuur en de verantwoordelijkheden van elke
+        laag, daarom voegde ik documentatie toe die beschrijft hoe de code is opgebouwd en welke laag waarvoor verantwoordelijk is. Ten tweede: de
+        tests hebben zorgvuldige review nodig, want ze vormen het vangnet voor elke latere wijziging. Ten derde: de redenen achter een beslissing
+        (overwogen opties, gemaakte keuze, risico's) moeten naast de code staan, zodat zowel mensen als AI die kennis behouden. Anders maakt AI
+        in sneltempo legacy-code.
       </p>
       <p>
-        Documentatie wordt ook belangrijker dan ooit. Elke feature moet beargumenteerd gebouwd zijn: welke opties zijn overwogen, welke is gekozen en
-        welke risico's deze inhouden. Die kennis zit normaal in het hoofd van een lead of architect en vervaagt na verloop van tijd. Deze gedachtegang
-        wordt dan naast de code opgeslagen zodat ze nooit verloren gaat en AI deze kan gebruiken. Zonder dit type van documentatie vrees ik dat AI
-        enkel helpt om sneller legacy-software te maken.
-      </p>
-      <p>
-        De eerste resultaten zijn veelbelovend, maar zekerheid vraagt tijd. Tot dan blijf ik het bewust en kritisch testen.
+        AI krijgt ook enkel de toegang die ze nodig heeft, en ik verruim die alleen waar de winst duidelijk groter is dan het risico. Pull requests
+        doorlopen dezelfde checks als die van iedereen (linting, formatting, build, tests). Ik heb de bespaarde tijd niet gemeten, omdat de
+        projecten te klein zijn voor betrouwbare cijfers. Ik beoordeel het op de herwerking die nodig is bij review en op of de code een maand later
+        nog in de codebase past.
       </p>
     `,
   },
