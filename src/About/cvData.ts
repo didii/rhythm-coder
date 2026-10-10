@@ -60,23 +60,21 @@ const cvData = {
   ai: {
     en: `
       <p>
-        AI is already powerful enough that I see no reason not to use it, as long as I use it responsibly. I validate what it produces instead of
-        assuming it works, and I give it only the access it needs: write access only where it must change something. To learn its weak spots while
-        they are still cheap, I introduce it in stages.
+        I use AI as a staged part of how I build software, not as a shortcut. At Taxi Hendriks I moved from asking for a second opinion, to small
+        tasks, to larger refactors. In an internal project at Kenze, we now prepare tickets together and the AI writes the code and tests and opens
+        the pull request, which another agent and a person reviews.
       </p>
       <p>
-        At Taxi Hendriks I went from asking for a second opinion, to offloading small tasks, to offloading larger refactors. At Honesty bar we now
-        prepare tickets together and the AI completes the full cycle on its own. Each stage showed something to adapt: without joint
-        preparation the AI makes too many assumptions, and its tests are sub-par. Tests need thorough review, because they are how the AI knows in
-        the future that it has not broken anything.
+        Three lessons so far. First, preparation decides the result: without a clear spec the AI makes too many assumptions, and writes what I would
+        call classic junior code. It works, but it doesn't take into account code structure and responsibilities of each layer, so I added
+        documentation describing how the code is structured and which layer is responsible for what. Second, generated tests need the most careful
+        review, because they are the safety net for every later change. Third, the reasons behind a decision (options considered, choice made, risks)
+        must live next to the code, so people and AI both keep that knowledge. Otherwise AI just produces legacy code faster.
       </p>
       <p>
-        Documentation also matters more than ever. Every feature needs a record of why it was built this way: which options were considered, which
-        was chosen and what risks come with it. That knowledge normally lives in the head of a lead or architect and deteriorates over time. Stored
-        next to the code, it is never lost and the AI can make use of it. Without it, I fear AI will only help in producing legacy software faster.
-      </p>
-      <p>
-        The first results are promising, but it will take some time to know for sure. Until then, I keep testing it deliberately.
+        The AI gets only the access it needs, and I widen that only where the gain clearly outweighs the risk. Its pull requests pass the same gates
+        as everyone's (linting, formatting, build, tests). I haven't measured time saved, since the projects are too small to give reliable numbers. I
+        judge it on rework needed in review and on whether the code still fits the codebase a month later.
       </p>
     `,
     nl: `
